@@ -1,15 +1,16 @@
+// content handling to view
 const content_profile = document.getElementById("profile").classList;
 
 function active_remove() {
 	if (document.querySelector(".active")) {
 		document.querySelector(".active").classList.remove("active");
 
-		Array.from(document.getElementById("content").children).forEach(element => {
-			if (!element.classList.contains("display_none")){
+		Array.from(document.getElementById("content").children).forEach((element) => {
+			if (!element.classList.contains("display_none")) {
 				element.classList.add("display_none");
 			}
 		});
-		
+
 		if (content_profile.contains("display_none")) {
 			content_profile.remove("display_none");
 		}
@@ -20,22 +21,23 @@ document.querySelector(".sidebar").addEventListener("click", function (event) {
 	const event_clicked = event.target;
 
 	if (event_clicked.classList.contains("sidebar_list")) {
-
 		if (!event_clicked.classList.contains("active")) {
 			active_remove();
 			event_clicked.classList.add("active");
 			content_profile.add("display_none");
 
-            const targetId = event_clicked.getAttribute("data-target");
+			const targetId = event_clicked.getAttribute("data-target");
 
-			if (targetId){
-				document.querySelector(targetId).classList.remove("display_none");
+			if (targetId) {
+				const targetContent = document.querySelector(targetId);
+
+				if (targetContent) {
+					targetContent.classList.remove("display_none");
+				}
 			}
-
 		} else {
 			active_remove();
 		}
-
 	} else {
 		active_remove();
 	}

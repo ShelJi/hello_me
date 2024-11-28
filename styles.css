@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Delius&display=swap");
 
 :root {
-	--sidebar-vw: 43vw;
+	--sidebar-vw: 40vw;
 	--text-opacity: 0.6;
 	--h1-font-size: 1.6rem;
 	--h3-font-size: 1.4rem;
@@ -11,6 +11,7 @@
 	--box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.25);
 	--box-shadow-active: 1px 1px 7px rgba(0, 0, 0, 0.15);
 	--white: white;
+	--bold-txt: 900;
 }
 
 ::before,
@@ -50,10 +51,11 @@ abbr{
 	display: flex;
 }
 
+/* sidebar */
 .sidebar {
 	user-select: none;
 	min-height: 100vh;
-	width: var(--sidebar-vw);
+	min-width: var(--sidebar-vw);
 	padding: 30vh 20px 30vh 20px;
 	display: flex;
 	flex-direction: column;
@@ -98,9 +100,9 @@ abbr{
 	box-shadow: var(--box-shadow);
 }
 
+/* content */
 .content {
 	height: 100vh;
-	min-width: fit-content;
 	width: calc(100vw - var(--sidebar-vw));
 	display: flex;
 	align-items: center;
@@ -108,8 +110,9 @@ abbr{
 	top: 0;
 }
 
+/* contents profile */
 .bold_txt {
-	font-weight: 900;
+	font-weight: var(--bold-txt);
 }
 
 .icon {
@@ -140,3 +143,5 @@ abbr{
 .cv:hover {
 	background-color: var(--bg-green);
 }
+
+/* contents about */
