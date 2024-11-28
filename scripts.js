@@ -1,29 +1,42 @@
-// NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE
-const canvas = document.getElementById("noise");
-const ctx = canvas.getContext("2d");
+const content_profile = document.getElementById("profile").classList;
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function active_remove() {
+	if (document.querySelector(".active")) {
+		document.querySelector(".active").classList.remove("active");
 
-function drawNoise() {
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    const data = imageData.data;
-    for (let i = 0; i < data.length; i += 4) {
-        const color = Math.random() * 255;
-        data[i] = color;
-        data[i + 1] = color;
-        data[i + 2] = color;
-        data[i + 3] = 255;
-    }
-    ctx.putImageData(imageData, 0, 0);
-    requestAnimationFrame(drawNoise);
+		Array.from(document.getElementById("content").children).forEach(element => {
+			if (!element.classList.contains("display_none")){
+				element.classList.add("display_none");
+			}
+		});
+		
+		if (content_profile.contains("display_none")) {
+			content_profile.remove("display_none");
+		}
+	}
 }
 
-drawNoise();
+document.querySelector(".sidebar").addEventListener("click", function (event) {
+	const event_clicked = event.target;
 
-// Add class to animate
-setTimeout(() => {
-    canvas.classList.add("noise-animate");
-}, 0);
+	if (event_clicked.classList.contains("sidebar_list")) {
 
-// NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE NOISE
+		if (!event_clicked.classList.contains("active")) {
+			active_remove();
+			event_clicked.classList.add("active");
+			content_profile.add("display_none");
+
+            const targetId = event_clicked.getAttribute("data-target");
+
+			if (targetId){
+				document.querySelector(targetId).classList.remove("display_none");
+			}
+
+		} else {
+			active_remove();
+		}
+
+	} else {
+		active_remove();
+	}
+});
