@@ -1,104 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shelj</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="shortcut icon" href="ico/favicon.png" type="image/x-icon" />
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Shelj</title>
-	<link rel="stylesheet" href="styles.css" />
-	<link rel="shortcut icon" href="ico/favicon.png" type="image/x-icon" />
-</head>
+	<body>
+		<div class="resume">
+			<!-- <div class="profile-img">
+				<img src="resume/shelj.jpg" alt="profile pic" loading="lazy">
+			</div> -->
 
-<body>
-	<div class="resume">
-		<div class="sidebar">
-			<h1 class="sidebar_list" data-target="#about">About</h1>
-			<h1 class="sidebar_list" data-target="#experience">Experience</h1>
-			<h1 class="sidebar_list" data-target="#project">Project</h1>
-			<h1 class="sidebar_list" data-target="#hobbies">Hobbies</h1>
-			<h1 class="sidebar_list" data-target="#dsa">DSA</h1>
+			<div class="sidebar">
+				<h1 class="sidebar_list" data-target="#about">About</h1>
+				<h1 class="sidebar_list" data-target="#experience">Experience</h1>
+				<h1 class="sidebar_list" data-target="#project">Project</h1>
+				<h1 class="sidebar_list" data-target="#hobbies">Game</h1>
+				<h1 class="sidebar_list" data-target="#hobbies">Hobbies</h1>
+				<h1 class="sidebar_list" data-target="#dsa">DSA</h1>
 
-		</div>
+			</div>
 
-		<div id="content" class="content">
-
-			<!-- profile -->
-			<div id="profile" class="content_profile">
-				<h1 class="bold_txt">Sheljin S.A,</h1>
-				<h3 class="bold_txt">Full Stack Developer</h3>
-				<h3>
-					Specialised in Django and <abbr title="Django Rest Framework">DRF (API)</abbr>
-				</h3>
-				<div class="icon">
-					<a href="#"><img src="ico/github.png" alt="github" /></a>
-					<a href="#"><img src="ico/linkedin1.png" alt="linkedin" /></a>
-					<a href="#"><img src="ico/mail1.png" alt="mail" /></a>
-					<!-- <a href="#"><img src="ico/freelancer.png" alt="freelancer" /></a> -->
-					<a href="#"><img src="ico/codechef.png" alt="codechef" /></a>
-					<a href="#"><img src="ico/leetcode.png" alt="leetcode" /></a>
-					<div class="cv">
-						<a href="#"><img src="ico/cv.png" alt="cv" /></a>
-						<a href="#"><img src="ico/arrow east north.png" alt="arrow up" /></a>
+			<div id="content" class="content">
+				<!-- profile -->
+				<div id="profile" class="content_profile ">
+					<h1 class="bold_txt bg-grad name">Sheljin S.A,</h1>
+					<h3 class="bold_txt">Full Stack Developer</h3>
+					<h3>
+						Specialised in Django and
+						<abbr title="Django Rest Framework">DRF (API)</abbr>
+					</h3>
+					<div class="icon">
+						<a href="#"><img src="ico/github.png" alt="github" /></a>
+						<a href="#"><img src="ico/linkedin1.png" alt="linkedin" /></a>
+						<a href="mailto:shelj.dev@gmail.com"
+							><img src="ico/mail1.png" alt="mail"
+						/></a>
+						<!-- <a href="#"><img src="ico/freelancer.png" alt="freelancer" /></a> -->
+						<a href="#"><img src="ico/codechef.png" alt="codechef" /></a>
+						<a href="#"><img src="ico/leetcode.png" alt="leetcode" /></a>
+						<div class="cv">
+							<a href="resume/Sheljin.S.A.pdf" target="_blank">
+								<!-- <img id="resume" src="ico/resume.png" alt="resume" /> -->
+								<span id="resume">Resume</span>
+								<img src="ico/arrow east north.png" alt="arrow up" />
+							</a>
+						</div>
 					</div>
+					<!-- <div class="explored">
+						<strong>Explored Technologies: </strong>
+						<p>
+							<span
+								title="Object-Relational Mapping (ORM) is a programming technique for converting data between relational databases and object-oriented programming languages.">ORM,</span>
+							<span
+								title="cPanel is a web hosting control panel that provides a graphical interface and automation tools to simplify website hosting.">CPanel,</span>
+							<abbr
+								title="HTMX is a modern JavaScript library that allows you to access AJAX, CSS Transitions, WebSockets, and Server-Sent Events directly in HTML.">HTMX,</abbr>
+							<abbr
+								title="Swagger UI is an open-source tool that helps developers visualize and interact with API resources using the OpenAPI specification.">SwaggerUI,</abbr>
+							<abbr
+								title="Eraser.io is an online collaborative whiteboarding tool used for brainstorming, planning, and documentation.">Eraser.io,</abbr>
+							<abbr
+								title="ReportLab is a Python library for creating PDFs, allowing dynamic PDF generation in applications.">ReportLab,</abbr>
+						</p>
+					</div> -->
 				</div>
-				<!-- <div class="explored">
-					<strong>Explored Technologies: </strong>
+
+				<!-- about page -->
+				<div id="about" class="content_about display_none" >
 					<p>
-						<span
-							title="Object-Relational Mapping (ORM) is a programming technique for converting data between relational databases and object-oriented programming languages.">ORM,</span>
-						<span
-							title="cPanel is a web hosting control panel that provides a graphical interface and automation tools to simplify website hosting.">CPanel,</span>
-						<abbr
-							title="HTMX is a modern JavaScript library that allows you to access AJAX, CSS Transitions, WebSockets, and Server-Sent Events directly in HTML.">HTMX,</abbr>
-						<abbr
-							title="Swagger UI is an open-source tool that helps developers visualize and interact with API resources using the OpenAPI specification.">SwaggerUI,</abbr>
-						<abbr
-							title="Eraser.io is an online collaborative whiteboarding tool used for brainstorming, planning, and documentation.">Eraser.io,</abbr>
-						<abbr
-							title="ReportLab is a Python library for creating PDFs, allowing dynamic PDF generation in applications.">ReportLab,</abbr>
+						Specializing in Django and DRF (API), building
+						scalable web applications and robust APIs for seamless performance. I
+						deliver clean, efficient code while adhering to industry best practices,
+						ensuring success in challenging environments.
 					</p>
-				</div> -->
+					
+					<!-- <summary>Languages/Framework</summary> -->
+					<details open>
+						<summary>Languages/Framework</summary>
+						<span>HTML</span>
+						<span>CSS</span>
+						<span>JavaScript</span>
+						<span>HTMX</span>
+						<span>Django</span>
+						<span>Django RestFramework</span>
+						<span>API</span>
+						<span>RESTful APIs</span>
+						<span>Bootstrap</span>
+						<span>PHP</span>
+						<span>Python</span>
+					</details>
 
-			</div>
-
-			<!-- about page -->
-			<div id="about" class="content_about display_none">
-				<p>
-					I am a technophile and enthusiastic about learning. Electronics and coding
-					are my favorite things to do. I always try to think out of the box and be
-					innovative. I'm also passionate about learning new things and growing
-					professionally. I'm always looking for opportunities to expand my knowledge
-					and take on new challenges. I'm a charismatic leader. It is easy for me to
-					adapt to a new environment . Strong creative and analytical skills.
-				</p>
-			</div>
-
-			<!-- experience -->
-			<div id="experience" class="content_experience display_none">
-				<H1>im experience</H1>
-			</div>
-
-			<!-- project -->
-			<div id="project" class="content_project display_none">
-				<!-- ecommerce project -->
-				<div class="ecom">
-
+					<!-- <summary>Explored Technogies</summary> -->
+					<details open>
+						<summary>Explored Technogies</summary>
+						<span>Reportlab</span>
+						<span>Swagger UI</span>
+						<span>Eraser.io</span>
+						<span>Simple JWT</span>
+						<span>Github Version Control</span>
+						<span>Microservices</span>
+						<span>Xampp</span>
+						<span>PHPMyadmin</span>
+					</details>
+					
+					<!-- <summary>Deployment</summary> -->
+					<details open>
+						<summary>Deployment</summary>
+						<span>cPanel</span>
+						<span>Python Anywhere</span>
+						<span>Netlify</span>
+					</details>
 				</div>
-			</div>
 
-			<!-- hobbies -->
-			<div id="hobbies" class="content_hobbies display_none">
-				<H1>im hobbies</H1>
-			</div>
+				<!-- experience -->
+				<div id="experience" class="content_experience display_none">
+					<h1>im experience</h1>
+				</div>
 
-			<!-- dsa -->
-			<div id="dsa" class="content_dsa display_none">
-				<H1>im dsa</H1>
+				<!-- project -->
+				<div id="project" class="content_project display_none">
+					<!-- ecommerce project -->
+					<div class="ecom"></div>
+				</div>
+
+				<!-- hobbies -->
+				<div id="hobbies" class="content_hobbies display_none">
+					<h1>im hobbies</h1>
+				</div>
+
+				<!-- dsa -->
+				<div id="dsa" class="content_dsa display_none">
+					<h1>im dsa</h1>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<script src="scripts.js"></script>
-</body>
+		<div id="particles-js"></div>
 
+		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+		<script src="particles-config.js"></script>
+		<script src="scripts.js"></script>
+	</body>
 </html>
