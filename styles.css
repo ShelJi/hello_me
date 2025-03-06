@@ -23,7 +23,7 @@
 	font-family: "Delius", cursive;
 	font-weight: 400;
 	font-style: normal;
-	
+
 	/* outline: yellowgreen dotted 1px; */
 }
 
@@ -39,8 +39,9 @@ img {
 	font-style: italic;
 }
 
-abbr{
+abbr {
 	text-decoration: none;
+	display: inline;
 }
 
 .display_none {
@@ -143,5 +144,3 @@ abbr{
 .cv:hover {
 	background-color: var(--bg-green);
 }
-
-/* contents about */
