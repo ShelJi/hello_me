@@ -8,7 +8,7 @@
 		<link rel="shortcut icon" href="ico/favicon.png" type="image/x-icon" />
 	</head>
 
-	<body>
+	<body data-theme="light">
 		<div class="resume">
 			<!-- <div class="profile-img">
 				<img src="resume/shelj.jpg" alt="profile pic" loading="lazy">
@@ -17,10 +17,11 @@
 			<div class="sidebar">
 				<h1 class="sidebar_list" data-target="#about">About</h1>
 				<h1 class="sidebar_list" data-target="#experience">Experience</h1>
-				<h1 class="sidebar_list" data-target="#project">Project</h1>
-				<h1 class="sidebar_list" data-target="#hobbies">Game</h1>
-				<h1 class="sidebar_list" data-target="#hobbies">Hobbies</h1>
-				<h1 class="sidebar_list" data-target="#dsa">DSA</h1>
+				<!-- <h1 class="sidebar_list" data-target="#project">Projects</h1> -->
+				<h1 class="sidebar_list" data-target="#game">Game</h1>
+				<!-- <h1 class="sidebar_list" data-target="#explored-technologies">Tech</h1> -->
+				<!-- <h1 class="sidebar_list" data-target="#hobbies">Hobbies</h1> -->
+				<!-- <h1 class="sidebar_list" data-target="#dsa">DSA</h1> -->
 			</div>
 
 			<div id="content" class="content">
@@ -125,18 +126,113 @@
 
 				<!-- experience -->
 				<div id="experience" class="content_experience display_none">
-					<h1>im experience</h1>
+					<details open>
+						<summary>
+							<a href="https://clovion.org/">Clovion Tech Solutions Pvt., Ltd.</a>
+							<span>05/2024 - Present</span>
+						</summary>
+						<!-- <section>
+							<h4><u>Projects</u></h4>
+							<div>
+								<b>E-Commerce Project API – </b> Designed and implemented scalable
+								RESTful APIs using DRF, Swagger UI, 2FA, JWT, and "Eraser.io."
+								Optimized backend performance, improving system stability. Worked
+								collaboratively within a 5 member team, focusing on backend
+								architecture, microservices, and API design.
+							</div>
+							<div>
+								<b>Billing Software – </b> Built a billing system using Django and
+								ReportLab to manage bills. Used MYSQL and ORM for database
+								integration, enhancing back-end performance. Focused on deployment
+								and stability. Ensured attention to detail and maintained version
+								control with GitHub and cPanel.
+							</div>
+							<div>
+								<b>Front-End Projects & Mentorship – </b> Developed dynamic,
+								responsive interfaces using HTML, CSS, JavaScript, Bootstrap, and
+								HTMX. Implemented RESTful APIs for seamless integration with
+								back-end services. Mentored junior developers on scalable code,
+								industry trends, best practices, and performance optimization.
+							</div>
+							<div>
+								<b>Deployment & Management – </b> Deployed Django, DRF APIs, PHP,
+								and static HTML projects to cPanel web hosting. Managed MySQL
+								databases, implemented cloud architecture strategies, optimized REST
+								API performance, and maintained version control with GitHub for
+								seamless collaboration and deployment.
+							</div>
+						</section> -->
+						<section>
+							<h3>Full Stack Developer</h3>
+							<p>API - Developer</p>
+							<p>Swagger UI - Documents management</p>
+						</section>
+					</details>
 				</div>
 
 				<!-- project -->
 				<div id="project" class="content_project display_none">
 					<!-- ecommerce project -->
-					<div class="ecom"></div>
+					<div>E-Commerce Project</div>
+					<!-- <div>
+						Face Recognition Authentication 
+					</div> -->
+					<div>Real time location and message sharing</div>
+					<!-- <div>
+						Large data import - export
+					</div> -->
 				</div>
 
-				<!-- hobbies -->
-				<div id="hobbies" class="content_hobbies display_none">
-					<h1>im hobbies</h1>
+				<!-- game -->
+				<div id="game" class="content_hobbies display_none">
+					<div class="game-box">
+						<div class="msg-container hide">
+							<h2 id="msg">TIC TAK TOE</h2>
+						</div>
+						<div class="game">
+							<div class="game-row">
+								<button class="box"></button>
+								<button class="box"></button>
+								<button class="box"></button>
+							</div>
+							<div class="game-row">
+								<button class="box"></button>
+								<button class="box"></button>
+								<button class="box"></button>
+							</div>
+							<div class="game-row">
+								<button class="box"></button>
+								<button class="box"></button>
+								<button class="box"></button>
+							</div>
+						</div>
+					</div>
+					<button id="reset" class="button">Reset Game</button>
+					<button id="mode" class="button">Switch to Man vs Computer</button>
+				</div>
+
+				<!-- explored-technologies -->
+				<div id="explored-technologies" class="display_none">
+					<details>
+						<summary>Swagger UI</summary>
+						<p></p>
+					</details>
+					<details>
+						<summary>Eraser.io</summary>
+						<p></p>
+					</details>
+					<details>
+						<summary>Microservices</summary>
+						<p></p>
+					</details>
+					<details>
+						<summary>HTMX</summary>
+						<p></p>
+					</details>
+					<!-- <details>
+						<summary>Celery</summary>
+						<p></p>
+					</details> -->
 				</div>
 
 				<!-- dsa -->
@@ -144,6 +240,24 @@
 					<h1>im dsa</h1>
 				</div>
 			</div>
+		</div>
+
+		<div id="switch">
+			<label class="switch">
+				<input checked id="toggleThemeButton" onclick="toggleTheme()" type="checkbox" />
+				<span class="slider">
+					<div class="star star_1"></div>
+					<div class="star star_2"></div>
+					<div class="star star_3"></div>
+					<svg viewBox="0 0 16 16" class="cloud_1 cloud">
+						<path
+							transform="matrix(.77976 0 0 .78395-299.99-418.63)"
+							fill="#fff"
+							d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"
+						></path>
+					</svg>
+				</span>
+			</label>
 		</div>
 
 		<div id="particles-js"></div>
