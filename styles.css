@@ -57,6 +57,59 @@
 	--transition: background 0.3s ease;
 }
 
+body[data-theme="dark"] {
+	color-scheme: dark;
+
+	/* --sidebar-vw: 40vw; */
+	/* --text-opacity: 0.6; */
+	/* --h1-font-size: 1.6rem; */
+	/* --h3-font-size: 1.4rem; */
+	/* --p-font-size: 0.8rem; */
+	--bg-aqua: aquamarine;
+	--bg-green: chartreuse;
+	--box-shadow: 3px 5px 15px rgba(255, 255, 255, 0.25);
+	--box-shadow-active: 1px 1px 7px rgba(0, 0, 0, 0.15);
+	--bg-color: black;
+	--font-color: white;
+	--white: white;
+	--bold-txt: 900;
+
+	--bg-grad-text: radial-gradient(
+		circle farthest-corner at 10% 20%,
+		var(--font-color) 0%,
+		rgba(117, 86, 204, 1) 45%,
+		rgba(213, 105, 167, 1) 90%
+	);
+
+	/* --font-name: 2.2rem; */
+	/* --letter-spacing: 1.4px; */
+
+	/* --minimal-border: 1.4px; */
+	/* --border-radius: 4.4px; */
+
+	/* --particle-color: #7556cc;
+		--particle-shape-stroke: #ffffff; */
+
+	/* --content-width: calc(100vw - var(--sidebar-vw)); */
+	/* --content-width-section: calc(var(--content-width) - 15vw); */
+
+	/* --content-padding: 2.5rem; */
+	--glass-card-bg: rgba(149, 144, 144, 0.55);
+	--glass-blur: 1px;
+
+	--border: 1px solid var(--bg-aqua);
+	/* --margin-setail-section: 30px 2px; */
+
+	/* theme button */
+	--theme-bg-color: #2a2a2a;
+	--theme-light-color: #00a6ff;
+	--theme-light-sun-color: #ffcf48;
+	/* theme button */
+
+	--transition: background 0.3s ease;
+}
+
+
 ::before,
 ::after,
 * {
@@ -442,57 +495,6 @@ abbr {
 }
 
 /* ################### */
-body[data-theme="dark"] {
-	color-scheme: dark;
-
-	/* --sidebar-vw: 40vw; */
-	/* --text-opacity: 0.6; */
-	/* --h1-font-size: 1.6rem; */
-	/* --h3-font-size: 1.4rem; */
-	/* --p-font-size: 0.8rem; */
-	--bg-aqua: aquamarine;
-	--bg-green: chartreuse;
-	--box-shadow: 3px 5px 15px rgba(255, 255, 255, 0.25);
-	--box-shadow-active: 1px 1px 7px rgba(0, 0, 0, 0.15);
-	--bg-color: black;
-	--font-color: white;
-	--white: white;
-	--bold-txt: 900;
-
-	--bg-grad-text: radial-gradient(
-		circle farthest-corner at 10% 20%,
-		var(--font-color) 0%,
-		rgba(117, 86, 204, 1) 45%,
-		rgba(213, 105, 167, 1) 90%
-	);
-
-	/* --font-name: 2.2rem; */
-	/* --letter-spacing: 1.4px; */
-
-	/* --minimal-border: 1.4px; */
-	/* --border-radius: 4.4px; */
-
-	/* --particle-color: #7556cc;
-		--particle-shape-stroke: #ffffff; */
-
-	/* --content-width: calc(100vw - var(--sidebar-vw)); */
-	/* --content-width-section: calc(var(--content-width) - 15vw); */
-
-	/* --content-padding: 2.5rem; */
-	--glass-card-bg: rgba(149, 144, 144, 0.55);
-	--glass-blur: 1px;
-
-	--border: 1px solid var(--bg-aqua);
-	/* --margin-setail-section: 30px 2px; */
-
-	/* theme button */
-	--theme-bg-color: #2a2a2a;
-	--theme-light-color: #00a6ff;
-	--theme-light-sun-color: #ffcf48;
-	/* theme button */
-
-	--transition: background 0.3s ease;
-}
 
 #particles-js {
 	position: fixed;
@@ -504,3 +506,9 @@ body[data-theme="dark"] {
 	z-index: 1;
 	pointer-events: none;
 }
+
+
+
+
+
+
