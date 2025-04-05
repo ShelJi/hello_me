@@ -1,5 +1,5 @@
+const button = document.getElementById("toggleThemeButton");
 function toggleTheme() {
-    const button = document.getElementById("toggleThemeButton");
     button.toggleAttribute("checked");
 
     if (document.body.getAttribute("data-theme") === "dark") {
