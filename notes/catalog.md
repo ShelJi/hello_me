@@ -2,52 +2,52 @@
 
 ## CROS header
 
-- [cros header](/cros/crosheaders.html)
+- [cros header](/notes/cros/crosheaders.html)
 
 ## CSS
 
-- [basic](/css/basic.html)
+- [basic](/notes/css/basic.html)
 
 ## DJ
 
-- [basic](/dj/basic.html)
-- [keywords](/dj/keywords.html)
+- [basic](/notes/dj/basic.html)
+- [keywords](/notes/dj/keywords.html)
 
 ## drf
 
-- [simple jwt token](/drf/simple_jwt.html)
-- [Swagger UI](/drf/swaggerui.html)
+- [simple jwt token](/notes/drf/simple_jwt.html)
+- [Swagger UI](/notes/drf/swaggerui.html)
 
 ## environ
 
-- [Django environ](/environ/environ.html)
+- [Django environ](/notes/environ/environ.html)
 
 ## github
 
-- [action](/github/action.html)
-- [basic](/github/basic.html)
+- [action](/notes/github/action.html)
+- [basic](/notes/github/basic.html)
 
 ## markdown
 
-- [basic](/md/basic.html)
+- [basic](/notes/md/basic.html)
 
 ## mysql
 
-- [basic](/mysql/basic.html)
+- [basic](/notes/mysql/basic.html)
 
 ## ngrok
 
-- [basic](/ngrok/basic.html)
+- [basic](/notes/ngrok/basic.html)
 
 ## py
 
-- [basic](/py/basic.html)
+- [basic](/notes/py/basic.html)
 
 ## react js
 
-- [basic](/react/basic.html)
-- [vite](/react/vite.html)
+- [basic](/notes/react/basic.html)
+- [vite](/notes/react/vite.html)
 
 ## yaml
 
-- [basic](/yaml/basic.html)
+- [basic](/notes/yaml/basic.html)
