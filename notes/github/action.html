@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>basic.md</title>
+<title>action.md</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 <style>
@@ -365,29 +365,27 @@ code {
           : 'default'
     });
   </script>
-<p>https://stackoverflow.com/questions/1278705/when-i-catch-an-exception-how-do-i-get-the-type-file-and-line-number</p>
-<p>important for python for finding errors in a line specifically</p>
-<p>python -m venv venv</p>
-<p>venv/scripts/activate</p>
-<p>python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-pip list</p>
-<p>pyenv is a Python version management tool that allows
-you to easily switch between multiple versions of Python
-on your system. It is especially useful when working on
-projects that require different Python versions.</p>
-<p>pyenv install --list
-Install a specific Python version</p>
-<p>pyenv install 3.9.9
-Set a global Python version</p>
-<p>pyenv global 3.9.9
-Set a Python version for a specific project</p>
-<p>pyenv local 3.9.9
-Check the currently active Python version</p>
-<p>pyenv version
-Uninstall a Python version</p>
-<p>pyenv uninstall 3.9.9</p>
+<h1 id="action">Action</h1>
+<ul>
+<li>Workflow</li>
+<li>Jobs</li>
+<li>Steps</li>
+</ul>
+<p><img src="img/key elements.png" alt="Action key elements">
+<a href="https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions">Official documentation</a></p>
+<hr>
+<h2 id="basic-template">Basic Template</h2>
+<p><img src="img/workflow basic.png" alt="Workflow basic"></p>
+<p>name -&gt; name</p>
+<p>on -&gt; event</p>
+<p>jobs -&gt; jobs</p>
+<p>first-job -&gt; name of the job and it can be variable</p>
+<p>run-on -&gt; is a runner(Pre defined environment) and ubuntu-latest for latest</p>
+<p>Commit changes</p>
+<p>Then in actions check the workflow created and run</p>
+<p>again in action after completing running it will be</p>
+<p><img src="img/run 1.png" alt="Run">
+<img src="img/run 2.png" alt="Run"></p>
 
 </body>
 </html>

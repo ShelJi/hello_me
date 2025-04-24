@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>basic.md</title>
+<title>swaggerui.md</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 <style>
@@ -365,29 +365,28 @@ code {
           : 'default'
     });
   </script>
-<p>https://stackoverflow.com/questions/1278705/when-i-catch-an-exception-how-do-i-get-the-type-file-and-line-number</p>
-<p>important for python for finding errors in a line specifically</p>
-<p>python -m venv venv</p>
-<p>venv/scripts/activate</p>
-<p>python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-pip list</p>
-<p>pyenv is a Python version management tool that allows
-you to easily switch between multiple versions of Python
-on your system. It is especially useful when working on
-projects that require different Python versions.</p>
-<p>pyenv install --list
-Install a specific Python version</p>
-<p>pyenv install 3.9.9
-Set a global Python version</p>
-<p>pyenv global 3.9.9
-Set a Python version for a specific project</p>
-<p>pyenv local 3.9.9
-Check the currently active Python version</p>
-<p>pyenv version
-Uninstall a Python version</p>
-<p>pyenv uninstall 3.9.9</p>
+<h1 id="drf">DRF</h1>
+<p><a href="https://drf-spectacular.readthedocs.io/en/latest/readme.html">drf-spectacular documentation</a></p>
+<p><a href="https://petstore.swagger.io/">swagger ui example petstore swagger</a></p>
+<p><code>pip install drf-spectacular</code></p>
+<pre class="hljs"><code><div>INSTALLED_APPS = [
+    <span class="hljs-comment"># ALL YOUR APPS</span>
+    <span class="hljs-string">'drf_spectacular'</span>,
+]
+</div></code></pre>
+<pre class="hljs"><code><div>REST_FRAMEWORK = {
+    <span class="hljs-comment"># YOUR SETTINGS</span>
+    <span class="hljs-string">'DEFAULT_SCHEMA_CLASS'</span>: <span class="hljs-string">'drf_spectacular.openapi.AutoSchema'</span>,
+}
+</div></code></pre>
+<pre class="hljs"><code><div>SPECTACULAR_SETTINGS = {
+    <span class="hljs-string">'TITLE'</span>: <span class="hljs-string">'Your Project API'</span>,
+    <span class="hljs-string">'DESCRIPTION'</span>: <span class="hljs-string">'Your project description'</span>,
+    <span class="hljs-string">'VERSION'</span>: <span class="hljs-string">'1.0.0'</span>,
+    <span class="hljs-string">'SERVE_INCLUDE_SCHEMA'</span>: <span class="hljs-literal">False</span>,
+    <span class="hljs-comment"># OTHER SETTINGS</span>
+}
+</div></code></pre>
 
 </body>
 </html>

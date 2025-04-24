@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>basic.md</title>
+<title>environ.md</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 <style>
@@ -365,29 +365,15 @@ code {
           : 'default'
     });
   </script>
-<p>https://stackoverflow.com/questions/1278705/when-i-catch-an-exception-how-do-i-get-the-type-file-and-line-number</p>
-<p>important for python for finding errors in a line specifically</p>
-<p>python -m venv venv</p>
-<p>venv/scripts/activate</p>
-<p>python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-pip list</p>
-<p>pyenv is a Python version management tool that allows
-you to easily switch between multiple versions of Python
-on your system. It is especially useful when working on
-projects that require different Python versions.</p>
-<p>pyenv install --list
-Install a specific Python version</p>
-<p>pyenv install 3.9.9
-Set a global Python version</p>
-<p>pyenv global 3.9.9
-Set a Python version for a specific project</p>
-<p>pyenv local 3.9.9
-Check the currently active Python version</p>
-<p>pyenv version
-Uninstall a Python version</p>
-<p>pyenv uninstall 3.9.9</p>
+<h1 id="environ">ENVIRON</h1>
+<p><code>pip install django-environ</code></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> environ
+
+env = environ.Env()
+environ.Env.read_env(BASE_DIR / <span class="hljs-string">'.env'</span>)
+
+SECRET_KEY = env(<span class="hljs-string">"SECRET_KEY"</span>)
+</div></code></pre>
 
 </body>
 </html>
