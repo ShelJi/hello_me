@@ -1,3 +1,9 @@
-npm create vite@latest
+# Vite react
+
+Create a new vite react app
+`npm create vite@latest`
+
 ...
-npm run dev
+
+Run development version
+`npm run dev`
