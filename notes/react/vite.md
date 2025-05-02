@@ -34,3 +34,12 @@ JSX - **Javascript XML**
 to create a new project `...`
 `npm run dev`
 and to run development server
+# Vite react
+
+Create a new vite react app
+`npm create vite@latest`
+
+...
+
+Run development version
+`npm run dev`
