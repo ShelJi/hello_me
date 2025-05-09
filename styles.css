@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Delius&display=swap");
 
 :root {
-	
-
 	--sidebar-vw: 40vw;
 	--text-opacity: 0.6;
 	--h1-font-size: 1.6rem;
@@ -16,7 +14,6 @@
 	--bg-color: white;
 	/* --bg: linear-gradient(to right, hsla(113, 100%, 72%, 0.196), rgba(48, 232, 6, 0.486)); */
 	/* --bg: linear-gradient(to right, hsla(113, 100%, 72%, 0.196), #9efd3262); */
-
 
 	--font-color: black;
 	--white: white;
@@ -119,7 +116,6 @@ body[data-theme="dark"] {
 	--transition: background 0.3s ease;
 }
 
-
 ::before,
 ::after,
 * {
@@ -196,30 +192,27 @@ abbr {
 }
 
 /* .profile-img */
-.resume #profile-img{
+.resume #profile-img {
 	position: fixed;
 	right: 0;
-	height: 100vh;
+	height: 100dvh;
 	z-index: 0;
 	cursor: pointer;
 	user-select: none;
-	
+
 	/* mask-image: linear-gradient(100deg, transparent 31%, black 54%, black 100%);
 	-webkit-mask-image: linear-gradient(100deg, transparent 31%, black 54%, black 100%);
 	 */
-	
+
 	mask-image: linear-gradient(100deg, transparent 18%, black 59%, black 100%);
 	-webkit-mask-image: linear-gradient(100deg, transparent 18%, black 59%, black 100%);
-	
 }
-
-
 
 /* sidebar */
 .sidebar {
 	user-select: none;
-	padding: 30vh 20px 20vh 20px;
-	min-height: 100vh;
+	padding: 30dvh 20px 20dvh 20px;
+	min-height: 100dvh;
 	min-width: var(--sidebar-vw);
 	display: flex;
 	flex-direction: column;
@@ -270,7 +263,7 @@ abbr {
 
 /* content */
 .content {
-	height: 100vh;
+	height: 100dvh;
 	width: var(--content-width);
 	display: flex;
 	align-items: center;
@@ -328,7 +321,7 @@ abbr {
 #explored-technologies,
 #game {
 	padding: var(--content-padding);
-	max-height: 80vh;
+	max-height: 80dvh;
 	max-width: var(--content-width-section);
 	background: var(--glass-card-bg);
 	border-radius: var(--border-radius);
@@ -528,15 +521,90 @@ abbr {
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 100vh;
+	height: 100dvh;
 	background-color: transparent;
 	z-index: 0;
 	pointer-events: none;
 	user-select: none;
 }
 
+.nav-ico-container {
+	position: fixed;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	display: none;
+	border: 1px solid red;
+	border-left: 0;
+	border-top: 0;
+	padding: 20px 16px;
+	border-radius: 0% 17% 87% 0% / 25% 13% 81% 25%;
 
+	background: var(--glass-card-bg);
+	box-shadow: var(--box-shadow);
+	backdrop-filter: blur(var(--glass-blur));
+	-webkit-backdrop-filter: blur(var(--glass-blur));
+	border: var(--border);
+	overflow-y: auto;
+}
 
+#navIco {
+	/* display: none; */
+	height: 30px;
+}
 
+/* Responsive content */
 
+@media (max-width: 768px) {
+	.sidebar {
+		display: none;
+		/* display: block; */
+		position: fixed;
+		top: 0;
+		z-index: 6;
 
+		height: 10px !important;
+		width: 90%;
+
+		background: var(--glass-card-bg);
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		backdrop-filter: blur(var(--glass-blur));
+		-webkit-backdrop-filter: blur(var(--glass-blur));
+		border: var(--border);
+		overflow-y: auto;
+	}
+
+	.nav-ico-container {
+		display: block;
+	}
+
+	#profile {
+		width: 100vw;
+		margin-left: 15vw;
+	}
+
+	#switch {
+		display: none;
+	}
+
+	#content {
+		height: 100dvh;
+		width: 100vw;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#about,
+	#experience,
+	#explored-technologies,
+	#game {
+		padding: var(--content-padding);
+		max-height: 80dvh;
+		max-width: 90vw;
+	}
+	#game {
+		height: fit-content;
+	}
+}

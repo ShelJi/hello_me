@@ -1,12 +1,12 @@
 const button = document.getElementById("toggleThemeButton");
 function toggleTheme() {
-    button.toggleAttribute("checked");
+	button.toggleAttribute("checked");
 
-    if (document.body.getAttribute("data-theme") === "dark") {
-        document.body.removeAttribute("data-theme");
-    } else {
-        document.body.setAttribute("data-theme", "dark");
-    }
+	if (document.body.getAttribute("data-theme") === "dark") {
+		document.body.removeAttribute("data-theme");
+	} else {
+		document.body.setAttribute("data-theme", "dark");
+	}
 }
 
 // content handling to view
@@ -29,6 +29,7 @@ function active_remove() {
 }
 
 document.querySelector(".sidebar").addEventListener("click", function (event) {
+	navClose();
 	const event_clicked = event.target;
 
 	if (event_clicked.classList.contains("sidebar_list")) {
@@ -168,3 +169,18 @@ const toggleMode = () => {
 
 resetBtn.addEventListener("click", resetGame);
 modeBtn.addEventListener("click", toggleMode);
+
+// Responsive content
+document.getElementById("navIcoContainer").addEventListener("click", () => navOpen());
+
+function navOpen() {
+	document.getElementsByClassName("sidebar")[0].style.display = "block";
+	document.getElementsByClassName("nav-ico-container")[0].style.display = "none";
+	document.getElementById("switch").style.display = "block";
+}
+
+function navClose() {
+	document.getElementsByClassName("sidebar")[0].style.display = "none";
+	document.getElementsByClassName("nav-ico-container")[0].style.display = "block";
+	document.getElementById("switch").style.display = "none";
+}
