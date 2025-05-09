@@ -1,3 +1,5 @@
+const mediaQuery = window.matchMedia("(max-width: 992px)"); 
+
 const button = document.getElementById("toggleThemeButton");
 function toggleTheme() {
 	button.toggleAttribute("checked");
@@ -29,7 +31,9 @@ function active_remove() {
 }
 
 document.querySelector(".sidebar").addEventListener("click", function (event) {
-	navClose();
+	if (mediaQuery.matches){
+		navClose();
+	}
 	const event_clicked = event.target;
 
 	if (event_clicked.classList.contains("sidebar_list")) {
