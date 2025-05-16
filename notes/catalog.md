@@ -51,3 +51,7 @@
 ## yaml
 
 - [basic](/notes/yaml/basic.html)
+
+## Streamlit
+
+- [basic](/notes/streamlit/streamlit.html)

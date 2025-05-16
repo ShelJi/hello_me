@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>catalog.md</title>
+<title>streamlit.md</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 <style>
@@ -365,63 +365,102 @@ code {
           : 'default'
     });
   </script>
-<h1 id="catalog">CATALOG</h1>
-<h2 id="cros-header">CROS header</h2>
-<ul>
-<li><a href="/notes/cros/crosheaders.html">cros header</a></li>
-</ul>
-<h2 id="css">CSS</h2>
-<ul>
-<li><a href="/notes/css/basic.html">basic</a></li>
-</ul>
-<h2 id="dj">DJ</h2>
-<ul>
-<li><a href="/notes/dj/basic.html">basic</a></li>
-<li><a href="/notes/dj/keywords.html">keywords</a></li>
-</ul>
-<h2 id="drf">drf</h2>
-<ul>
-<li><a href="/notes/drf/simple_jwt.html">simple jwt token</a></li>
-<li><a href="/notes/drf/swaggerui.html">Swagger UI</a></li>
-</ul>
-<h2 id="environ">environ</h2>
-<ul>
-<li><a href="/notes/environ/environ.html">Django environ</a></li>
-</ul>
-<h2 id="github">github</h2>
-<ul>
-<li><a href="/notes/github/action.html">action</a></li>
-<li><a href="/notes/github/basic.html">basic</a></li>
-</ul>
-<h2 id="markdown">markdown</h2>
-<ul>
-<li><a href="/notes/md/basic.html">basic</a></li>
-</ul>
-<h2 id="mysql">mysql</h2>
-<ul>
-<li><a href="/notes/mysql/basic.html">basic</a></li>
-</ul>
-<h2 id="ngrok">ngrok</h2>
-<ul>
-<li><a href="/notes/ngrok/basic.html">basic</a></li>
-</ul>
-<h2 id="py">py</h2>
-<ul>
-<li><a href="/notes/py/basic.html">basic</a></li>
-</ul>
-<h2 id="react-js">react js</h2>
-<ul>
-<li><a href="/notes/react/basic.html">basic</a></li>
-<li><a href="/notes/react/vite.html">vite</a></li>
-</ul>
-<h2 id="yaml">yaml</h2>
-<ul>
-<li><a href="/notes/yaml/basic.html">basic</a></li>
-</ul>
-<h2 id="streamlit">Streamlit</h2>
-<ul>
-<li><a href="/notes/streamlit/streamlit.html">basic</a></li>
-</ul>
+<h1 id="streamlit">Streamlit</h1>
+<p><code>pip install streamlit</code></p>
+<p>Terminal:
+<code>streamlit hello</code> to validate installation</p>
+<p>Terminal:
+<code>streamlit run main.py</code></p>
+<h2 id="basic-elements">Basic Elements</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> streamlit <span class="hljs-keyword">as</span> st
+
+
+st.title(<span class="hljs-string">"Hello shelj"</span>)
+st.subheader(<span class="hljs-string">"sub heading"</span>)
+st.header(<span class="hljs-string">"sub heading"</span>)
+st.text(<span class="hljs-string">"sub heading"</span>)
+st.markdown(<span class="hljs-string">"**Hello** *shelj*"</span>)
+st.caption(<span class="hljs-string">""</span>)
+</div></code></pre>
+<h3 id="math-expressions">math expressions</h3>
+<p><a href="https://katex.org/docs/supported">Cheat sheet for math expressions</a></p>
+<p><code>st.latex(r&quot;To write mathemativcal formulae&quot;)</code></p>
+<h3 id="json">Json</h3>
+<pre class="hljs"><code><div>json = {<span class="hljs-string">"a"</span>:<span class="hljs-number">1</span>, <span class="hljs-string">"b"</span>:<span class="hljs-number">2</span>}
+st.json(json)
+</div></code></pre>
+<h3 id="code">code</h3>
+<pre class="hljs"><code><div>code = <span class="hljs-string">"""
+print("Hello world")
+"""</span>
+st.code(code, language=<span class="hljs-string">"python"</span>)
+</div></code></pre>
+<h3 id="write">write</h3>
+<pre class="hljs"><code><div>st.write(<span class="hljs-string">"Here it supports markdown, json, etc..."</span>)
+</div></code></pre>
+<h3 id="image-audio-video">image, audio, video</h3>
+<pre class="hljs"><code><div>st.image(<span class="hljs-string">"image.jpg"</span>, caption=<span class="hljs-string">"Image sample"</span>, width=<span class="hljs-number">680</span>)
+st.audio()
+st.video()
+</div></code></pre>
+<h3 id="add-custom-css">add custom css</h3>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">load_css</span><span class="hljs-params">(file_path)</span>:</span>
+    <span class="hljs-keyword">with</span> open(file_path) <span class="hljs-keyword">as</span> f:
+        st.html(<span class="hljs-string">f"&lt;style&gt;<span class="hljs-subst">{f.read()}</span>&lt;/style&gt;"</span>)
+
+css_path = pathlib.Path(<span class="hljs-string">"style.css"</span>)
+load_css(css_path)
+
+st.button(<span class="hljs-string">"Hello"</span>, key=<span class="hljs-string">"hello"</span>)
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-selector-class">.stAppToolbar</span><span class="hljs-selector-class">.st-emotion-cache-15ecox0</span><span class="hljs-selector-class">.e14ksaui2</span>{
+    <span class="hljs-attribute">display</span>: none;
+}
+
+<span class="hljs-selector-class">.st-key-hello</span> <span class="hljs-selector-tag">button</span>{
+    <span class="hljs-attribute">background-color</span>: yellowgreen;
+}
+</div></code></pre>
+<p>In here <code>.stAppToolbar.st-emotion-cache-15ecox0.e14ksaui2</code> this line of css class get from inspect to remove defaults.</p>
+<p><code>st-key-hello</code> is created by default by using key keyword where <strong>hello</strong> is changable.</p>
+<h3 id="checkbox">checkbox</h3>
+<pre class="hljs"><code><div>say_hello = st.checkbox(<span class="hljs-string">"Say hello"</span>, value=<span class="hljs-literal">True</span>)
+
+<span class="hljs-keyword">if</span> say_hello:
+    st.write(<span class="hljs-string">"Hellooooooooo"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">pass</span>
+</div></code></pre>
+<h3 id="terminal-values">terminal values</h3>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">change</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">"Changed"</span>)
+
+say_hello = st.checkbox(<span class="hljs-string">"Say hello"</span>, value=<span class="hljs-literal">True</span>, on_change=change)
+
+<span class="hljs-keyword">if</span> say_hello:
+    st.write(<span class="hljs-string">"Hellooooooooo"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">pass</span>
+</div></code></pre>
+<p>Output in teminal: Changed</p>
+<h3 id="sessionstate">session_state</h3>
+<pre class="hljs"><code><div>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">change</span><span class="hljs-params">()</span>:</span>
+    print(st.session_state.checker)
+
+say_hello = st.checkbox(<span class="hljs-string">"Say hello"</span>, value=<span class="hljs-literal">True</span>, on_change=change, key=<span class="hljs-string">"checker"</span>)
+
+<span class="hljs-keyword">if</span> say_hello:
+    st.write(<span class="hljs-string">"Hellooooooooo"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">pass</span>
+</div></code></pre>
+<p>Output in teminal: True if checked else False</p>
+<h2 id="cheatsheets">Cheatsheets</h2>
+<p><a href="https://cheat-sheets.streamlit.app/">Pro</a>
+<a href="https://cheat-sheet.streamlit.app/">cheat-sheet</a>
+<a href="https://docs.streamlit.io/develop/quick-reference/cheat-sheet">docs cheat-sheet</a>
+<a href="https://codemaker2016.medium.com/streamlit-cheatsheet-for-beginners-eb93da97ae1">Streamlit cheatsheet for beginners</a></p>
 
 </body>
 </html>
