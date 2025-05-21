@@ -7,6 +7,7 @@
 ## CSS
 
 - [basic](/notes/css/basic.html)
+- [tailwindcss](/notes/css/tailwindcss.html)
 
 ## DJ
 
