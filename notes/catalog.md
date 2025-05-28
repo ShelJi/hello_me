@@ -65,3 +65,22 @@
 🥣 What is BeautifulSoup?
 BeautifulSoup is a Python library used to extract data from HTML and XML files — essentially, it's a tool for web scraping.
 [docs](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+
+## GSAP - GreenSock Animation Platform
+
+- Tween
+- Timeline
+
+  ### Tween
+  ```javascript
+  let tweenTo = gsap.to(".box", {
+x:300,
+duration:5,
+ease: "elastic",
+rotation: 300
+  })
+
+  document.querySelector("#play").onClick = ()=> tweenTo.play()
+
+  // play, pause, resume, reverse, restart
+  ```
