@@ -132,8 +132,22 @@ body[data-theme="dark"] {
 	/* border: 5px solid red; */
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 h1 {
 	font-size: var(--h1-font-size);
+}
+
+h2 {
+	font-size: var(--h1-font-size);
+}
+
+.sidebar_btn {
+	all: unset;
+	font-size: var(--h1-font-size);
+	cursor: pointer;
 }
 
 h3 {
@@ -147,6 +161,10 @@ img {
 abbr {
 	text-decoration: none;
 	display: inline;
+}
+
+a:-webkit-any-link {
+	text-decoration: none;
 }
 
 .button {
@@ -408,6 +426,12 @@ abbr {
 
 #about details span:hover {
 	background-color: var(--bg-aqua);
+}
+
+#linkedin-badge {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #experience details div {

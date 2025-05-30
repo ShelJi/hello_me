@@ -3,7 +3,46 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Shelj</title>
+		<title>Sheljin | Full Stack Developer | Portfolio</title>
+		<meta
+			name="description"
+			content="Official portfolio of Sheljin (aka Shelj), a full-stack developer and tech enthusiast."
+		/>
+		<meta
+			name="keywords"
+			content="Sheljin, Shelj, Sheljin S.A, Clovion, clovion developer, clovion organisation, full stack developer, portfolio, software developer"
+		/>
+		<meta
+			name="google-site-verification"
+			content="We72srxjHLhk5SEKfungvchKQ8-3X6yPGC1glt7ESIw"
+		/>
+		<link rel="canonical" href="https://shelj.in/" />
+
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Sheljin S.A",
+				"alternateName": ["Shelj", "Sheljin", "Sheljin S.A", "shelj", "sheljin", "clovion"],
+				"@id": "https://shelj.in/#person",
+				"mainEntityOfPage": "https://shelj.in",
+				"email": "mailto:shelj.dev@gmail.com",
+				"url": "https://shelj.in",
+				"jobTitle": "Full Stack Developer",
+				"worksFor": {
+					"@type": "Organization",
+					"name": "Clovion Tech Solutions Pvt. Ltd."
+				},
+				"sameAs": [
+					"https://github.com/shelji",
+					"https://www.linkedin.com/in/sheljin-sa",
+					"http://www.codechef.com/users/sheljin",
+					"https://leetcode.com/u/shelj/",
+					"https://www.instagram.com/shelj__/"
+				]
+			}
+		</script>
+
 		<link rel="stylesheet" href="styles.css" />
 		<link rel="shortcut icon" href="ico/favicon.png" type="image/x-icon" />
 	</head>
@@ -25,41 +64,59 @@
 			</div>
 
 			<div class="sidebar">
-				<h1 class="sidebar_list" data-target="#about">About</h1>
-				<h1 class="sidebar_list" data-target="#experience">Experience</h1>
-				<!-- <h1 class="sidebar_list" data-target="#project">Projects</h1> -->
-				<!-- <h1 class="sidebar_list" data-target="#game">Game</h1> -->
-				<!-- <h1 class="sidebar_list" data-target="#explored-technologies">Tech</h1> -->
-				<!-- <h1 class="sidebar_list" data-target="#hobbies">Hobbies</h1> -->
-				<!-- <h1 class="sidebar_list" data-target="#dsa">DSA</h1> -->
+				<button class="sidebar_list sidebar_btn" data-target="#about">About</button>
+				<button class="sidebar_list sidebar_btn" data-target="#experience">
+					Experience
+				</button>
+				<button class="sidebar_list sidebar_btn" data-target="#project">Projects</button>
+				<!-- <button class="sidebar_list sidebar_btn" data-target="#game">Game</button> -->
+				<!-- <button class="sidebar_list sidebar_btn" data-target="#explored-technologies">Tech</button> -->
+				<!-- <button class="sidebar_list sidebar_btn" data-target="#hobbies">Hobbies</button> -->
+				<!-- <button class="sidebar_list sidebar_btn" data-target="#dsa">DSA</button> -->
 			</div>
 
-			<div id="content" class="content">
+			<main id="content" class="content">
 				<!-- profile -->
-				<div id="profile" class="content_profile">
-					<h1 class="bold_txt bg-grad name">Sheljin S.A,</h1>
+				<div id="profile" class="content_profile ">
+					<h2 class="bold_txt bg-grad name">Sheljin S.A,</h2>
 					<h3 class="bold_txt">Full Stack Developer</h3>
 					<h3>
-						Specialised in Django and
-						<abbr title="Django Rest Framework">DRF (API)</abbr>
+						Specializing in React & Django
+						<!-- <abbr title="Django Rest Framework">DRF (API)</abbr> -->
 					</h3>
 					<div class="icon">
-						<a href="https://github.com/shelji"
-							><img src="ico/github.png" alt="github"
-						/></a>
-						<a href="https://www.linkedin.com/in/sheljin-sa"
-							><img src="ico/linkedin1.png" alt="linkedin"
-						/></a>
-						<a href="mailto:shelj.dev@gmail.com"
-							><img src="ico/mail1.png" alt="mail"
-						/></a>
-						<!-- <a href="#"><img src="ico/freelancer.png" alt="freelancer" /></a> -->
-						<a href="http://www.codechef.com/users/sheljin"
-							><img src="ico/codechef.png" alt="codechef"
-						/></a>
-						<a href="https://leetcode.com/u/shelj/"
-							><img src="ico/leetcode.png" alt="leetcode"
-						/></a>
+						<a
+							href="https://github.com/shelji"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<img src="ico/github.png" alt="GitHub Profile of Sheljin S.A" />
+						</a>
+						<a
+							href="https://www.linkedin.com/in/sheljin-sa"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<img src="ico/linkedin1.png" alt="LinkedIn Profile of Sheljin S.A" />
+						</a>
+						<a href="mailto:shelj.dev@gmail.com">
+							<img src="ico/mail1.png" alt="Email Sheljin S.A" />
+						</a>
+						<a
+							href="http://www.codechef.com/users/sheljin"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<img src="ico/codechef.png" alt="CodeChef Profile of Sheljin S.A" />
+						</a>
+						<a
+							href="https://leetcode.com/u/shelj/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<img src="ico/leetcode.png" alt="LeetCode Profile of Sheljin S.A" />
+						</a>
+
 						<div class="cv">
 							<a href="resume/Sheljin.S.A.pdf" target="_blank">
 								<!-- <img id="resume" src="ico/resume.png" alt="resume" /> -->
@@ -107,26 +164,23 @@
 
 				<!-- about page -->
 				<div id="about" class="content_about display_none">
-					<div
-						class="badge-base LI-profile-badge"
-						data-locale="en_US"
-						data-size="medium"
-						data-theme="light"
-						data-type="VERTICAL"
-						data-vanity="sheljin-sa"
-						data-version="v1"
-					>
-						<a
-							class="badge-base__link LI-simple-link"
-							href="https://in.linkedin.com/in/sheljin-sa?trk=profile-badge"
-						></a>
+					<div id="linkedin-badge">
+						<div
+							class="badge-base LI-profile-badge"
+							data-locale="en_US"
+							data-size="large"
+							data-theme="light"
+							data-type="VERTICAL"
+							data-vanity="sheljin-sa"
+							data-version="v1"
+						>
+							<a
+								class="badge-base__link LI-simple-link"
+								href="https://in.linkedin.com/in/sheljin-sa?trk=profile-badge"
+							></a>
+						</div>
 					</div>
-					<p>
-						Specializing in Django and DRF (API), building scalable web applications and
-						robust APIs for seamless performance. I deliver clean, efficient code while
-						adhering to industry best practices, ensuring success in challenging
-						environments.
-					</p>
+					<p>React & Django Developer</p>
 
 					<!-- <summary>Languages/Framework</summary> -->
 					<details open>
@@ -282,9 +336,9 @@
 
 				<!-- dsa -->
 				<div id="dsa" class="content_dsa display_none">
-					<h1>im dsa</h1>
+					<h2>im dsa</h2>
 				</div>
-			</div>
+			</main>
 		</div>
 
 		<!-- <div id="switch">
@@ -298,7 +352,7 @@
 						<path
 							transform="matrix(.77976 0 0 .78395-299.99-418.63)"
 							fill="#fff"
-							d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"
+							d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h22.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"
 						></path>
 					</svg>
 				</span>
