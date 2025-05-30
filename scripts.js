@@ -1,4 +1,4 @@
-const mediaQuery = window.matchMedia("(max-width: 992px)"); 
+const mediaQuery = window.matchMedia("(max-width: 992px)");
 
 const button = document.getElementById("toggleThemeButton");
 function toggleTheme() {
@@ -31,7 +31,7 @@ function active_remove() {
 }
 
 document.querySelector(".sidebar").addEventListener("click", function (event) {
-	if (mediaQuery.matches){
+	if (mediaQuery.matches) {
 		navClose();
 	}
 	const event_clicked = event.target;
@@ -188,3 +188,19 @@ function navClose() {
 	document.getElementsByClassName("nav-ico-container")[0].style.display = "block";
 	document.getElementById("switch").style.display = "none";
 }
+
+// Animaton for sections
+
+// document.addEventListener("DOMContentLoaded", (event) => {
+// 	gsap.registerPlugin(Flip);
+// 	const state = Flip.getState("#profile, #about");
+// 	Flip.from(state, {
+// 		duration: 0.5,
+// 		ease: "power1.inOut",
+// 		stagger: 0.1,
+// 		absolute: true,
+// 		onEnter: (el) =>
+// 			gsap.fromTo(el, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }),
+// 		onLeave: (el) => gsap.to(el, { opacity: 0, y: -20, duration: 0.5 }),
+// 	});
+// });

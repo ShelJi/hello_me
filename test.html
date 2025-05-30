@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>GSAP Flip Example</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+		<style>
+			#profile,
+			#about,
+			#experience {
+				margin: 20px 0;
+				padding: 20px;
+				background: #eee;
+				border-radius: 8px;
+				min-height: 40px;
+			}
+			/* Only show one at a time */
+			.hidden {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div
+			class="badge-base LI-profile-badge"
+			data-locale="en_US"
+			data-size="medium"
+			data-theme="light"
+			data-type="VERTICAL"
+			data-vanity="sheljin-sa"
+			data-version="v1"
+		>
+			<a
+				class="badge-base__link LI-simple-link"
+				href="https://in.linkedin.com/in/sheljin-sa?trk=profile-badge"
+				>SHELJIN S A</a
+			>
+		</div>
+
+		<script
+			src="https://platform.linkedin.com/badges/js/profile.js"
+			async 
+			defer
+			type="text/javascript"
+		></script>
+
+		<!-- <div id="profile">Profile</div>
+		<div id="about" class="hidden">About</div>
+		<div id="experience" class="hidden">Experience</div>
+
+		<button data-show="profile">show profile</button>
+		<button data-show="about">show about</button>
+		<button data-show="experience">show experience</button> -->
+
+		<script>
+			gsap.registerPlugin(Flip);
+
+			const sections = ["profile", "about", "experience"];
+			function showSection(sectionToShow) {
+				// 1. Get the FLIP state before DOM changes
+				const state = Flip.getState(sections.map((id) => "#" + id));
+
+				// 2. Update which section is shown
+				sections.forEach((id) => {
+					document.getElementById(id).classList.toggle("hidden", id !== sectionToShow);
+				});
+
+				// 3. Animate to the new state
+				Flip.from(state, {
+					duration: 0.5,
+					ease: "power1.inOut",
+					stagger: 0.1,
+					absolute: true,
+					onEnter: (el) =>
+						gsap.fromTo(el, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }),
+					onLeave: (el) => gsap.to(el, { opacity: 0, y: -20, duration: 0.5 }),
+				});
+			}
+
+			// Set up button listeners
+			document.querySelectorAll("button[data-show]").forEach((btn) => {
+				btn.addEventListener("click", () => showSection(btn.getAttribute("data-show")));
+			});
+
+			// Initial load animation
+			document.addEventListener("DOMContentLoaded", () => {
+				const state = Flip.getState(sections.map((id) => "#" + id));
+				Flip.from(state, {
+					duration: 0.5,
+					stagger: 0.1,
+					absolute: true,
+					onEnter: (el) =>
+						gsap.fromTo(el, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }),
+				});
+			});
+		</script>
+	</body>
+</html>

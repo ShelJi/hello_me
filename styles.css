@@ -195,7 +195,7 @@ abbr {
 .resume #profile-img {
 	position: fixed;
 	right: 0;
-	height: 100dvh;
+	height: 100svh;
 	z-index: 0;
 	cursor: pointer;
 	user-select: none;
@@ -211,8 +211,8 @@ abbr {
 /* sidebar */
 .sidebar {
 	user-select: none;
-	padding: 30dvh 20px 20dvh 20px;
-	min-height: 100dvh;
+	padding: 30svh 20px 20svh 20px;
+	min-height: 100svh;
 	min-width: var(--sidebar-vw);
 	display: flex;
 	flex-direction: column;
@@ -263,7 +263,7 @@ abbr {
 
 /* content */
 .content {
-	height: 100dvh;
+	height: 100svh;
 	width: var(--content-width);
 	display: flex;
 	align-items: center;
@@ -294,26 +294,82 @@ abbr {
 	margin-right: 10px;
 }
 
-.cv a img {
+/* .cv a img {
 	margin: 0;
-}
+} */
 
 .cv {
 	padding-top: 4px;
 	padding-left: 6px;
 	display: inline-block;
-	background-color: var(--bg-aqua);
+	/* background-color: var(--bg-aqua); */
 	border-radius: var(--minimal-border);
 }
 
-.cv:hover {
+/* .cv:hover {
 	background-color: var(--bg-green);
-}
+} */
 
-.cv #resume {
+/* .cv #resume {
 	font-weight: bolder;
 	color: black;
+} */
+
+/* resume button */
+/* From Uiverse.io by alexmaracinaru */
+.cta {
+	border: none;
+	background: none;
+	cursor: pointer;
+
+	& span {
+		color: var(--font-color);
+		padding-bottom: 7px;
+		letter-spacing: 4px;
+		font-size: 14px;
+		padding-right: 15px;
+		text-transform: uppercase;
+	}
+	& svg {
+		fill: var(--font-color);
+		transform: translateX(-8px);
+		transition: all 0.3s ease;
+	}
 }
+
+.cta:hover svg {
+	transform: translateX(0);
+}
+
+.cta:active svg {
+	transform: scale(0.9);
+}
+
+.hover-underline-animation {
+	position: relative;
+	color: var(--font-color);
+	padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: var(--font-color);
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+
+/* resume button */
 
 /* ABOUT SECTION */
 #about,
@@ -321,7 +377,7 @@ abbr {
 #explored-technologies,
 #game {
 	padding: var(--content-padding);
-	max-height: 80dvh;
+	max-height: 80svh;
 	max-width: var(--content-width-section);
 	background: var(--glass-card-bg);
 	border-radius: var(--border-radius);
@@ -521,7 +577,7 @@ abbr {
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 100dvh;
+	height: 100lvh;
 	background-color: transparent;
 	z-index: 0;
 	pointer-events: none;
@@ -589,7 +645,7 @@ abbr {
 	}
 
 	#content {
-		height: 100dvh;
+		height: 100svh;
 		width: 100vw;
 		display: flex;
 		justify-content: center;
@@ -601,9 +657,10 @@ abbr {
 	#explored-technologies,
 	#game {
 		padding: var(--content-padding);
-		max-height: 80dvh;
+		max-height: 80svh;
 		max-width: 90vw;
 	}
+
 	#game {
 		height: fit-content;
 	}

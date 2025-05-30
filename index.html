@@ -28,7 +28,7 @@
 				<h1 class="sidebar_list" data-target="#about">About</h1>
 				<h1 class="sidebar_list" data-target="#experience">Experience</h1>
 				<!-- <h1 class="sidebar_list" data-target="#project">Projects</h1> -->
-				<h1 class="sidebar_list" data-target="#game">Game</h1>
+				<!-- <h1 class="sidebar_list" data-target="#game">Game</h1> -->
 				<!-- <h1 class="sidebar_list" data-target="#explored-technologies">Tech</h1> -->
 				<!-- <h1 class="sidebar_list" data-target="#hobbies">Hobbies</h1> -->
 				<!-- <h1 class="sidebar_list" data-target="#dsa">DSA</h1> -->
@@ -63,8 +63,26 @@
 						<div class="cv">
 							<a href="resume/Sheljin.S.A.pdf" target="_blank">
 								<!-- <img id="resume" src="ico/resume.png" alt="resume" /> -->
-								<span id="resume">Resume</span>
-								<img src="ico/arrow east north.png" alt="arrow up" />
+								<!-- <span id="resume">Resume</span>
+								<img src="ico/arrow east north.png" alt="arrow up" /> -->
+								<!-- From Uiverse.io by alexmaracinaru -->
+								<button class="cta">
+									<span class="hover-underline-animation"> resume </span>
+									<svg
+										id="arrow-horizontal"
+										xmlns="http://www.w3.org/2000/svg"
+										width="30"
+										height="10"
+										viewBox="0 0 46 16"
+									>
+										<path
+											id="Path_10"
+											data-name="Path 10"
+											d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+											transform="translate(30)"
+										></path>
+									</svg>
+								</button>
 							</a>
 						</div>
 					</div>
@@ -269,7 +287,7 @@
 			</div>
 		</div>
 
-		<div id="switch">
+		<!-- <div id="switch">
 			<label class="switch">
 				<input checked id="toggleThemeButton" onclick="toggleTheme()" type="checkbox" />
 				<span class="slider">
@@ -285,18 +303,22 @@
 					</svg>
 				</span>
 			</label>
-		</div>
+		</div> -->
 
 		<div id="particles-js"></div>
-
 		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 		<script src="particles-config.js"></script>
-		<script src="scripts.js"></script>
+
 		<script
 			src="https://platform.linkedin.com/badges/js/profile.js"
 			async
 			defer
 			type="text/javascript"
 		></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+
+		<script src="scripts.js"></script>
 	</body>
 </html>
