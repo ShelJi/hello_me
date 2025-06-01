@@ -823,6 +823,9 @@ a:-webkit-any-link {
 		.card{
 			width: 95%;
 		}
+		*{
+			user-select: none;
+		}
 	}
 }
 
