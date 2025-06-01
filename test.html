@@ -2,111 +2,238 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<title>eeeeeeeeeeee</title>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sheljin | Portfolio</title>
 		<style>
-			#profile,
-			#about,
-			#experience {
-				margin: 20px 0;
-				padding: 20px;
-				background: #eee;
-				border-radius: 8px;
-				min-height: 40px;
+			body {
+				margin: 0;
+				font-family: Arial, sans-serif;
+				background: #f4f4f4;
+				color: #333;
+				line-height: 1.6;
 			}
-			/* Only show one at a time */
-			.hidden {
-				display: none;
+			header {
+				background: #24292e;
+				color: #fff;
+				padding: 1rem;
+				text-align: center;
+			}
+			.container {
+				max-width: 900px;
+				margin: 2rem auto;
+				padding: 0 1rem;
+			}
+			.card {
+				background: #fff;
+				border-radius: 8px;
+				padding: 1.5rem;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+				margin-bottom: 1.5rem;
+			}
+			h2 {
+				margin-top: 0;
+			}
+			a {
+				color: #0366d6;
+				text-decoration: none;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+			.badges span {
+				background: #e1ecf4;
+				color: #0366d6;
+				padding: 4px 8px;
+				border-radius: 4px;
+				margin: 2px;
+				font-size: 0.9rem;
+				display: inline-block;
+			}
+			.footer {
+				text-align: center;
+				padding: 1rem;
+				background: #24292e;
+				color: white;
 			}
 		</style>
 	</head>
 	<body>
-		<div
-			class="badge-base LI-profile-badge"
-			data-locale="en_US"
-			data-size="medium"
-			data-theme="light"
-			data-type="VERTICAL"
-			data-vanity="sheljin-sa"
-			data-version="v1"
-		>
-			<a
-				class="badge-base__link LI-simple-link"
-				href="https://in.linkedin.com/in/sheljin-sa?trk=profile-badge"
-				>SHELJIN S A</a
-			>
+		<header>
+			<h1>Sheljin S A</h1>
+			<p>Full Stack Developer | Django & React</p>
+			<p>
+				<a href="https://github.com/sheljin-sa" target="_blank">GitHub</a> |
+				<a href="https://linkedin.com/in/sheljin-sa" target="_blank">LinkedIn</a>
+			</p>
+		</header>
+
+		<div class="container">
+			<div class="card">
+				<h2>
+					<a href="https://github.com/sheljin-sa/ecommerce-api" target="_blank"
+						>E-Commerce API</a
+					>
+				</h2>
+				<p>
+					Scalable Django REST API using JWT, Swagger UI, 2FA, and Eraser.io.
+					Microservice-friendly and optimized for performance.
+				</p>
+				<div class="badges">
+					<span>Django</span><span>DRF</span><span>JWT</span><span>Swagger</span>
+				</div>
+			</div>
+
+			<div class="card">
+				<h2>
+					<a href="https://github.com/sheljin-sa/billing-system" target="_blank"
+						>Billing Software</a
+					>
+				</h2>
+				<p>
+					Billing system built with Django and ReportLab for PDF generation. Integrated
+					with MySQL and deployed via cPanel.
+				</p>
+				<div class="badges">
+					<span>Django</span><span>ReportLab</span><span>MySQL</span><span>cPanel</span>
+				</div>
+			</div>
+
+			<div class="card">
+				<h2>
+					<a href="https://github.com/sheljin-sa/portfolio" target="_blank"
+						>Portfolio Website</a
+					>
+				</h2>
+				<p>
+					Responsive personal portfolio site with HTML, CSS, Bootstrap and Tailwind.
+					Hosted on GitHub Pages.
+				</p>
+				<div class="badges">
+					<span>HTML</span><span>CSS</span><span>Bootstrap</span><span>Tailwind</span>
+				</div>
+			</div>
 		</div>
-		<svg
-			id="arrow-horizontal"
-			xmlns="http://www.w3.org/2000/svg"
-			width="30"
-			height="10"
-			viewBox="0 0 46 16"
-		>
-			<path
-				id="Path_10"
-				data-name="Path 10"
-				d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-				transform="translate(30)"
-			></path>
-		</svg>
-		<script
-			src="https://platform.linkedin.com/badges/js/profile.js"
-			async
-			defer
-			type="text/javascript"
-		></script>
 
-		<!-- <div id="profile">Profile</div>
-		<div id="about" class="hidden">About</div>
-		<div id="experience" class="hidden">Experience</div>
+		<img
+			src="https://github-readme-stats.vercel.app/api?username=shelji&show_icons=true&theme=radical"
+			alt="GitHub stats"
+		/>
+		<img
+			src="https://github-readme-stats.vercel.app/api/top-langs/?username=shelji&layout=compact&theme=radical"
+			alt="Top Languages"
+		/>
 
-		<button data-show="profile">show profile</button>
-		<button data-show="about">show about</button>
-		<button data-show="experience">show experience</button> -->
+		<img
+			src="https://github-readme-activity-graph.vercel.app/graph?username=shelji&theme=react-dark"
+			alt="GitHub Activity Graph"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+		/>
+
+		<div class="calendar">Loading GitHub contributions...</div>
+		<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+		<script>
+			GitHubCalendar(".calendar", "shelji");
+		</script>
+		<div id="github-stats"></div>
 
 		<script>
-			gsap.registerPlugin(Flip);
-
-			const sections = ["profile", "about", "experience"];
-			function showSection(sectionToShow) {
-				// 1. Get the FLIP state before DOM changes
-				const state = Flip.getState(sections.map((id) => "#" + id));
-
-				// 2. Update which section is shown
-				sections.forEach((id) => {
-					document.getElementById(id).classList.toggle("hidden", id !== sectionToShow);
+			fetch("https://api.github.com/users/shelji")
+				.then((res) => res.json())
+				.then((data) => {
+					document.getElementById("github-stats").innerHTML = `
+      <p>Public Repos: ${data.public_repos}</p>
+      <p>Followers: ${data.followers}</p>
+      <p>Following: ${data.following}</p>
+    `;
 				});
-
-				// 3. Animate to the new state
-				Flip.from(state, {
-					duration: 0.5,
-					ease: "power1.inOut",
-					stagger: 0.1,
-					absolute: true,
-					onEnter: (el) =>
-						gsap.fromTo(el, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }),
-					onLeave: (el) => gsap.to(el, { opacity: 0, y: -20, duration: 0.5 }),
-				});
-			}
-
-			// Set up button listeners
-			document.querySelectorAll("button[data-show]").forEach((btn) => {
-				btn.addEventListener("click", () => showSection(btn.getAttribute("data-show")));
-			});
-
-			// Initial load animation
-			document.addEventListener("DOMContentLoaded", () => {
-				const state = Flip.getState(sections.map((id) => "#" + id));
-				Flip.from(state, {
-					duration: 0.5,
-					stagger: 0.1,
-					absolute: true,
-					onEnter: (el) =>
-						gsap.fromTo(el, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }),
-				});
-			});
 		</script>
+
+		<hr />
+
+		<img
+			src="https://github-readme-stats.vercel.app/api?username=shelji&show_icons=true&theme=radical"
+		/>
+		<!-- Top Languages -->
+		<img
+			src="https://github-readme-stats.vercel.app/api/top-langs/?username=shelji&layout=compact&theme=tokyonight"
+		/>
+
+		<!-- GitHub Streak Stats -->
+		<img src="https://github-readme-streak-stats.herokuapp.com/?user=shelji&theme=dark" />
+
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+		/>
+		<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+		<div class="calendar">Loading GitHub activity...</div>
+		<script>
+			GitHubCalendar(".calendar", "shelji");
+		</script>
+
+		<img src="https://github-profile-trophy.vercel.app/?username=shelji&theme=algolia" />
+
+		<hr />
+		<div id="leetcode-stats"></div>
+
+		<script>
+			fetch("https://leetcode-stats-api.herokuapp.com/shelj")
+				.then((res) => res.json())
+				.then((data) => {
+					document.getElementById("leetcode-stats").innerHTML = `
+        <h3>LeetCode Stats for ${data.username}</h3>
+        <ul>
+          <li>Total Solved: ${data.totalSolved}</li>
+          <li>Easy: ${data.easySolved}</li>
+          <li>Medium: ${data.mediumSolved}</li>
+          <li>Hard: ${data.hardSolved}</li>
+          <li>Acceptance Rate: ${data.acceptanceRate}</li>
+        </ul>
+      `;
+				})
+				.catch(() => {
+					document.getElementById("leetcode-stats").innerText =
+						"Could not load LeetCode stats.";
+				});
+		</script>
+
+		<a href="https://www.codechef.com/users/sheljin" target="_blank" rel="noopener noreferrer">
+			CodeChef Profile: sheljin
+		</a>
+		<p>
+			<a
+				href="https://www.codechef.com/users/sheljin"
+				target="_blank"
+				rel="noopener noreferrer"
+				>CodeChef: sheljin</a
+			>
+		</p>
+		<p>
+			<a href="https://leetcode.com/u/shelj/" target="_blank" rel="noopener noreferrer"
+				>LeetCode: shelj</a
+			>
+		</p>
+
+		<script>
+			fetch("https://leetcode-stats-api.herokuapp.com/shelj")
+				.then((res) => res.json())
+				.then((data) => {
+					console.log(data);
+					// Use data to display stats dynamically
+				});
+		</script>
+
+		<hr />
+
+		<iframe src="https://codechef-api.vercel.app/heatmap/sheljin" height="500px" width="100%"></iframe>
+
+		<iframe src="https://codechef-api.vercel.app/rating/sheljin" height="500px" width="100%"></iframe>
+
+		<div class="footer">
+			<p>© 2025 Sheljin S A</p>
+		</div>
 	</body>
 </html>
