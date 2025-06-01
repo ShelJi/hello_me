@@ -624,6 +624,14 @@ a:-webkit-any-link {
 }
 
 /* ################### */
+/* game-city-bird */
+#game-city-bird{
+	height: 90svh;
+	width: 50svh;
+	/* border: 1px solid black; */
+}
+
+/* ################### */
 
 #particles-js {
 	position: fixed;
