@@ -806,8 +806,7 @@ a:-webkit-any-link {
 	#experience,
 	#explored-technologies,
 	#game,
-	#techstack,
-	#project {
+	#techstack {
 		padding: var(--content-padding);
 		max-height: 80svh;
 		max-width: 90vw;
@@ -815,6 +814,15 @@ a:-webkit-any-link {
 
 	#game {
 		height: fit-content;
+	}
+
+	#project {
+		padding: 4px;
+		max-height: 80svh;
+		max-width: 90vw;
+		.card{
+			width: 95%;
+		}
 	}
 }
 

@@ -180,13 +180,13 @@ document.getElementById("navIcoContainer").addEventListener("click", () => navOp
 function navOpen() {
 	document.getElementsByClassName("sidebar")[0].style.display = "block";
 	document.getElementsByClassName("nav-ico-container")[0].style.display = "none";
-	document.getElementById("switch").style.display = "block";
+	// document.getElementById("switch").style.display = "block";
 }
 
 function navClose() {
 	document.getElementsByClassName("sidebar")[0].style.display = "none";
 	document.getElementsByClassName("nav-ico-container")[0].style.display = "block";
-	document.getElementById("switch").style.display = "none";
+	// document.getElementById("switch").style.display = "none";
 }
 
 // Animaton for sections
