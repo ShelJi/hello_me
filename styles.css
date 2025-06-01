@@ -406,6 +406,7 @@ a:-webkit-any-link {
 #explored-technologies,
 #game,
 #techstack,
+#game-city-bird,
 #project {
 	padding: var(--content-padding);
 	max-height: 80svh;
@@ -625,10 +626,21 @@ a:-webkit-any-link {
 
 /* ################### */
 /* game-city-bird */
-#game-city-bird{
+#game-city-bird {
 	height: 90svh;
 	width: 50svh;
+	padding: 5px;
+	overflow: hidden;
 	/* border: 1px solid black; */
+	div {
+		height: 85svh;
+		width: 100%;
+		border-radius: var(--border-radius);
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 /* ################### */
@@ -828,11 +840,20 @@ a:-webkit-any-link {
 		padding: 4px;
 		max-height: 80svh;
 		max-width: 90vw;
-		.card{
+		.card {
 			width: 95%;
 		}
-		*{
+		* {
 			user-select: none;
+		}
+	}
+
+	#game-city-bird {
+		max-height: 80svh;
+		max-width: 90vw;
+		min-height: fit-content;
+		div {
+			min-height: fit-content;
 		}
 	}
 }
