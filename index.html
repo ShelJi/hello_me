@@ -743,14 +743,8 @@
 
 				<!-- game-city-bird -->
 				<div id="game-city-bird" class="content_hobbies display_none">
-					<div class="loading-game-container">
-						<iframe
-							id="delayed-game"
-							data-src="https://shelji.github.io/City-Bird/"
-							frameborder="0"
-							height="101%"
-							width="100%"
-						></iframe>
+					<div class="loading-game-container" id="loading-game-container">
+						<canvas id="gameCanvas"></canvas>
 					</div>
 				</div>
 
@@ -797,5 +791,6 @@
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script> -->
 
 		<script src="scripts.js"></script>
+		<script src="citybird/city_bird_ctx.js"></script>
 	</body>
 </html>

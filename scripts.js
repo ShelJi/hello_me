@@ -193,14 +193,6 @@ function navClose() {
 	// document.getElementById("switch").style.display = "none";
 }
 
-// delayed game loading 
-  window.onload = function () {
-    const game = document.getElementById('delayed-game');
-    if (game && game.dataset.src) {
-      game.src = game.dataset.src;
-    }
-  };
-
 
 // Animaton for sections
 
