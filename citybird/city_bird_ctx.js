@@ -652,12 +652,89 @@ canvas.addEventListener("mousemove", (event) => {
 	}
 });
 
-// Keyboard event listeners
-document.addEventListener("keydown", (event) => {
-	if (event.key === "Escape") {
-		running = false;
+// Touch event listeners for mobile
+canvas.addEventListener("touchstart", (event) => {
+	event.preventDefault();
+	let touch = event.touches[0];
+	let mouseEvent = { clientX: touch.clientX, clientY: touch.clientY };
+	let mousePos = getMousePos(mouseEvent);
+
+	if (home_page || score_page) {
+		console.log("Game reset/replay triggered (touch)");
+		home_page = false;
+		score_page = false;
+		emptySpriteGroup(win_particle_group);
+		bg = random_choice(bg_list);
+		particles = [];
+		last_bar = Date.now() - bar_frequency;
+		next_bar = 0;
+		bar_speed = 4;
+		bar_frequency = 1200;
+		bird_dead = false;
+		score = 0;
+		p_count = 0;
+		score_list = [];
+		score_msg = null;
+		score_point = null;
+		// Add blocks
+		emptySpriteGroup(block_group);
+		for (let i = 0; i < 15; i++) {
+			let x = random_randint(30, SCREEN_WIDTH - 30);
+			let y = random_randint(60, SCREEN_HEIGHT - 60);
+			let max = random_randint(8, 16);
+			let b = new Block(x, y, max, ctx);
+			block_group.push(b);
+		}
+	}
+
+	if (!home_page) {
+		if (p.rect.collidepoint(mousePos)) {
+			touched = true;
+			let [x, y] = mousePos;
+			offset_x = p.rect.x - x;
+		}
 	}
 });
+
+canvas.addEventListener("touchend", (event) => {
+	event.preventDefault();
+	if (!home_page) {
+		touched = false;
+	}
+});
+
+canvas.addEventListener("touchmove", (event) => {
+	event.preventDefault();
+	if (!home_page && touched) {
+		let touch = event.touches[0];
+		let mouseEvent = { clientX: touch.clientX, clientY: touch.clientY };
+		let [x, y] = getMousePos(mouseEvent);
+
+		if (move_right && prev_x > x) {
+			move_right = false;
+			move_left = true;
+			if (move_fx) {
+				move_fx.play().catch((e) => console.log("Audio play error:", e));
+			}
+		}
+		if (move_left && prev_x < x) {
+			move_right = true;
+			move_left = false;
+			if (move_fx) {
+				move_fx.play().catch((e) => console.log("Audio play error:", e));
+			}
+		}
+		prev_x = x;
+		p.rect.x = x + offset_x;
+	}
+});
+
+// Keyboard event listeners
+// document.addEventListener("keydown", (event) => {
+// 	if (event.key === "Escape") {
+// 		running = false;
+// 	}
+// });
 
 // Main game loop
 async function main() {
