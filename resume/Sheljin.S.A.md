@@ -49,7 +49,7 @@ Built using React, GSAP, and Tailwind CSS to create a high-performance, animated
 - [**E-Commerce Website -** <u>https://shelj.pythonanywhere.com/</u>](https://shelj.pythonanywhere.com/) <br/>
  Built and deployed an e-commerce website using Django on PythonAnywhere, implementing a responsive front-end with cloud architecture. Focused on feedback- driven improvements and implemented best practices for scalability and performance.
 
-- [**E-Commerce Website -** <u>https://github.com/ShelJi</u>](https://github.com/ShelJi?tab=repositories/) <br/>
+- [**Facial Locker -** <u>https://github.com/ShelJi</u>](https://github.com/ShelJi?tab=repositories/) <br/>
 Built a facial recognition authentication system using Django. Collaborated on back-end development, ensuring seamless communication between system components for optimal performance.
 
 ## SKILLS
