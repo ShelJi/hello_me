@@ -407,6 +407,7 @@ a:-webkit-any-link {
 #game,
 #techstack,
 #game-city-bird,
+#contact,
 #project {
 	padding: var(--content-padding);
 	max-height: 80svh;
@@ -644,7 +645,7 @@ a:-webkit-any-link {
 	}
 }
 
-#gameCanvas{
+#gameCanvas {
 	border-radius: 2% !important;
 }
 
@@ -782,6 +783,67 @@ a:-webkit-any-link {
 }
 /* projects card */
 
+/* CONTACT SECTION */
+#contact.content_hobbies {
+	padding: var(--content-padding);
+	max-width: var(--content-width-section);
+	background: var(--glass-card-bg);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	backdrop-filter: blur(var(--glass-blur));
+	-webkit-backdrop-filter: blur(var(--glass-blur));
+	border: var(--border);
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+	overflow-y: auto;
+}
+
+#contact .content_about {
+	margin: 0;
+	padding: 0;
+}
+
+#contact h3 {
+	font-size: var(--h3-font-size);
+	margin-bottom: 1.2em;
+	font-weight: var(--bold-txt);
+}
+
+#contact ul.contact-list {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 1.5em 0;
+}
+
+#contact ul.contact-list li {
+	margin-bottom: 0.8em;
+	font-size: 1em;
+	color: var(--font-color);
+}
+
+#contact ul.contact-list a {
+	color: var(--font-color);
+	text-decoration: underline;
+	word-break: break-all;
+}
+
+#contact .contact-icons {
+	margin-top: 1.5em;
+	display: flex;
+	gap: 18px;
+	align-items: center;
+}
+
+#contact .contact-icons a img {
+	height: 32px;
+	width: 32px;
+	transition: transform 0.2s;
+}
+
+#contact .contact-icons a img:hover {
+	transform: scale(1.15) rotate(-8deg);
+}
+
 /* Responsive content */
 
 @media (max-width: 992px) {
@@ -858,6 +920,16 @@ a:-webkit-any-link {
 		.loading-game-container {
 			min-height: fit-content;
 		}
+	}
+
+	#contact,
+	#contact.content_about {
+		/* padding: var(--content-padding); */
+		height: fit-content !important;
+		width: 90vw !important;
+
+		max-height: 80svh !important;
+		max-width: 90vw !important;
 	}
 }
 
