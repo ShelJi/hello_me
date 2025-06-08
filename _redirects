@@ -1,0 +1,6 @@
+# Redirect www to non-www
+https://www.shelj.in/*  https://shelj.in/:splat  301!
+
+# Redirect all HTTP to HTTPS (Netlify does this by default, but just in case)
+http://www.shelj.in/*   https://shelj.in/:splat  301!
+http://shelj.in/*       https://shelj.in/:splat  301!
