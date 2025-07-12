@@ -24,9 +24,9 @@ header:
 
 Enthusiastic Full Stack Developer with hands-on experience in building scalable web apps using Django and React. Passionate about backend architecture, API design, and deploying robust systems with cloud hosting.
 
-## WORK EXPERIENCE / 1 YEAR
+## WORK EXPERIENCE / 6 Months
 
-**Full Stack Developer**
+**Python/Django Developer**
 
 [Clovion Tech Solutions Pvt., Ltd. ](https://clovion.org/)
   ~ 05/2024 - Present

@@ -1,0 +1,5 @@
+font: Open sans
+font size: 12px
+Margins: 30 - 30
+paragraph spacing: 12
+Line spacing: 1.4
