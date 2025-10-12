@@ -10,6 +10,11 @@
 	--p-font-size: 0.8rem;
 	--bg-aqua: aquamarine;
 	--bg-green: chartreuse;
+
+	/* --box-shadow: 0px 0px 80px -13px rgba(0,0,0,0.75); */
+	/* -webkit-box-shadow: 0px 0px 80px -13px rgba(0,0,0,0.75); */
+	/* -moz-box-shadow: 0px 0px 80px -13px rgba(0,0,0,0.75); */
+
 	--box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.25);
 	--box-shadow-active: 1px 1px 7px rgba(0, 0, 0, 0.15);
 	--bg-color: white;
@@ -134,7 +139,7 @@ body[data-theme="dark"] {
 	font-style: normal;
 	letter-spacing: var(--letter-spacing);
 
-	/* outline: yellowgreen dotted 10px; */
+	/* outline: pink dotted 1px; */
 	/* border: 5px solid red; */
 }
 
@@ -235,6 +240,18 @@ a:-webkit-any-link {
 
 /* sidebar */
 .sidebar {
+	/* user-select: none; */
+	/* padding: 30svh 20px 20svh 20px; */
+	min-height: 100svh;
+	min-width: var(--sidebar-vw);
+	/* display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center; */
+	/* background-color: aqua; */
+}
+
+#sidebar-content {
 	user-select: none;
 	padding: 30svh 20px 20svh 20px;
 	min-height: 100svh;
@@ -243,7 +260,9 @@ a:-webkit-any-link {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	/* background-color: aqua; */
+
+	position: fixed;
+	left: 0;
 }
 
 .sidebar_list {
@@ -287,18 +306,25 @@ a:-webkit-any-link {
 }
 
 /* content */
-.content {
-	height: 100svh;
-	width: var(--content-width);
-	display: flex;
-	align-items: center;
-	position: sticky;
-	top: 0;
-}
 
 /* contents profile */
+#profile {
+	height: 100svh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 #profile * {
 	font-family: "Delius", cursive !important;
+}
+
+#github-contrib {
+	width: 100%;
+}
+
+#graph {
+	width: 100% !important;
 }
 
 .bold_txt {
@@ -401,16 +427,17 @@ a:-webkit-any-link {
 /* resume button */
 
 /* ABOUT SECTION */
-#about,
-#experience,
-#explored-technologies,
-#game,
-#techstack,
-#game-city-bird,
-#contact,
-#project {
+#content {
+	height: 100vh;
+	width: var(--content-width);
+
+	/* position: fixed;
+	right: 0;
+	overflow: scroll; */
+}
+
+.content {
 	padding: var(--content-padding);
-	max-height: 80svh;
 	max-width: var(--content-width-section);
 	background: var(--glass-card-bg);
 	border-radius: var(--border-radius);
@@ -418,62 +445,20 @@ a:-webkit-any-link {
 	backdrop-filter: blur(var(--glass-blur));
 	-webkit-backdrop-filter: blur(var(--glass-blur));
 	border: var(--border);
+	margin-bottom: 2rem;
+	margin-top: 2rem;
 	overflow-y: auto;
-}
 
-#about details,
-#experience details,
-#techstack details {
-	cursor: pointer;
-	margin: 20px;
-}
-
-#about details span,
-#techstack details span {
-	display: inline-block;
-	padding: 5px 10px;
-	margin: 3px 2px;
-	color: var(--white);
-	background-color: var(--bg-green);
-	border: none;
-	border-radius: 25px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-#about details span:hover,
-#techstack details span:hover {
-	background-color: var(--bg-aqua);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 #linkedin-badge {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-#experience,
-#techstack {
-	details {
-		div {
-			margin: var(--margin-setail-section);
-		}
-		h4 {
-			margin: var(--margin-setail-section);
-		}
-		summary {
-			a {
-				text-decoration: none;
-			}
-		}
-	}
-	ul {
-		list-style: inside;
-	}
-}
-
-#techstack .main-stack {
-	margin-left: 20px;
 }
 
 /* ################### */
@@ -846,93 +831,6 @@ a:-webkit-any-link {
 
 /* Responsive content */
 
-@media (max-width: 992px) {
-	.sidebar {
-		display: none;
-		/* display: block; */
-		position: fixed;
-		top: 0;
-		z-index: 6;
-
-		height: 10px !important;
-		width: 90%;
-
-		background: var(--glass-card-bg);
-		border-radius: var(--border-radius);
-		box-shadow: var(--box-shadow);
-		backdrop-filter: blur(var(--glass-blur));
-		-webkit-backdrop-filter: blur(var(--glass-blur));
-		border: var(--border);
-		overflow-y: auto;
-	}
-
-	.nav-ico-container {
-		display: block;
-	}
-
-	#profile {
-		width: 100vw;
-		margin-left: 15vw;
-	}
-
-	#switch {
-		display: none;
-	}
-
-	#content {
-		height: 100svh;
-		width: 100vw;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	#about,
-	#experience,
-	#explored-technologies,
-	#game,
-	#techstack {
-		padding: var(--content-padding);
-		max-height: 80svh;
-		max-width: 90vw;
-	}
-
-	#game {
-		height: fit-content;
-	}
-
-	#project {
-		padding: 4px;
-		max-height: 80svh;
-		max-width: 90vw;
-		.card {
-			width: 95%;
-		}
-		* {
-			user-select: none;
-		}
-	}
-
-	#game-city-bird {
-		max-height: 80svh;
-		max-width: 90vw;
-		min-height: fit-content;
-		.loading-game-container {
-			min-height: fit-content;
-		}
-	}
-
-	#contact,
-	#contact.content_about {
-		/* padding: var(--content-padding); */
-		height: fit-content !important;
-		width: 90vw !important;
-
-		max-height: 80svh !important;
-		max-width: 90vw !important;
-	}
-}
-
 /* projects button */
 
 .uiverse {
@@ -1236,3 +1134,88 @@ a:-webkit-any-link {
 }
  */
 /* projects button */
+
+@media (max-width: 992px) {
+	.sidebar {
+		display: none;
+		position: fixed;
+		top: 0;
+		z-index: 6;
+
+		height: 10px !important;
+		width: 90%;
+
+		background: var(--glass-card-bg);
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		backdrop-filter: blur(var(--glass-blur));
+		-webkit-backdrop-filter: blur(var(--glass-blur));
+		border: var(--border);
+		overflow-y: auto;
+	}
+
+	.nav-ico-container {
+		display: block;
+	}
+
+	#profile {
+		width: 100vw;
+		margin-left: 15vw;
+	}
+
+	#switch {
+		display: none;
+	}
+
+	#content {
+		height: 100svh;
+		width: 100vw;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#about,
+	#experience,
+	#explored-technologies,
+	#game,
+	#techstack {
+		padding: var(--content-padding);
+		max-height: 80svh;
+		max-width: 90vw;
+	}
+
+	#game {
+		height: fit-content;
+	}
+
+	#project {
+		padding: 4px;
+		max-height: 80svh;
+		max-width: 90vw;
+		.card {
+			width: 95%;
+		}
+		* {
+			user-select: none;
+		}
+	}
+
+	#game-city-bird {
+		max-height: 80svh;
+		max-width: 90vw;
+		min-height: fit-content;
+		.loading-game-container {
+			min-height: fit-content;
+		}
+	}
+
+	#contact,
+	#contact.content_about {
+		height: fit-content !important;
+		width: 90vw !important;
+
+		max-height: 80svh !important;
+		max-width: 90vw !important;
+	}
+}
