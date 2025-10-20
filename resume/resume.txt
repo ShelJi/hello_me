@@ -1,5 +1,5 @@
 font: Open sans
 font size: 12px
-Margins: 30 - 30
-paragraph spacing: 12
-Line spacing: 1.4
+Margins: 72 - 40
+paragraph spacing: 18
+Line spacing: 1.5

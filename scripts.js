@@ -11,91 +11,53 @@ function toggleTheme() {
 	}
 }
 
-//////////////////////////////////////////// 
+////////////////////////////////////////////
 
-// // Initialize Lenis
-// const lenis = new Lenis({
-//   autoRaf: true,
-// });
-
-// // Listen for the scroll event and log the event data
-// lenis.on('scroll', (e) => {
-//   console.log(e);
-// });
-
-// Initialize Lenis
 const lenis = new Lenis();
 
-// Use requestAnimationFrame to continuously update the scroll
 function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
+	lenis.raf(time);
+	requestAnimationFrame(raf);
 }
 
 requestAnimationFrame(raf);
 
-//////////////////////////////////////////// 
-
-// content handling to view
-const content_profile = document.getElementById("profile").classList;
-
-function active_remove() {
-	if (document.querySelector(".active")) {
-		document.querySelector(".active").classList.remove("active");
-
-		Array.from(document.getElementById("content").children).forEach((element) => {
-			if (!element.classList.contains("display_none")) {
-				element.classList.add("display_none");
-			}
-		});
-
-		if (content_profile.contains("display_none")) {
-			content_profile.remove("display_none");
-		}
-	}
-}
-
 document.querySelector(".sidebar").addEventListener("click", function (event) {
-	if (mediaQuery.matches) {
-		navClose();
-	}
+	// if (mediaQuery.matches) {
+	// 	navClose();
+	// }
 	const event_clicked = event.target;
+	const active = document.querySelector(".active");
 
 	if (event_clicked.classList.contains("sidebar_list")) {
 		if (!event_clicked.classList.contains("active")) {
-			active_remove();
+			event.preventDefault();
+			lenis.scrollTo(document.querySelector(event_clicked.getAttribute("href")), {offset: -100});
+			active?.classList.remove("active");
 			event_clicked.classList.add("active");
-			content_profile.add("display_none");
-
-			const targetId = event_clicked.getAttribute("data-target");
-
-			if (targetId) {
-				const targetContent = document.querySelector(targetId);
-
-				if (targetContent) {
-					targetContent.classList.remove("display_none");
-				}
-			}
 		} else {
-			active_remove();
+			event.preventDefault();
+			active?.classList.remove("active");
+			lenis.scrollTo("#profile");
 		}
 	} else {
-		active_remove();
+		event.preventDefault();
+		active?.classList.remove("active");
+		lenis.scrollTo("#profile");
 	}
 });
 
 // Responsive content
-document.getElementById("navIcoContainer").addEventListener("click", () => navOpen());
+// document.getElementById("navIcoContainer").addEventListener("click", () => navOpen());
 
-function navOpen() {
-	document.getElementsByClassName("sidebar")[0].style.display = "block";
-	document.getElementsByClassName("nav-ico-container")[0].style.display = "none";
-	// document.getElementById("switch").style.display = "block";
-}
+// function navOpen() {
+// 	document.getElementsByClassName("sidebar")[0].style.display = "block";
+// 	document.getElementsByClassName("nav-ico-container")[0].style.display = "none";
+// 	// document.getElementById("switch").style.display = "block";
+// }
 
-function navClose() {
-	document.getElementsByClassName("sidebar")[0].style.display = "none";
-	document.getElementsByClassName("nav-ico-container")[0].style.display = "block";
-	// document.getElementById("switch").style.display = "none";
-}
-
+// function navClose() {
+// 	document.getElementsByClassName("sidebar")[0].style.display = "none";
+// 	document.getElementsByClassName("nav-ico-container")[0].style.display = "block";
+// 	// document.getElementById("switch").style.display = "none";
+// }

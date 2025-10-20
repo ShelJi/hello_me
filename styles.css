@@ -15,6 +15,7 @@
 	/* -webkit-box-shadow: 0px 0px 80px -13px rgba(0,0,0,0.75); */
 	/* -moz-box-shadow: 0px 0px 80px -13px rgba(0,0,0,0.75); */
 
+	--box-shadow-fill: 3px 5px 15px rgba(0, 0, 0, 1);
 	--box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.25);
 	--box-shadow-active: 1px 1px 7px rgba(0, 0, 0, 0.15);
 	--bg-color: white;
@@ -216,6 +217,7 @@ a:-webkit-any-link {
 .resume {
 	display: flex;
 	background-color: var(--bg-color);
+
 	/* background: var(--bg), var(--bg-color); */
 
 	/* background: var(--glass-card-bg); */
@@ -279,7 +281,10 @@ a:-webkit-any-link {
 
 .sidebar_list:hover {
 	box-shadow: var(--box-shadow);
-	background: var(--glass-card-bg);
+	/* background: var(--glass-card-bg); */
+	/* background: var(--white) !important; */
+	/* background-color: ; */
+	/* backface-visibility: hidden; */
 }
 
 .active {
@@ -445,7 +450,7 @@ a:-webkit-any-link {
 	backdrop-filter: blur(var(--glass-blur));
 	-webkit-backdrop-filter: blur(var(--glass-blur));
 	border: var(--border);
-	margin-bottom: 2rem;
+	/* margin-bottom: 2rem; */
 	margin-top: 2rem;
 	overflow-y: auto;
 
@@ -459,6 +464,10 @@ a:-webkit-any-link {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.end{
+	height: 25vh;
 }
 
 /* ################### */
