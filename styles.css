@@ -313,11 +313,17 @@ a:-webkit-any-link {
 /* content */
 
 /* contents profile */
+#profile-wrapper {
+	height: 100svh;
+}
+
 #profile {
 	height: 100svh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	position: fixed;
+	/* top: 0; */
 }
 
 #profile * {

@@ -459,10 +459,10 @@ function generate_particles(p, particles, color, win) {
 function safe_load_sound(path) {
 	try {
 		const audio = new Audio(path);
-		console.log(`Loaded sound: ${path}`);
+		// console.log(`Loaded sound: ${path}`);
 		return audio;
 	} catch (e) {
-		console.log(`Sound load error for ${path}: ${e}`);
+		// console.log(`Sound load error for ${path}: ${e}`);
 		return null;
 	}
 }
@@ -484,9 +484,9 @@ async function loadBackgrounds() {
 				img.onerror = reject;
 			});
 			bg_list.push(img);
-			console.log(`Loaded background: bg${i}.${ext}`);
+			// console.log(`Loaded background: bg${i}.${ext}`);
 		} catch (e) {
-			console.log(`Background load error for bg${i}.${ext}: ${e}`);
+			// console.log(`Background load error for bg${i}.${ext}: ${e}`);
 		}
 	}
 
@@ -498,9 +498,9 @@ async function loadBackgrounds() {
 			img.onerror = reject;
 		});
 		home_bg = img;
-		console.log("Loaded background: home.jpeg");
+		// console.log("Loaded background: home.jpeg");
 	} catch (e) {
-		console.log("Background load error for home.jpeg:", e);
+		// console.log("Background load error for home.jpeg:", e);
 		// Create fallback black background
 		const canvas_bg = document.createElement("canvas");
 		canvas_bg.width = SCREEN_WIDTH;
@@ -586,7 +586,7 @@ canvas.addEventListener("mousedown", (event) => {
 	let mousePos = getMousePos(event);
 
 	if (home_page || score_page) {
-		console.log("Game reset/replay triggered");
+		// console.log("Game reset/replay triggered");
 		home_page = false;
 		score_page = false;
 		emptySpriteGroup(win_particle_group);
@@ -660,7 +660,7 @@ canvas.addEventListener("touchstart", (event) => {
 	let mousePos = getMousePos(mouseEvent);
 
 	if (home_page || score_page) {
-		console.log("Game reset/replay triggered (touch)");
+		// console.log("Game reset/replay triggered (touch)");
 		home_page = false;
 		score_page = false;
 		emptySpriteGroup(win_particle_group);
@@ -738,7 +738,7 @@ canvas.addEventListener("touchmove", (event) => {
 
 // Main game loop
 async function main() {
-	console.log("main() started");
+	// console.log("main() started");
 
 	// Load assets
 	await loadBackgrounds();
@@ -889,7 +889,7 @@ async function main() {
 				}
 
 				if (bird_dead && destruct_group.length == 0) {
-					console.log("Switching to score_page");
+					// console.log("Switching to score_page");
 					score_page = true;
 					let font = "BubblegumSans-Regular";
 					if (score < high_score) {
@@ -931,11 +931,11 @@ async function main() {
 			await new Promise((resolve) => setTimeout(resolve, 1000 / FPS));
 		}
 	} catch (e) {
-		console.log("Exception in main loop:", e);
+		// console.log("Exception in main loop:", e);
 		console.trace();
 	}
 
-	console.log("main() ended");
+	// console.log("main() ended");
 }
 
 // Start the game
