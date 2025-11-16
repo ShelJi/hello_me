@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /private/
+Disallow:
+
 Sitemap: https://shelj.in/sitemap.xml
