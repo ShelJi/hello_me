@@ -5,16 +5,15 @@
 	--sidebar-vw: 40vw;
 	--h1-font-size: 1.6rem;
 	--h3-font-size: 1.4rem;
-	--bg-aqua: aquamarine;
 	--bg-green: chartreuse;
 
-	--box-shadow-fill: 3px 5px 15px rgba(0, 0, 0, 1);
+	/* --box-shadow-fill: 3px 5px 15px rgba(0, 0, 0, 1); */
 	--box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.25);
-	--box-shadow-active: 1px 1px 7px rgba(0, 0, 0, 0.15);
-	--bg-color: white;
+	/* --box-shadow-active: 1px 1px 7px rgba(0, 0, 0, 0.15); */
+	/* --bg-color: white; */
 
 	--font-color: black;
-	--white: white;
+	/* --white: white; */
 	--bold-txt: 900;
 
 	--bg-grad-text: radial-gradient(
@@ -45,7 +44,7 @@
 
 	--border: 1px solid rgba(255, 255, 255, 1);
 
-	--margin-setail-section: 30px 2px;
+	/* --margin-setail-section: 30px 2px; */
 }
 
 ::before,
@@ -117,11 +116,6 @@ a:-webkit-any-link {
 	cursor: pointer;
 }
 
-.button:hover {
-	color: var(--bg-green);
-	box-shadow: 0 0 10px var(--bg-green);
-}
-
 .bg-grad {
 	width: max-content;
 	text-align: center;
@@ -171,11 +165,6 @@ a:-webkit-any-link {
 	position: relative;
 }
 
-.sidebar_list:hover {
-	box-shadow: var(--box-shadow);
-	background: var(--bg-grain);
-}
-
 /* content */
 
 /* contents profile */
@@ -215,10 +204,6 @@ a:-webkit-any-link {
 	margin-top: 13px;
 }
 
-.icon:hover > a:not(:hover) {
-	filter: blur(var(--glass-blur));
-}
-
 .icon a img {
 	height: 26px;
 	width: 26px;
@@ -254,36 +239,8 @@ a:-webkit-any-link {
 	}
 }
 
-.cta:hover svg {
-	transform: translateX(0);
-}
-
 .cta:active svg {
 	transform: scale(0.9);
-}
-
-.hover-underline-animation {
-	position: relative;
-	color: var(--font-color);
-	padding-bottom: 20px;
-}
-
-.hover-underline-animation:after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	transform: scaleX(0);
-	height: 2px;
-	bottom: 0;
-	left: 0;
-	background-color: var(--font-color);
-	transform-origin: bottom right;
-	transition: transform 0.25s ease-out;
-}
-
-.cta:hover .hover-underline-animation:after {
-	transform: scaleX(1);
-	transform-origin: bottom left;
 }
 
 /* resume button */
@@ -309,12 +266,6 @@ a:-webkit-any-link {
 	overflow-y: auto;
 }
 
-#linkedin-badge {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 .end {
 	height: 33vh;
 }
@@ -325,11 +276,12 @@ a:-webkit-any-link {
 	justify-content: space-around;
 	align-items: center;
 }
+
 /* Game */
 
 #game-city-bird {
-	height: 522px;
-	width: 298px;
+	height: 522px !important;
+	width: 298px !important;
 	padding: 5px;
 	overflow: hidden;
 	.loading-game-container {
@@ -384,6 +336,11 @@ a:-webkit-any-link {
 
 .welcome-description {
 	margin: 20px 0;
+}
+
+.about-keywords {
+	text-align: center;
+	margin-bottom: 20px;
 }
 /* project section */
 /* 
@@ -514,14 +471,97 @@ a:-webkit-any-link {
 	transition: transform 0.2s;
 }
 
-#contact .contact-icons a img:hover {
-	transform: scale(1.15) rotate(-8deg);
-}
-
 #heart-touching-slogan {
 	display: flex;
 	justify-content: center;
 	margin: 30px 0;
 	font-weight: 540;
+	text-align: center;
 }
 /* Responsive content */
+/* Extra small (phones) */
+@media (max-width: 480px) {
+}
+
+/* Small devices (larger phones) */
+@media (max-width: 640px) {
+	:root {
+		--h1-font-size: 1rem;
+		--h3-font-size: 1.2rem;
+		--content-width: 100vw;
+	}
+	.sidebar {
+		display: none;
+	}
+	#content {
+		padding: 5vw;
+	}
+	.content {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#game {
+		padding: 0;
+		justify-content: center;
+	}
+	#game-helper {
+		display: none;
+	}
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 768px) {
+}
+
+/* Large devices (small laptops/desktops) */
+@media (max-width: 1024px) {
+}
+
+/* Extra large (large desktops) */
+@media (max-width: 1280px) {
+}
+
+/* hover animations */
+@media (hover: hover) {
+	.button:hover {
+		color: var(--bg-green);
+		box-shadow: 0 0 10px var(--bg-green);
+	}
+	.sidebar_list:hover {
+		box-shadow: var(--box-shadow);
+		background: var(--bg-grain);
+	}
+	.icon:hover > a:not(:hover) {
+		filter: blur(var(--glass-blur));
+	}
+	.cta:hover svg {
+		transform: translateX(0);
+	}
+
+	.hover-underline-animation {
+		position: relative;
+		color: var(--font-color);
+		padding-bottom: 20px;
+	}
+
+	.hover-underline-animation:after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		transform: scaleX(0);
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: var(--font-color);
+		transform-origin: bottom right;
+		transition: transform 0.25s ease-out;
+	}
+
+	.cta:hover .hover-underline-animation:after {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+	#contact .contact-icons a img:hover {
+		transform: scale(1.15) rotate(-8deg);
+	}
+}

@@ -99,7 +99,8 @@ window.addEventListener("load", async () => {
 		trigger: "#profile",
 		start: "top top",
 		endTrigger: "#about",
-		end: "bottom bottom",
+		end: "top top+=100",
+		scrub: true,
 		snap: {
 			snapTo: (p) => (p < 0.3 ? 0 : 1),
 			duration: 0.2,
@@ -175,3 +176,14 @@ window.addEventListener("load", async () => {
 
 	// gsap.ticker.add(animate);
 });
+if (window.innerWidth <= 768) {
+	document.querySelectorAll("#break-span").forEach((el) => {
+		el.outerHTML = "<br>";
+	});
+}
+const game = document.querySelector("#game");
+const helper = document.querySelector("#game-helper");
+
+if (game.getBoundingClientRect().width <= 650) {
+	helper.style.display = "none";
+}

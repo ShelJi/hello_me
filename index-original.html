@@ -191,13 +191,17 @@
 					</div>
 				</div>
 				<!-- about page -->
-				<div id="about" class="content ">
+				<div id="about" class="content">
 					<h3>Hey Welcome,</h3>
 					<p class="welcome-description split">
-						I'm Sheljin <3 — An Electrical Engineer who played with Python 🐍, fried few
-						circuits <br />
-						💥💥💥, and ended up building robots 🤖, APIs 🌐, and cloud systems ☁️ as
-						passion.
+						I'm Sheljin — <wbr />An Electrical Engineer who played with Python 🐍,
+						<wbr />fried few circuits 💥💥💥, <wbr />and ended up building robots 🤖,
+						<wbr />APIs 🌐, and cloud systems ☁️ as passion.
+					</p>
+					<p class="about-keywords">
+						<small class="split"
+							>Electrical Engineer · Python · Robotics · <wbr /> APIs · Cloud</small
+						>
 					</p>
 					<!-- <img
 							src="https://github-readme-activity-graph.vercel.app/graph?username=shelji&theme=dracula"
@@ -205,8 +209,11 @@
 							height="100%"
 							width="100%"
 						/> -->
+
 					<div id="github-contrib">
-						<h3 class="split">GITHUB</h3>
+						<a href="https://github.com/shelji">
+							<h3 class="split">GITHUB</h3>
+						</a>
 						<div>
 							<!-- <img
 								src="https://github-readme-streak-stats.herokuapp.com/?user=shelji&theme=light"
@@ -307,12 +314,13 @@
 						<p>
 							<strong
 								>Bachelor of
-								<span>Electrical and Electronics Engineering</span></strong
+								<span> <wbr />Electrical and Electronics Engineering</span></strong
 							><br />
 							<a href="https://maps.app.goo.gl/anpvQm4jMcYqGiBDA" target="_blank">
-								Mar Ephraem College of Engineering and Technology, Elavuvilai<br />
+								<wbr />Mar Ephraem College of Engineering and Technology,
+								<wbr />Elavuvilai<br />
 							</a>
-							<em>May 2020 – June 2024</em>
+							<em> <wbr />May 2020 – June 2024</em>
 						</p>
 					</div>
 					<br />
@@ -320,21 +328,23 @@
 						<h3>Work Experience</h3>
 
 						<p>
-							<strong>Associate <span>IoT Engineer</span></strong
+							<strong> <wbr />Associate <span>IoT Engineer</span></strong
 							><br />
 							<em
-								><a href="https://foxtechsolutions.com"
-									>FoxTech Private Solutions</a
+								><a href="https://foxtechsolutions.com">
+									<wbr />FoxTech Private Solutions</a
 								>
-								– <i>Mar 2025 to Present</i></em
+								– <wbr /><i> Mar 2025 to <span>Present</span></i></em
 							>
 						</p>
 
 						<p>
-							<strong>Python / Django Developer</strong><br />
+							<strong> <wbr />Python / Django Developer</strong><br />
 							<em
-								><a href="https://clovion.org">Clovion Tech Solutions Pvt. Ltd.</a>
-								– <i>May 2024 to Feb 2024</i></em
+								><a href="https://clovion.org">
+									<wbr />Clovion Tech Solutions Pvt. Ltd.</a
+								>
+								– <i> <wbr />May 2024 to Feb 2024</i></em
 							>
 						</p>
 						<br />
@@ -419,7 +429,7 @@
 							<canvas id="gameCanvas"></canvas>
 						</div>
 					</div>
-					<div>
+					<div id="game-helper">
 						<span>Drag the bird left and right</span>
 					</div>
 				</div>
@@ -429,11 +439,13 @@
 						<h3>Contact</h3>
 						<ul class="contact-list">
 							<li>
-								<strong>Email:</strong>
-								<a href="mailto:shelj.dev@gmail.com">shelj.dev@gmail.com</a>
+								<strong> Email: </strong>
+								<span id="break-span"></span>
+								<a href="mailto:shelj.dev@gmail.com"> shelj.dev@gmail.com </a>
 							</li>
 							<li>
 								<strong>LinkedIn:</strong>
+								<span id="break-span"></span>
 								<a
 									href="https://www.linkedin.com/in/sheljin-sa"
 									target="_blank"
@@ -443,6 +455,7 @@
 							</li>
 							<li>
 								<strong>GitHub:</strong>
+								<span id="break-span"></span>
 								<a
 									href="https://github.com/shelji"
 									target="_blank"
@@ -452,6 +465,7 @@
 							</li>
 							<li>
 								<strong>Resume:</strong>
+								<span id="break-span"></span>
 								<a href="resume/Sheljin.S.A.pdf" download>Download PDF</a>
 							</li>
 						</ul>
@@ -487,7 +501,8 @@
 		</div>
 
 		<div id="particles-js"></div>
-		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
+		 <script src="assests/particle.min.js"></script>
 		<script src="particles-config.js"></script>
 
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
@@ -500,6 +515,6 @@
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
 
 		<script src="scripts.js"></script>
-		<script src="citybird/city_bird_ctx.js"></script>
+		<script src="citybird/minified_city_bird_ctx.js"></script>
 	</body>
 </html>
