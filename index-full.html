@@ -410,30 +410,6 @@
 				user-select: none;
 			}
 
-			.nav-ico-container {
-				position: fixed;
-				z-index: 5;
-				top: 0;
-				left: 0;
-				display: none;
-				border: 1px solid red;
-				border-left: 0;
-				border-top: 0;
-				padding: 20px 16px;
-				border-radius: 0% 17% 87% 0% / 25% 13% 81% 25%;
-
-				background: var(--glass-card-bg);
-				box-shadow: var(--box-shadow);
-				backdrop-filter: blur(var(--glass-blur));
-				-webkit-backdrop-filter: blur(var(--glass-blur));
-				border: var(--border);
-				overflow-y: auto;
-			}
-
-			#navIco {
-				height: 30px;
-			}
-
 			.welcome-description {
 				margin: 20px 0;
 			}
@@ -442,44 +418,6 @@
 				text-align: center;
 				margin-bottom: 20px;
 			}
-			/* project section */
-			/* 
-.carousel {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 70vh;
-	transform: rotateX(-20deg) translateY(-70px);
-	transform-style: preserve-3d;
-	perspective: 800px;
-	user-select: none;
-	cursor: grab;
-}
-
-.carousel-image {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -100px 0 0 -100px;
-	width: 200px;
-	height: 200px;
-	transform: translate3d(0, 0, -10px);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #fff;
-	transform-origin: 50% 50%;
-	user-select: none;
-	pointer-events: none;
-	-webkit-user-drag: none;
-}
-
-@media (max-width: 600px) {
-	.carousel {
-		transform: rotateX(-10deg) scale(0.6) translateY(-60px);
-	}
-} */
 
 			/* experience */
 			#experience div {
@@ -670,10 +608,6 @@
 
 	<body>
 		<div class="resume">
-			<div class="nav-ico-container" id="navIcoContainer">
-				<img id="navIco" src="ico/right-arrow.png" alt="nav ico" />
-			</div>
-
 			<div class="sidebar">
 				<div id="sidebar-content">
 					<a href="#about" class="sidebar_list sidebar_btn">About</a>
@@ -688,72 +622,80 @@
 			<main id="content" class="">
 				<!-- profile -->
 				<div id="profile-wrapper">
-					<div id="profile" class="">
+					<div id="profile">
 						<h2 class="bold_txt bg-grad name">Sheljin S.A,</h2>
-						<h3 class="bold_txt">Software Engineer</h3>
-						<h3>Specializing in Web and IoT</h3>
-						<div class="icon">
-							<a
-								href="https://github.com/shelji"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<img src="ico/github.png" alt="GitHub Profile of Sheljin S.A"
-							/></a>
-							<a
-								href="https://www.linkedin.com/in/sheljin-sa"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<img src="ico/linkedin1.png" alt="LinkedIn Profile of Sheljin S.A"
-							/></a>
-							<a href="mailto:shelj.dev@gmail.com">
-								<img src="ico/mail1.png" alt="Email Sheljin S.A"
-							/></a>
-							<a
-								href="http://www.codechef.com/users/sheljin"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<img src="ico/codechef.png" alt="CodeChef Profile of Sheljin S.A"
-							/></a>
-							<a
-								href="https://leetcode.com/u/shelj/"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<img src="ico/leetcode.png" alt="LeetCode Profile of Sheljin S.A"
-							/></a>
-							<a
-								href="https://instagram.com/shelj__"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<img
-									src="ico/instagram-48.png"
-									alt="Instagram Profile of Sheljin S.A"
-							/></a>
-							<div class="cv">
-								<a href="resume/Sheljin.S.A.pdf" target="_blank">
-									<!-- From Uiverse.io by alexmaracinaru -->
-									<button class="cta">
-										<span class="hover-underline-animation"> resume </span>
-										<svg
-											id="arrow-horizontal"
-											xmlns="http://www.w3.org/2000/svg"
-											width="30"
-											height="10"
-											viewBox="0 0 46 16"
-										>
-											<path
-												id="Path_10"
-												data-name="Path 10"
-												d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-												transform="translate(30)"
-											></path>
-										</svg>
-									</button>
-								</a>
+						<div id="anim-split-word">
+							<h3 class="bold_txt">Software Engineer</h3>
+							<h3>Specializing in Web and IoT</h3>
+							<div class="icon">
+								<a
+									href="https://github.com/shelji"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<img src="ico/github.png" alt="GitHub Profile of Sheljin S.A"
+								/></a>
+								<a
+									href="https://www.linkedin.com/in/sheljin-sa"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<img
+										src="ico/linkedin1.png"
+										alt="LinkedIn Profile of Sheljin S.A"
+								/></a>
+								<a href="mailto:shelj.dev@gmail.com">
+									<img src="ico/mail1.png" alt="Email Sheljin S.A"
+								/></a>
+								<a
+									href="http://www.codechef.com/users/sheljin"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<img
+										src="ico/codechef.png"
+										alt="CodeChef Profile of Sheljin S.A"
+								/></a>
+								<a
+									href="https://leetcode.com/u/shelj/"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<img
+										src="ico/leetcode.png"
+										alt="LeetCode Profile of Sheljin S.A"
+								/></a>
+								<a
+									href="https://instagram.com/shelj__"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<img
+										src="ico/instagram-48.png"
+										alt="Instagram Profile of Sheljin S.A"
+								/></a>
+								<div class="cv">
+									<a href="resume/Sheljin.S.A.pdf" target="_blank">
+										<!-- From Uiverse.io by alexmaracinaru -->
+										<button class="cta">
+											<span class="hover-underline-animation"> resume </span>
+											<svg
+												id="arrow-horizontal"
+												xmlns="http://www.w3.org/2000/svg"
+												width="30"
+												height="10"
+												viewBox="0 0 46 16"
+											>
+												<path
+													id="Path_10"
+													data-name="Path 10"
+													d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+													transform="translate(30)"
+												></path>
+											</svg>
+										</button>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -818,62 +760,6 @@
 					</div>
 					<br />
 				</div>
-
-				<!-- project -->
-				<!-- <div id="project" class="content display_none">
-					<div class="carousel">
-						<img
-							class="carousel-image"
-							src="assests/img/github-profile.png"
-							draggable="false"
-						/>
-						<img
-							class="carousel-image"
-							src="assests/img/github-profile.png"
-							draggable="false"
-						/>
-						<img
-							class="carousel-image"
-							src="assests/img/github-profile.png"
-							draggable="false"
-						/>
-						<img
-							class="carousel-image"
-							src="assests/img/github-profile.png"
-							draggable="false"
-						/>
-						<img
-							class="carousel-image"
-							src="assests/img/github-profile.png"
-							draggable="false"
-						/>
-						<img
-							class="carousel-image"
-							src="assests/img/github-profile.png"
-							draggable="false"
-						/>
-						<img
-							class="carousel-image"
-							src="assests/img/github-profile.png"
-							draggable="false"
-						/>
-						<img
-							class="carousel-image"
-							src="assests/img/github-profile.png"
-							draggable="false"
-						/> -->
-				<!-- https://github.com/ShelJi/bike_lock -->
-				<!-- https://github.com/ShelJi/battery_manager -->
-				<!-- https://github.com/ShelJi/IOT_home -->
-				<!-- https://github.com/ShelJi/NOVA-django-Ecom -->
-				<!-- https://gamer.shelj.in/ -->
-				<!-- https://github.com/ShelJi/Gamer-react -->
-				<!-- https://chitti-chitti.streamlit.app/ -->
-				<!-- https://github.com/ShelJi/QA-Bot -->
-				<!-- https://github.com/ShelJi/Turbo -->
-				<!-- https://github.com/ShelJi/-raspberry_pi_pico_w_Thingspeak_DHT -->
-				<!-- </div>
-				</div> -->
 
 				<!-- experience -->
 				<div id="experience" class="content">
@@ -1080,9 +966,203 @@
 		<!-- Game -->
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/InertiaPlugin.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js"></script>
+		<script>
+			gsap.registerPlugin(
+				ScrollToPlugin,
+				ScrollTrigger,
+				SplitText
+				// Game
+			);
 
-		<script>gsap.registerPlugin(ScrollToPlugin,ScrollTrigger,SplitText);document.querySelector(".sidebar").addEventListener("click",function(event){const event_clicked=event.target;const active=document.querySelector(".active");if(event_clicked.classList.contains("sidebar_list")){if(!event_clicked.classList.contains("active")){event.preventDefault();const targetElement=document.querySelector(event_clicked.getAttribute("href"));gsap.to(window,{duration:1.2,scrollTo:{y:targetElement,offsetY:100,},ease:"power2.out",});active?.classList.remove("active");event_clicked.classList.add("active")}else{event.preventDefault();active?.classList.remove("active");gsap.to(window,{duration:1.2,scrollTo:{y:"#profile-wrapper",offsetY:100,},ease:"power2.out",})}}else{event.preventDefault();active?.classList.remove("active");gsap.to(window,{duration:1.2,scrollTo:{y:"#profile-wrapper",offsetY:100,},ease:"power2.out",})}});window.addEventListener("load",async()=>{await document.fonts.ready;gsap.registerPlugin(SplitText,ScrollTrigger);const profileSplit=new SplitText("#profile",{type:"words"});const tl=gsap.timeline({scrollTrigger:{trigger:"#profile",start:"top 0%",end:"bottom top+=300",scrub:!0,},});tl.to(profileSplit.words,{y:80,opacity:0,stagger:{amount:1.2,from:"end",ease:"power3.out",},ease:"power4.out",}).to(".icon",{y:100,opacity:0,ease:"power3.out",},0);ScrollTrigger.create({trigger:"#profile",start:"top top",endTrigger:"#about",end:"top top+=100",scrub:!0,snap:{snapTo:(p)=>(p<0.3?0:1),duration:0.2,ease:"power2.inOut",},});gsap.set(".split",{opacity:1});const revealSplit=new SplitText(".split",{type:"words,lines",linesClass:"line",autoSplit:!0,mask:"lines",});gsap.from(revealSplit.lines,{duration:0.6,yPercent:100,opacity:0,stagger:0.1,ease:"expo.out",scrollTrigger:{trigger:".split",start:"top 80%",once:!1,},})});if(window.innerWidth<=768){document.querySelectorAll("#break-span").forEach((el)=>{el.outerHTML="<br>"})}
-const game=document.querySelector("#game");const helper=document.querySelector("#game-helper");if(game.getBoundingClientRect().width<=650){helper.style.display="none"}</script>
+			document.querySelector(".sidebar").addEventListener("click", function (event) {
+				const event_clicked = event.target;
+				const active = document.querySelector(".active");
+
+				if (event_clicked.classList.contains("sidebar_list")) {
+					if (!event_clicked.classList.contains("active")) {
+						event.preventDefault();
+
+						const targetElement = document.querySelector(
+							event_clicked.getAttribute("href")
+						);
+
+						gsap.to(window, {
+							duration: 1.2,
+							scrollTo: {
+								y: targetElement,
+								offsetY: 100,
+							},
+							ease: "power2.out",
+						});
+
+						active?.classList.remove("active");
+						event_clicked.classList.add("active");
+					} else {
+						event.preventDefault();
+						active?.classList.remove("active");
+
+						gsap.to(window, {
+							duration: 1.2,
+							scrollTo: {
+								y: "#profile-wrapper",
+								offsetY: 100,
+							},
+							ease: "power2.out",
+						});
+					}
+				} else {
+					event.preventDefault();
+					active?.classList.remove("active");
+
+					gsap.to(window, {
+						duration: 1.2,
+						scrollTo: {
+							y: "#profile-wrapper",
+							offsetY: 100,
+						},
+						ease: "power2.out",
+					});
+				}
+			});
+
+			window.addEventListener("load", async () => {
+				await document.fonts.ready;
+
+				gsap.registerPlugin(SplitText, ScrollTrigger);
+
+				/* -------------------------------------
+	   PROFILE SECTION (Scroll animation)
+	------------------------------------- */
+				const profileSplit = new SplitText("#anim-split-word", { type: "words" });
+
+				const tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: "#profile",
+						start: "top 0%",
+						end: "bottom top+=300",
+						scrub: true,
+					},
+				});
+
+				tl.to(profileSplit.words, {
+					y: 80,
+					opacity: 0,
+					stagger: {
+						amount: 1.2,
+						from: "end",
+						ease: "power3.out",
+					},
+					ease: "power4.out",
+				})
+					.to(
+						".icon",
+						{
+							y: 100,
+							opacity: 0,
+							ease: "power3.out",
+						},
+						0
+					)
+					.to(".name", {
+						opacity: 0,
+					});
+
+				/* -------------------------------------
+	   SNAP SCROLL (Profile → About)
+	------------------------------------- */
+				ScrollTrigger.create({
+					trigger: "#profile",
+					start: "top top",
+					endTrigger: "#about",
+					end: "top top+=100",
+					scrub: true,
+					snap: {
+						snapTo: (p) => (p < 0.3 ? 0 : 1),
+						duration: 0.2,
+						ease: "power2.inOut",
+					},
+				});
+
+				/* -------------------------------------
+	   SPLIT TEXT (Reveal on scroll)
+	------------------------------------- */
+
+				gsap.set(".split", { opacity: 1 });
+
+				const revealSplit = new SplitText(".split", {
+					type: "words,lines",
+					linesClass: "line",
+					autoSplit: true,
+					mask: "lines",
+				});
+
+				gsap.from(revealSplit.lines, {
+					duration: 0.6,
+					yPercent: 100,
+					opacity: 0,
+					stagger: 0.1,
+					ease: "expo.out",
+					scrollTrigger: {
+						trigger: ".split",
+						start: "top 80%",
+						once: false,
+					},
+				});
+
+				/* -------------------------------------
+	   OPTIONAL: PROJECT CAROUSEL (Disabled)
+	   (Uncomment if needed)
+	------------------------------------- */
+
+				// const images = document.querySelectorAll(".carousel-image");
+				// const radius = 242;
+				// const progress = { value: 0 };
+				// const carousel = document.querySelector(".carousel");
+
+				// Observer.create({
+				// 	target: carousel,
+				// 	type: "wheel,pointer",
+				// 	onPress: () => (carousel.style.cursor = "grabbing"),
+				// 	onRelease: () => (carousel.style.cursor = "grab"),
+				// 	onChange: (self) => {
+				// 		gsap.killTweensOf(progress);
+				// 		const p =
+				// 			self.event.type === "wheel"
+				// 				? self.deltaY * -0.0005
+				// 				: self.deltaX * 0.05;
+				// 		gsap.to(progress, {
+				// 			duration: 2,
+				// 			ease: "power4.out",
+				// 			value: `+=${p}`,
+				// 		});
+				// 	},
+				// });
+
+				// const animate = () => {
+				// 	images.forEach((image, index) => {
+				// 		const theta = index / images.length - progress.value;
+				// 		const x = -Math.sin(theta * Math.PI * 2) * radius;
+				// 		const y = Math.cos(theta * Math.PI * 2) * radius;
+				// 		image.style.transform = `translate3d(${x}px, 0px, ${y}px) rotateY(${
+				// 			360 * -theta
+				// 		}deg)`;
+				// 	});
+				// };
+
+				// gsap.ticker.add(animate);
+			});
+			if (window.innerWidth <= 768) {
+				document.querySelectorAll("#break-span").forEach((el) => {
+					el.outerHTML = "<br>";
+				});
+			}
+			const game = document.querySelector("#game");
+			const helper = document.querySelector("#game-helper");
+
+			if (game.getBoundingClientRect().width <= 650) {
+				helper.style.display = "none";
+			}
+		</script>
 		<script src="citybird/minified_city_bird_ctx.js"></script>
 	</body>
 </html>

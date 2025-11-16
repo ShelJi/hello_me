@@ -62,7 +62,7 @@ window.addEventListener("load", async () => {
 	/* -------------------------------------
 	   PROFILE SECTION (Scroll animation)
 	------------------------------------- */
-	const profileSplit = new SplitText("#profile", { type: "words" });
+	const profileSplit = new SplitText("#anim-split-word", { type: "words" });
 
 	const tl = gsap.timeline({
 		scrollTrigger: {
@@ -82,15 +82,19 @@ window.addEventListener("load", async () => {
 			ease: "power3.out",
 		},
 		ease: "power4.out",
-	}).to(
-		".icon",
-		{
-			y: 100,
+	})
+		.to(
+			".icon",
+			{
+				y: 100,
+				opacity: 0,
+				ease: "power3.out",
+			},
+			0
+		)
+		.to(".name", {
 			opacity: 0,
-			ease: "power3.out",
-		},
-		0
-	);
+		});
 
 	/* -------------------------------------
 	   SNAP SCROLL (Profile → About)
