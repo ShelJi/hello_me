@@ -10,3 +10,7 @@ hosted in netlify free version.
 ## Noise creator
 
 [Noise](https://www.fffuel.co/nnnoise/)
+
+## CV
+
+[ohmycv](https://ohmycv.app)

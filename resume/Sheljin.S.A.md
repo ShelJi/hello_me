@@ -26,7 +26,7 @@ Expert in connected devices, embedded systems, MQTT, cloud IoT platforms, and se
 
 ## WORK EXPERIENCE 
 
-**Embedded Engineer** | [Foxtech Private Solutions](https://www.foxtechsolutions.com/)
+**Associate IoT Engineer** | [Foxtech Private Solutions](https://www.foxtechsolutions.com/)
   ~ 03/2025 - Present
 
 **AI Rover** 
