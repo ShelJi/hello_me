@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>nest.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="nest-js">Nest JS</h1>
+<p><strong>@Body():</strong> This NestJS decorator extracts the body of the HTTP request (JSON data sent by the client) and passes it into the method.</p>
+<h2 id="dto">DTO</h2>
+<p>DTO stands for Data Transfer Object.
+Contains classes that define the structure of incoming and outgoing data.</p>
+<p>Used for:</p>
+<ul>
+<li>
+<p>Validation (class-validator)</p>
+</li>
+<li>
+<p>Type safety</p>
+</li>
+<li>
+<p>Input filtering</p>
+</li>
+</ul>
+<h2 id="entities">Entities</h2>
+<p><strong>entities/</strong>
+Contains ORM entity classes that represent your database tables/models.</p>
+<p>These are used by tools like TypeORM or Prisma to map data.</p>
+<p>Example: User, Admin, Role entities.</p>
+<h2 id="enum">Enum</h2>
+<p><strong>enums/</strong>
+Stores enumeration types, e.g. fixed sets of constants.</p>
+<h2 id="services">Services</h2>
+<p><strong>services/</strong>
+Contains business logic.</p>
+<p>Services interact with:</p>
+<p>Repositories (DB)</p>
+<p>Other services</p>
+<p>Utils</p>
+<p>Example: AdminUsersService handles user CRUD operations.</p>
+<h2 id="swagger-ui">Swagger UI</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> {
+  ApiTags,
+  ApiOperation,
+  ApiBody,
+  ApiResponse,
+  ApiQuery,
+  ApiParam,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'@nestjs/swagger'</span>;
+
+
+<span class="hljs-meta">@ApiTags</span>(<span class="hljs-string">'Admin Users'</span>) <span class="hljs-comment">// Swagger group name</span>
+<span class="hljs-meta">@Controller</span>(<span class="hljs-string">'admin/users'</span>)
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> UsersController {
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">
+    <span class="hljs-keyword">private</span> readonly usersService: AdminUsersService,
+    <span class="hljs-keyword">private</span> readonly usersDeleteService: UsersDeleteService,
+  </span>) {}
+
+  <span class="hljs-meta">@Post</span>(<span class="hljs-string">'enroll'</span>)
+  <span class="hljs-meta">@ApiOperation</span>({ summary: <span class="hljs-string">'Enroll a new user'</span>, description: <span class="hljs-string">'Creates and enrolls a new user into the system.'</span> })
+  <span class="hljs-meta">@ApiBody</span>({ <span class="hljs-keyword">type</span>: CreateUserDto })
+  <span class="hljs-meta">@ApiResponse</span>({ status: <span class="hljs-number">201</span>, description: <span class="hljs-string">'User successfully created.'</span> })
+  <span class="hljs-meta">@ApiResponse</span>({ status: <span class="hljs-number">400</span>, description: <span class="hljs-string">'Validation failed or bad input.'</span> })
+  <span class="hljs-keyword">async</span> create(<span class="hljs-meta">@Body</span>() createUserDto: CreateUserDto): <span class="hljs-built_in">Promise</span>&lt;User&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.usersService.create(createUserDto);
+  }
+
+  <span class="hljs-meta">@Get</span>()
+  <span class="hljs-meta">@ApiOperation</span>({ summary: <span class="hljs-string">'List users'</span>, description: <span class="hljs-string">'Returns a paginated list of users with optional filters.'</span> })
+  <span class="hljs-meta">@ApiQuery</span>({ name: <span class="hljs-string">'page'</span>, required: <span class="hljs-literal">false</span>, <span class="hljs-keyword">type</span>: <span class="hljs-built_in">Number</span> })
+  <span class="hljs-meta">@ApiQuery</span>({ name: <span class="hljs-string">'limit'</span>, required: <span class="hljs-literal">false</span>, <span class="hljs-keyword">type</span>: <span class="hljs-built_in">Number</span> })
+  <span class="hljs-comment">// Add more @ApiQuery if your FilterUsersDto has more fields like search, role, status, etc.</span>
+  <span class="hljs-meta">@ApiResponse</span>({ status: <span class="hljs-number">200</span>, description: <span class="hljs-string">'List of users with pagination metadata.'</span> })
+  <span class="hljs-keyword">async</span> findAll(<span class="hljs-meta">@Query</span>() filter: FilterUsersDto) {
+    <span class="hljs-keyword">const</span> [users, total] = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.usersService.findAll(filter);
+    <span class="hljs-keyword">const</span> page = filter.page;
+    <span class="hljs-keyword">const</span> limit = filter.limit;
+
+    <span class="hljs-keyword">return</span> {
+      data: users,
+      meta: {
+        total,
+        page,
+        limit,
+        lastPage: <span class="hljs-built_in">Math</span>.ceil(total / limit),
+      },
+    };
+  }
+
+  <span class="hljs-meta">@Get</span>(<span class="hljs-string">':id'</span>)
+  <span class="hljs-meta">@ApiOperation</span>({ summary: <span class="hljs-string">'Get user by ID'</span>, description: <span class="hljs-string">'Fetches a single user by their ID. Admin only.'</span> })
+  <span class="hljs-meta">@ApiParam</span>({ name: <span class="hljs-string">'id'</span>, <span class="hljs-keyword">type</span>: <span class="hljs-built_in">Number</span> })
+  <span class="hljs-meta">@ApiResponse</span>({ status: <span class="hljs-number">200</span>, description: <span class="hljs-string">'User found and returned.'</span> })
+  <span class="hljs-meta">@ApiResponse</span>({ status: <span class="hljs-number">404</span>, description: <span class="hljs-string">'User not found.'</span> })
+  <span class="hljs-meta">@Roles</span>(userRoleType.ADMIN)
+  <span class="hljs-keyword">async</span> getUser(
+    <span class="hljs-meta">@Param</span>(<span class="hljs-string">'id'</span>, ParseIntPipe) id: <span class="hljs-built_in">number</span>,
+  ): <span class="hljs-built_in">Promise</span>&lt;UserResponseDto&gt; {
+    <span class="hljs-keyword">const</span> user = <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.usersService.findUserById(id);
+    <span class="hljs-keyword">return</span> plainToInstance(UserResponseDto, user);
+  }
+
+  <span class="hljs-meta">@Delete</span>(<span class="hljs-string">':id'</span>)
+  <span class="hljs-meta">@ApiOperation</span>({ summary: <span class="hljs-string">'Delete user by ID'</span>, description: <span class="hljs-string">'Deletes a single user by their ID.'</span> })
+  <span class="hljs-meta">@ApiParam</span>({ name: <span class="hljs-string">'id'</span>, <span class="hljs-keyword">type</span>: <span class="hljs-built_in">Number</span> })
+  <span class="hljs-meta">@ApiResponse</span>({ status: <span class="hljs-number">200</span>, description: <span class="hljs-string">'User deleted successfully.'</span> })
+  <span class="hljs-meta">@ApiResponse</span>({ status: <span class="hljs-number">404</span>, description: <span class="hljs-string">'User not found.'</span> })
+  <span class="hljs-meta">@HttpCode</span>(HttpStatus.OK)
+  <span class="hljs-keyword">async</span> deleteUser(<span class="hljs-meta">@Param</span>(<span class="hljs-string">'id'</span>) id: <span class="hljs-built_in">number</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.usersDeleteService.deleteUserOrMany(id);
+  }
+
+  <span class="hljs-meta">@Delete</span>()
+  <span class="hljs-meta">@ApiOperation</span>({ summary: <span class="hljs-string">'Delete multiple users'</span>, description: <span class="hljs-string">'Deletes multiple users by a list of user IDs.'</span> })
+  <span class="hljs-meta">@ApiBody</span>({ <span class="hljs-keyword">type</span>: DeleteUsersDto })
+  <span class="hljs-meta">@ApiResponse</span>({ status: <span class="hljs-number">200</span>, description: <span class="hljs-string">'Users deleted successfully.'</span> })
+  <span class="hljs-meta">@HttpCode</span>(HttpStatus.OK)
+  <span class="hljs-keyword">async</span> deleteMultipleUsers(<span class="hljs-meta">@Body</span>() deleteUsersDto: DeleteUsersDto) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.usersDeleteService.deleteUserOrMany(
+      deleteUsersDto.user_ids,
+    );
+  }
+
+  <span class="hljs-meta">@Patch</span>(<span class="hljs-string">'status'</span>)
+  <span class="hljs-meta">@ApiOperation</span>({ summary: <span class="hljs-string">'Update status for multiple users'</span>, description: <span class="hljs-string">'Activate or deactivate multiple users by ID.'</span> })
+  <span class="hljs-meta">@ApiBody</span>({ <span class="hljs-keyword">type</span>: UpdateUserStatusDto })
+  <span class="hljs-meta">@ApiResponse</span>({ status: <span class="hljs-number">200</span>, description: <span class="hljs-string">'User statuses updated.'</span> })
+  <span class="hljs-keyword">async</span> updateBulkUserStatus(<span class="hljs-meta">@Body</span>() dto: UpdateUserStatusDto): <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">any</span>&gt; {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.usersService.updateStatus(dto.user_ids, dto.is_active);
+  }
+}
+</div></code></pre>
+<h2 id="for-dpo-for-form-updates">for DPO for form updates</h2>
+<p><code>import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';</code></p>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 # Nest JS
 
-@Body(): This NestJS decorator extracts the body of the HTTP request (JSON data sent by the client) and passes it into the method.
+**@Body():** This NestJS decorator extracts the body of the HTTP request (JSON data sent by the client) and passes it into the method.
 
 ## DTO
 
@@ -9,15 +9,15 @@ Contains classes that define the structure of incoming and outgoing data.
 
 Used for:
 
-Validation (class-validator)
+- Validation (class-validator)
 
-Type safety
+- Type safety
 
-Input filtering
+- Input filtering
 
 ## Entities
 
-entities/
+**entities/**
 Contains ORM entity classes that represent your database tables/models.
 
 These are used by tools like TypeORM or Prisma to map data.
@@ -26,12 +26,12 @@ Example: User, Admin, Role entities.
 
 ## Enum
 
-enums/
+**enums/**
 Stores enumeration types, e.g. fixed sets of constants.
 
 ## Services
 
-services/
+**services/**
 Contains business logic.
 
 Services interact with:
@@ -46,7 +46,7 @@ Example: AdminUsersService handles user CRUD operations.
 
 ## Swagger UI
 
-```js
+```ts
 import {
   ApiTags,
   ApiOperation,
@@ -140,6 +140,6 @@ export class UsersController {
 }
 ```
 
-`import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';`
+## for DPO for form updates
 
-for DPO for form updates
+`import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';`

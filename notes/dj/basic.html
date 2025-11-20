@@ -365,401 +365,237 @@ code {
           : 'default'
     });
   </script>
-<p>DRY (Don't Repeat Yourself)</p>
+<h1 id="django">Django</h1>
 <p>TemplateView</p>
 <p>ListView
 DetailView
 CreateView
 UpdateView
 DeleteView</p>
-<p>########### Template Views</p>
-<h1 id="these-views-are-used-when-you-simply-need-to-render-a-template-with-or-without-context">These views are used when you simply need to render a template with or without context.</h1>
-<p>from django.views.generic import TemplateView</p>
-<p>class AboutView(TemplateView):
-template_name = 'about.html'</p>
+<h2 id="template-views">Template Views</h2>
+<p>These views are used when you simply need to render a template with or without context.</p>
+<pre class="hljs"><code><div>from django.views.generic import TemplateView
+
+class AboutView(TemplateView):
+    template_name = <span class="hljs-string">'about.html'</span>
+</div></code></pre>
+<p>These views are used when you simply need to render a template with or without context.</p>
+<pre class="hljs"><code><div>from django.views.generic import TemplateView
+
+class AboutView(TemplateView):
+    template_name = <span class="hljs-string">'about.html'</span>
+</div></code></pre>
 <h2 id="2-views-for-models-crud-operations">2. Views for Models (CRUD Operations)</h2>
-<p>########### 2.1 ListView</p>
-<h1 id="used-to-display-a-list-of-objects-from-a-database-model">Used to display a list of objects from a database model.</h1>
-<p>from django.views.generic import ListView
-from .models import Post</p>
-<p>class PostListView(ListView):
-model = Post
-template_name = 'post_list.html'
-context_object_name = 'posts'    # over ride the object name</p>
-<p>###########  2.2 DetailView</p>
-<h1 id="used-to-display-details-of-a-single-object-based-on-its-id-or-some-identifier">Used to display details of a single object based on its ID or some identifier.</h1>
-<p>from django.views.generic import DetailView
-from .models import Post</p>
-<p>class PostDetailView(DetailView):
-model = Post
-template_name = 'post_detail.html'
-context_object_name = 'post'</p>
-<p>########### 2.3 CreateView</p>
-<h1 id="used-to-create-a-new-object-in-the-database-using-a-form">Used to create a new object in the database using a form.</h1>
-<p>from django.views.generic import CreateView
+<h2 id="21-listview">2.1 ListView</h2>
+<p>Used to display a list of objects from a database model.</p>
+<pre class="hljs"><code><div>from django.views.generic import ListView
 from .models import Post
-from django.urls import reverse_lazy</p>
-<p>class PostCreateView(CreateView):
-model = Post
-template_name = 'post_form.html'
-fields = ['title', 'content']
-success_url = reverse_lazy('post_list')</p>
-<p>or</p>
-<p>from django.views.generic import FormView
+
+class PostListView(ListView):
+    model = Post
+    template_name = <span class="hljs-string">'post_list.html'</span>
+    context_object_name = <span class="hljs-string">'posts'</span>    <span class="hljs-comment"># over ride the object name</span>
+</div></code></pre>
+<h2 id="22-detailview">2.2 DetailView</h2>
+<p>Used to display details of a single object based on its ID or some identifier.</p>
+<pre class="hljs"><code><div>from django.views.generic import DetailView
+from .models import Post
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = <span class="hljs-string">'post_detail.html'</span>
+    context_object_name = <span class="hljs-string">'post'</span>
+</div></code></pre>
+<h2 id="23-createview">2.3 CreateView</h2>
+<p>Used to create a new object in the database using a form.</p>
+<pre class="hljs"><code><div>from django.views.generic import CreateView
+from .models import Post
 from django.urls import reverse_lazy
-from .forms import PostForm</p>
-<p>class PostCreateView(FormView):
-template_name = 'post_form.html'
-form_class = PostForm
-success_url = reverse_lazy('post_list')</p>
-<pre><code># these lines are not necessary
-def form_valid(self, form):
-    # Here you can handle form submission and manually save to the model
-    title = form.cleaned_data['title']
-    content = form.cleaned_data['content']
-    
-    # Example of saving to the model manually:
-    Post.objects.create(title=title, content=content)
-    
-    return super().form_valid(form)
-</code></pre>
-<p>########### 2.4 UpdateView</p>
-<h1 id="used-to-update-an-existing-object">Used to update an existing object.</h1>
-<p>from django.views.generic import UpdateView
-from .models import Post
-from django.urls import reverse_lazy</p>
-<p>class PostUpdateView(UpdateView):
-model = Post
-template_name = 'post_form.html'
-fields = ['title', 'content']
-success_url = reverse_lazy('post_list')</p>
-<h2 id="25-deleteview">2.5 DeleteView</h2>
-<h1 id="used-to-delete-an-object">Used to delete an object.</h1>
-<p>from django.views.generic import DeleteView
-from .models import Post
-from django.urls import reverse_lazy</p>
-<p>class PostDeleteView(DeleteView):
-model = Post
-template_name = 'post_confirm_delete.html'
-success_url = reverse_lazy('post_list')</p>
-<p>https://dennisivy.com/django-class-based-views</p>
-<p>DRY (Don't Repeat Yourself)</p>
-<p>TemplateView - only template render
-FormView</p>
-<p>ListView   - render with model data
-DetailView - render data of specific item based on ID
-CreateView
-UpdateView
-DeleteView</p>
-<p>########### Template Views</p>
-<h1 id="these-views-are-used-when-you-simply-need-to-render-a-template-with-or-without-context">These views are used when you simply need to render a template with or without context.</h1>
-<p>from django.views.generic import TemplateView</p>
-<p>class AboutView(TemplateView):
-template_name = 'about.html'</p>
-<h2 id="2-views-for-models-crud-operations">2. Views for Models (CRUD Operations)</h2>
-<p>########### 2.1 ListView</p>
-<h1 id="used-to-display-a-list-of-objects-from-a-database-model">Used to display a list of objects from a database model.</h1>
-<p>from django.views.generic import ListView
-from .models import Post</p>
-<p>class PostListView(ListView):
-model = Post
-template_name = 'post_list.html'
-context_object_name = 'posts'    # over ride the object name</p>
-<p>###########  2.2 DetailView</p>
-<h1 id="used-to-display-details-of-a-single-object-based-on-its-id-or-some-identifier">Used to display details of a single object based on its ID or some identifier.</h1>
-<p>from django.views.generic import DetailView
-from .models import Post</p>
-<p>class PostDetailView(DetailView):
-model = Post
-template_name = 'post_detail.html'
-context_object_name = 'post'</p>
-<p>########### 2.3 CreateView</p>
-<h1 id="used-to-create-a-new-object-in-the-database-using-a-form">Used to create a new object in the database using a form.</h1>
-<p>from django.views.generic import CreateView
-from .models import Post
-from django.urls import reverse_lazy</p>
-<p>class PostCreateView(CreateView):
-model = Post
-template_name = 'post_form.html'
-fields = ['title', 'content']
-success_url = reverse_lazy('post_list')</p>
-<p>or</p>
-<p>from django.views.generic import FormView   ### form view used for forms
+
+class PostCreateView(CreateView):
+    model = Post
+    template_name = <span class="hljs-string">'post_form.html'</span>
+    fields = [<span class="hljs-string">'title'</span>, <span class="hljs-string">'content'</span>]
+    success_url = reverse_lazy(<span class="hljs-string">'post_list'</span>)
+
+<span class="hljs-comment"># or</span>
+
+from django.views.generic import FormView
 from django.urls import reverse_lazy
-from .forms import PostForm</p>
-<p>class PostCreateView(FormView):
-template_name = 'post_form.html'
-form_class = PostForm
-success_url = reverse_lazy('post_list')</p>
-<pre><code># these lines are not necessary
-def form_valid(self, form):
-    # Here you can handle form submission and manually save to the model
-    title = form.cleaned_data['title']
-    content = form.cleaned_data['content']
-    
-    # Example of saving to the model manually:
-    Post.objects.create(title=title, content=content)
-    
-    return super().form_valid(form)
-</code></pre>
-<p>########### 2.4 UpdateView</p>
-<h1 id="used-to-update-an-existing-object">Used to update an existing object.</h1>
-<p>from django.views.generic import UpdateView
+from .forms import PostForm
+
+class PostCreateView(FormView):
+    template_name = <span class="hljs-string">'post_form.html'</span>
+    form_class = PostForm
+    success_url = reverse_lazy(<span class="hljs-string">'post_list'</span>)
+
+    <span class="hljs-comment"># these lines are not necessary</span>
+    def form_valid(self, form):
+        <span class="hljs-comment"># Here you can handle form submission and manually save to the model</span>
+        title = form.cleaned_data[<span class="hljs-string">'title'</span>]
+        content = form.cleaned_data[<span class="hljs-string">'content'</span>]
+        
+        <span class="hljs-comment"># Example of saving to the model manually:</span>
+        Post.objects.create(title=title, content=content)
+        
+        <span class="hljs-built_in">return</span> super().form_valid(form)
+</div></code></pre>
+<h2 id="24-updateview">2.4 UpdateView</h2>
+<p>Used to update an existing object.</p>
+<pre class="hljs"><code><div>from django.views.generic import UpdateView
 from .models import Post
-from django.urls import reverse_lazy</p>
-<p>class PostUpdateView(UpdateView):
-model = Post
-template_name = 'post_form.html'
-fields = ['title', 'content']
-success_url = reverse_lazy('post_list')</p>
+from django.urls import reverse_lazy
+
+class PostUpdateView(UpdateView):
+    model = Post
+    template_name = <span class="hljs-string">'post_form.html'</span>
+    fields = [<span class="hljs-string">'title'</span>, <span class="hljs-string">'content'</span>]
+    success_url = reverse_lazy(<span class="hljs-string">'post_list'</span>)
+</div></code></pre>
 <h2 id="25-deleteview">2.5 DeleteView</h2>
-<h1 id="used-to-delete-an-object">Used to delete an object.</h1>
-<p>from django.views.generic import DeleteView
+<p>Used to delete an object.</p>
+<pre class="hljs"><code><div>from django.views.generic import DeleteView
 from .models import Post
-from django.urls import reverse_lazy</p>
-<p>class PostDeleteView(DeleteView):
-model = Post
-template_name = 'post_confirm_delete.html'
-success_url = reverse_lazy('post_list')</p>
-<p>############### Main command
-django-admin  #shows all available comands</p>
-<p>################msql
-pip install mysqlclient</p>
-<p>django-admin startproject newApp
-cd newApp
-django-admin startapp blog</p>
-<p>python manage.py runserver</p>
-<p>python manage.py makemigrations
-python manage.py migrate</p>
-<p>######################## url path redirect
-from django.contrib import admin
-from django.urls import path, include</p>
-<p>urlpatterns = [
-path('', include(&quot;blog.urls&quot;)),
-path('admin/', admin.site.urls),
-]</p>
-<p>############################dynamic urls
-path(&quot;post/<a href="int:post_id">int:post_id</a>&quot;)
-path(&quot;post/<a href="str:post_str">str:post_str</a>&quot;)</p>
-<p>##########################################reversed nad named url
-from django.urls import reverse</p>
-<p>def for_reverse(request):
-return redirect(reverse(&quot;blog:redirect&quot;))</p>
-<p>app_name = 'blog'</p>
-<p>path(&quot;redirect_to/&quot;, views.redirect_to, name=&quot;redirect&quot;),</p>
-<p>###########################statics</p>
-<p>{% load static %}</p>
-<link rel="stylesheet" href="{% static "style.css" %}">
-<p>##########################dynamic content</p>
-<p>main html file
-{% extends &quot;header_footer.html&quot; %}
+from django.urls import reverse_lazy
+
+class PostDeleteView(DeleteView):
+    model = Post
+    template_name = <span class="hljs-string">'post_confirm_delete.html'</span>
+    success_url = reverse_lazy(<span class="hljs-string">'post_list'</span>)
+</div></code></pre>
+<h2 id="main-command">Main command</h2>
+<p><code>django-admin</code>  #shows all available comands</p>
+<h2 id="msql">msql</h2>
+<pre class="hljs"><code><div>pip install mysqlclient
+
+django-admin startproject newApp
+<span class="hljs-built_in">cd</span> newApp
+django-admin startapp blog
+
+python manage.py runserver
+
+python manage.py makemigrations
+python manage.py migrate
+</div></code></pre>
+<h2 id="url-path-redirect">url path redirect</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
+<span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path, include
+
+urlpatterns = [
+    path(<span class="hljs-string">''</span>, include(<span class="hljs-string">"blog.urls"</span>)),
+    path(<span class="hljs-string">'admin/'</span>, admin.site.urls),
+]
+
+
+<span class="hljs-comment"># dynamic urls</span>
+path(<span class="hljs-string">"post/&lt;int:post_id&gt;"</span>)
+path(<span class="hljs-string">"post/&lt;str:post_str&gt;"</span>)
+
+
+<span class="hljs-comment"># reversed nad named url</span>
+<span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> reverse
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">for_reverse</span><span class="hljs-params">(request)</span>:</span>
+    <span class="hljs-keyword">return</span> redirect(reverse(<span class="hljs-string">"blog:redirect"</span>))
+
+app_name = <span class="hljs-string">'blog'</span>
+
+path(<span class="hljs-string">"redirect_to/"</span>, views.redirect_to, name=<span class="hljs-string">"redirect"</span>),
+
+<span class="hljs-comment"># statics</span>
+
+{% load static %}
+
+&lt;link rel=<span class="hljs-string">"stylesheet"</span> href=<span class="hljs-string">"{% static "</span>style.css<span class="hljs-string">" %}"</span>&gt;
+</div></code></pre>
+<h2 id="dynamic-content">dynamic content</h2>
+<pre class="hljs"><code><div>
+main html file
+{% extends "header_footer.html" %}
 {% block content %}
-{% endblock %}</p>
-<p>extended header footer html file
+{% endblock %}
+
+extended header footer html file
 {% load static%}
 {% block content %}
-{% endblock %}</p>
-<p>##############################includes</p>
-<p>{% include &quot;header.html&quot; %}</p>
-<p>################# variable interpolation
-{{ data }}</p>
-<p>###############################filters
+{% endblock %}
+
+<span class="hljs-comment">&lt;!-- Includes --&gt;</span>
+
+{% include "header.html" %}
+
+<span class="hljs-comment">&lt;!-- variable interpolation --&gt;</span>
+
+{{ data }}
+
+<span class="hljs-comment">&lt;!-- filters --&gt;</span>
+
 {{ data | upper }}
 {{ data | length }}
 {{ data | truncatewords:1 }}
-{{ data | default:&quot;no data&quot; }}</p>
-<p>########################## url tag dynamic url
+{{ data | default:"no data" }}
+
+ <span class="hljs-comment">&lt;!-- url tag dynamic url  --&gt;</span>
 access through reverse
 1.40 jvl
-{% url 'appname:name' post_id=post.id %}</p>
-<p>############################# 404 page
-1.50 jvl
---&gt; urls
-handler404 = 'app.views.custom_page'</p>
-<p>set debug = False
-set templates--&gt;DIR--&gt; the template folder path
-set localhost</p>
-<p>########################## models</p>
-<p>models.BooleanField(default=False, help_text=&quot;0-show,1-hidden&quot;)
-models.DateTimeField(auto_now_add=True)</p>
-<p>######################### img model
+{% url 'appname:name' post_id=post.id %}
+</div></code></pre>
+<h2 id="404-page">404 page</h2>
+<pre class="hljs"><code><div>handler404 = <span class="hljs-string">'app.views.custom_page'</span>
+
+set debug = <span class="hljs-literal">False</span>
+<span class="hljs-comment"># set templates--&gt;DIR--&gt; the template folder path</span>
+set localhost
+
+<span class="hljs-comment"># models</span>
+
+models.BooleanField(default=<span class="hljs-literal">False</span>, help_text=<span class="hljs-string">"0-show,1-hidden"</span>)
+models.DateTimeField(auto_now_add=<span class="hljs-literal">True</span>)
+
+<span class="hljs-comment"># img model</span>
+
+<span class="hljs-string">"""
 1)settings--&gt; import os
 --&gt; below--&gt;STATIC_URL='static/'
---&gt;MEDIA_ROOT=os.Path.join(BASE_DIR, &quot;media&quot;)
-MEDIA_URL = &quot;/media/&quot;</p>
-<p>2)from django.conf import settings
-from django.conf.urls.static import static</p>
-<p>urls--&gt;UrlPatterns=[]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)</p>
-<p>3)views--&gt; instance=data(used in function where data is called to save)</p>
-<p>4)HTML--&gt; after Method=POST--&gt; enctype=multipart/formdata</p>
-<p>##################### super user</p>
-<p>py manage.py createsuperuser</p>
-<p>access previleage</p>
-<p>###################admin jazzmin
+--&gt;MEDIA_ROOT=os.Path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
+
+2)from django.conf import settings
+from django.conf.urls.static import static
+
+urls--&gt;UrlPatterns=[]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+3)views--&gt; instance=data(used in function where data is called to save)
+
+4)HTML--&gt; after Method=POST--&gt; enctype=multipart/formdata
+"""</span>
+</div></code></pre>
+<h2 id="super-user">super user</h2>
+<p><code>py manage.py createsuperuser</code></p>
+<h2 id="access-previleage">access previleage</h2>
+<pre class="hljs"><code><div>admin jazzmin
 pip install django-jazzmin
-settings---&gt; installed apps---&gt; 'jazzmin',</p>
-<p>##################################  super user</p>
-<p>py manage.py createsuperuser
-admin--&gt; from models import *
-admin.site.register(product)</p>
-<p>models--&gt; def <strong>str</strong> (self):
-return self.productname + self.productdata</p>
-<p>DRY (Don't Repeat Yourself)</p>
-<p>TemplateView</p>
-<p>ListView
-DetailView
-CreateView
-UpdateView
-DeleteView</p>
-<p>########### Template Views</p>
-<h1 id="these-views-are-used-when-you-simply-need-to-render-a-template-with-or-without-context">These views are used when you simply need to render a template with or without context.</h1>
-<p>from django.views.generic import TemplateView</p>
-<p>class AboutView(TemplateView):
-template_name = 'about.html'</p>
-<h2 id="2-views-for-models-crud-operations">2. Views for Models (CRUD Operations)</h2>
-<p>########### 2.1 ListView</p>
-<h1 id="used-to-display-a-list-of-objects-from-a-database-model">Used to display a list of objects from a database model.</h1>
-<p>from django.views.generic import ListView
-from .models import Post</p>
-<p>class PostListView(ListView):
-model = Post
-template_name = 'post_list.html'
-context_object_name = 'posts'    # over ride the object name</p>
-<p>###########  2.2 DetailView</p>
-<h1 id="used-to-display-details-of-a-single-object-based-on-its-id-or-some-identifier">Used to display details of a single object based on its ID or some identifier.</h1>
-<p>from django.views.generic import DetailView
-from .models import Post</p>
-<p>class PostDetailView(DetailView):
-model = Post
-template_name = 'post_detail.html'
-context_object_name = 'post'</p>
-<p>########### 2.3 CreateView</p>
-<h1 id="used-to-create-a-new-object-in-the-database-using-a-form">Used to create a new object in the database using a form.</h1>
-<p>from django.views.generic import CreateView
-from .models import Post
-from django.urls import reverse_lazy</p>
-<p>class PostCreateView(CreateView):
-model = Post
-template_name = 'post_form.html'
-fields = ['title', 'content']
-success_url = reverse_lazy('post_list')</p>
-<p>or</p>
-<p>from django.views.generic import FormView
-from django.urls import reverse_lazy
-from .forms import PostForm</p>
-<p>class PostCreateView(FormView):
-template_name = 'post_form.html'
-form_class = PostForm
-success_url = reverse_lazy('post_list')</p>
-<pre><code># these lines are not necessary
-def form_valid(self, form):
-    # Here you can handle form submission and manually save to the model
-    title = form.cleaned_data['title']
-    content = form.cleaned_data['content']
-    
-    # Example of saving to the model manually:
-    Post.objects.create(title=title, content=content)
-    
-    return super().form_valid(form)
-</code></pre>
-<p>########### 2.4 UpdateView</p>
-<h1 id="used-to-update-an-existing-object">Used to update an existing object.</h1>
-<p>from django.views.generic import UpdateView
-from .models import Post
-from django.urls import reverse_lazy</p>
-<p>class PostUpdateView(UpdateView):
-model = Post
-template_name = 'post_form.html'
-fields = ['title', 'content']
-success_url = reverse_lazy('post_list')</p>
-<h2 id="25-deleteview">2.5 DeleteView</h2>
-<h1 id="used-to-delete-an-object">Used to delete an object.</h1>
-<p>from django.views.generic import DeleteView
-from .models import Post
-from django.urls import reverse_lazy</p>
-<p>class PostDeleteView(DeleteView):
-model = Post
-template_name = 'post_confirm_delete.html'
-success_url = reverse_lazy('post_list')</p>
-<p>https://dennisivy.com/django-class-based-views</p>
-<p>DRY (Don't Repeat Yourself)</p>
-<p>TemplateView - only template render
-FormView</p>
-<p>ListView   - render with model data
-DetailView - render data of specific item based on ID
-CreateView
-UpdateView
-DeleteView</p>
-<p>########### Template Views</p>
-<h1 id="these-views-are-used-when-you-simply-need-to-render-a-template-with-or-without-context">These views are used when you simply need to render a template with or without context.</h1>
-<p>from django.views.generic import TemplateView</p>
-<p>class AboutView(TemplateView):
-template_name = 'about.html'</p>
-<h2 id="2-views-for-models-crud-operations">2. Views for Models (CRUD Operations)</h2>
-<p>########### 2.1 ListView</p>
-<h1 id="used-to-display-a-list-of-objects-from-a-database-model">Used to display a list of objects from a database model.</h1>
-<p>from django.views.generic import ListView
-from .models import Post</p>
-<p>class PostListView(ListView):
-model = Post
-template_name = 'post_list.html'
-context_object_name = 'posts'    # over ride the object name</p>
-<p>###########  2.2 DetailView</p>
-<h1 id="used-to-display-details-of-a-single-object-based-on-its-id-or-some-identifier">Used to display details of a single object based on its ID or some identifier.</h1>
-<p>from django.views.generic import DetailView
-from .models import Post</p>
-<p>class PostDetailView(DetailView):
-model = Post
-template_name = 'post_detail.html'
-context_object_name = 'post'</p>
-<p>########### 2.3 CreateView</p>
-<h1 id="used-to-create-a-new-object-in-the-database-using-a-form">Used to create a new object in the database using a form.</h1>
-<p>from django.views.generic import CreateView
-from .models import Post
-from django.urls import reverse_lazy</p>
-<p>class PostCreateView(CreateView):
-model = Post
-template_name = 'post_form.html'
-fields = ['title', 'content']
-success_url = reverse_lazy('post_list')</p>
-<p>or</p>
-<p>from django.views.generic import FormView   ### form view used for forms
-from django.urls import reverse_lazy
-from .forms import PostForm</p>
-<p>class PostCreateView(FormView):
-template_name = 'post_form.html'
-form_class = PostForm
-success_url = reverse_lazy('post_list')</p>
-<pre><code># these lines are not necessary
-def form_valid(self, form):
-    # Here you can handle form submission and manually save to the model
-    title = form.cleaned_data['title']
-    content = form.cleaned_data['content']
-    
-    # Example of saving to the model manually:
-    Post.objects.create(title=title, content=content)
-    
-    return super().form_valid(form)
-</code></pre>
-<p>########### 2.4 UpdateView</p>
-<h1 id="used-to-update-an-existing-object">Used to update an existing object.</h1>
-<p>from django.views.generic import UpdateView
-from .models import Post
-from django.urls import reverse_lazy</p>
-<p>class PostUpdateView(UpdateView):
-model = Post
-template_name = 'post_form.html'
-fields = ['title', 'content']
-success_url = reverse_lazy('post_list')</p>
-<h2 id="25-deleteview">2.5 DeleteView</h2>
-<h1 id="used-to-delete-an-object">Used to delete an object.</h1>
-<p>from django.views.generic import DeleteView
-from .models import Post
-from django.urls import reverse_lazy</p>
-<p>class PostDeleteView(DeleteView):
-model = Post
-template_name = 'post_confirm_delete.html'
-success_url = reverse_lazy('post_list')</p>
+<span class="hljs-comment"># settings---&gt; installed apps---&gt; 'jazzmin',</span>
+
+
+<span class="hljs-comment">#  super user</span>
+
+py manage.py createsuperuser
+admin--&gt; <span class="hljs-keyword">from</span> models <span class="hljs-keyword">import</span> *
+admin.site.register(product)
+
+models--&gt; <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span> <span class="hljs-params">(self)</span>:</span>
+<span class="hljs-keyword">return</span> self.productname + self.productdata
+</div></code></pre>
+<h2 id="environ">ENVIRON</h2>
+<p><code>pip install django-environ</code></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> environ
+
+env = environ.Env()
+environ.Env.read_env(BASE_DIR / <span class="hljs-string">'.env'</span>)
+
+SECRET_KEY = env(<span class="hljs-string">"SECRET_KEY"</span>)
+</div></code></pre>
 
 </body>
 </html>

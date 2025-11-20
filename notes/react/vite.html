@@ -365,9 +365,52 @@ code {
           : 'default'
     });
   </script>
-<p>npm create vite@latest
-...
-npm run dev</p>
+<h1 id="vite-react">vite react</h1>
+<p>React is a <strong>Library</strong>.</p>
+<p>Angular is a <strong>Framework</strong>.</p>
+<p>SPA - <strong>Single Page Application</strong></p>
+<p>JSX - <strong>Javascript XML</strong></p>
+<h2 id="content">Content</h2>
+<h3 id="component">Component</h3>
+<ul>
+<li>Reusable</li>
+<li>self-contained</li>
+</ul>
+<h3 id="props-default-props-proptypes">Props, default-props, propTypes</h3>
+<ul>
+<li>props - property</li>
+<li>propTypes - condition to render the type(int, str, bool)</li>
+</ul>
+<h3 id="dynamic-content-loading-map">Dynamic content loading (map)</h3>
+<ul>
+<li><code>array.map( (value, index) =&gt; {condition /*key={index}*/ })</code></li>
+</ul>
+<h3 id="filtering-filter-and-sorting-sort">Filtering (<code>filter()</code>) and sorting (<code>sort()</code>)</h3>
+<ul>
+<li>...</li>
+</ul>
+<h2 id="steps-to-create">Steps to create</h2>
+<p><code>npm create vite@latest</code>
+to create a new project <code>...</code>
+<code>npm run dev</code>
+and to run development server</p>
+<h2 id="vite-react">Vite react</h2>
+<p>Create a new vite react app
+<code>npm create vite@latest</code></p>
+<p>...</p>
+<p>Run development version
+<code>npm run dev</code></p>
+<h2 id="vue-gh-pages">vue-gh-pages</h2>
+<h3 id="github-hoist">Github hoist</h3>
+<p>inside <code>vite.config.js</code></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> { defineConfig } <span class="hljs-keyword">from</span> <span class="hljs-string">'vite'</span>
+<span class="hljs-keyword">import</span> react <span class="hljs-keyword">from</span> <span class="hljs-string">'@vitejs/plugin-react'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> defineConfig({
+  <span class="hljs-attr">plugins</span>: [react()],
+  <span class="hljs-attr">base</span>: <span class="hljs-string">"/myresume"</span>,
+})
+</div></code></pre>
 
 </body>
 </html>

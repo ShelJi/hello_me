@@ -34,7 +34,8 @@ JSX - **Javascript XML**
 to create a new project `...`
 `npm run dev`
 and to run development server
-# Vite react
+
+## Vite react
 
 Create a new vite react app
 `npm create vite@latest`
@@ -43,3 +44,19 @@ Create a new vite react app
 
 Run development version
 `npm run dev`
+
+## vue-gh-pages
+
+### Github hoist
+
+inside `vite.config.js`
+
+```js
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  base: "/myresume",
+})
+```

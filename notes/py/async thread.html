@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>basic.md</title>
+<title>async thread.md</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 <style>
@@ -365,9 +365,54 @@ code {
           : 'default'
     });
   </script>
-<h1 id="markdown">Markdown</h1>
-<p><a href="https://www.markdownguide.org/cheat-sheet/">Cheatsheet</a></p>
-<p><a href="https://dl.icdst.org/pdfs/files3/c79990b0b853932d36ddc117ce2503e3.pdf">PDF</a></p>
+<h1 id="async-thread">Async Thread</h1>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> asyncio
+<span class="hljs-keyword">import</span> aiohttp
+
+<span class="hljs-comment"># ## Task 1</span>
+
+<span class="hljs-comment"># ### Async HTTP client</span>
+
+<span class="hljs-comment"># Your task in this Bite is to create an http client that will asynchronously send http requests and process responses.</span>
+
+<span class="hljs-comment"># This Bite is focused on using asyncio, so you are expected to write async function.</span>
+
+<span class="hljs-comment"># To demonstrate power of asynchronous requests you will have to implement function that is able to send 100 requests and get results in 0.5 seconds, despite the fact that each request will take around 0.1 second for the server to respond to!</span>
+
+<span class="hljs-comment"># This is impossible without concurrent requests. (The test server is able to handle concurrent requests.)</span>
+
+<span class="hljs-comment"># For a detailed task description read the docstrings of the function that you are supposed to implement: get_results_from_urls.</span>
+
+<span class="hljs-comment"># Useful links</span>
+
+<span class="hljs-comment"># - Python docs: asyncio — Asynchronous I/O</span>
+<span class="hljs-comment"># - AIOHTTP docs</span>
+<span class="hljs-comment"># - Async IO in Python: A Complete Walkthrough</span>
+
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fetch_datas</span><span class="hljs-params">(session, url)</span>:</span>
+    <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> session.get(url) <span class="hljs-keyword">as</span> response:
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> response.text()
+
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_results</span><span class="hljs-params">(urls)</span>:</span>
+    <span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> aiohttp.ClientSession() <span class="hljs-keyword">as</span> session:
+        tasks = [asyncio.create_task(fetch_datas(session, url)) <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> urls]
+        results = <span class="hljs-keyword">await</span> asyncio.gather(*tasks)
+    <span class="hljs-keyword">return</span> results
+
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    urls = [<span class="hljs-string">"https://httpbin.org/delay/0.1"</span>] * <span class="hljs-number">100</span>
+    start = time.perf_counter() <span class="hljs-comment"># Perfect counter</span>
+    results = <span class="hljs-keyword">await</span> get_results(urls)
+    end = time.perf_counter()
+    <span class="hljs-comment"># print(results)</span>
+    print(<span class="hljs-string">f"Fetched <span class="hljs-subst">{len(results)}</span> URLs in <span class="hljs-subst">{end - start:<span class="hljs-number">.2</span>f}</span> seconds"</span>)
+
+asyncio.run(main())
+</div></code></pre>
 
 </body>
 </html>

@@ -1,7 +1,8 @@
-###################################################
-"""
+# Playwright
+
 Open the give website in playwright headless browser
-"""
+
+```py
 # from playwright.sync_api import sync_playwright
 # import time
 
@@ -23,11 +24,11 @@ Open the give website in playwright headless browser
 # page.close()
 # browser.close()
 # playwright.stop()
-###################################################
+```
 
-"""
 save the content in a html file
-"""
+
+```py
 from playwright.sync_api import sync_playwright
 import time
 
@@ -44,3 +45,4 @@ with sync_playwright() as p:
         f.write(page.content()) 
     
     browser.close()
+```

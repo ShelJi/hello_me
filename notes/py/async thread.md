@@ -1,3 +1,6 @@
+# Async Thread
+
+```py
 import time
 import asyncio
 import aiohttp
@@ -44,4 +47,4 @@ async def main():
     print(f"Fetched {len(results)} URLs in {end - start:.2f} seconds")
 
 asyncio.run(main())
-
+```

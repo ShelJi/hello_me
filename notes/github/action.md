@@ -7,8 +7,6 @@
 ![Action key elements](img/key%20elements.png)
 [Official documentation](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
 
-<hr>
-
 ## Basic Template
 
 ![Workflow basic](img/workflow%20basic.png)
@@ -31,14 +29,3 @@ again in action after completing running it will be
 
 ![Run](img/run%201.png)
 ![Run](img/run%202.png)
-
-
-
-
-
-
-
-
-
-
-

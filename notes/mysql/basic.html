@@ -365,16 +365,27 @@ code {
           : 'default'
     });
   </script>
-<p>https://www.mycompiler.io/new/sql</p>
-<p>CREATE TABLE employee(name varchar(10), age int, salary int, position varchar(10), gender varchar(10));</p>
-<p>insert into employee values (&quot;hello&quot;, 20, 20000, &quot;junior&quot;, &quot;male&quot;);</p>
-<p>insert into employee values (&quot;hey&quot;, 30, 30000, &quot;senior&quot;, &quot;male&quot;);</p>
-<p>insert into employee values (&quot;wow&quot;, 35, 27000, &quot;senior&quot;, &quot;male&quot;);</p>
-<p>insert into employee values (&quot;wonder&quot;, 27, 22000, &quot;junior&quot;, &quot;female&quot;);</p>
-<p>insert into employee values (&quot;thunder&quot;, 28, 40000, &quot;senior&quot;, &quot;female&quot;);</p>
-<p>insert into employee values (&quot;tender&quot;, 58, 40000, &quot;senior&quot;, &quot;female&quot;);</p>
-<p>select * from employee where 25&lt;age and age&lt;50;</p>
-<p>select sum(salary) from employee where position == &quot;senior&quot;;</p>
+<h1 id="mysql">MySql</h1>
+<p><a href="https://www.mycompiler.io/new/sql">Online compiler</a></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> employee(<span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>), age <span class="hljs-built_in">int</span>, salary <span class="hljs-built_in">int</span>, <span class="hljs-keyword">position</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>), gender <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>));
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> employee <span class="hljs-keyword">values</span> (<span class="hljs-string">"hello"</span>, <span class="hljs-number">20</span>, <span class="hljs-number">20000</span>, <span class="hljs-string">"junior"</span>, <span class="hljs-string">"male"</span>);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> employee <span class="hljs-keyword">values</span> (<span class="hljs-string">"hey"</span>, <span class="hljs-number">30</span>, <span class="hljs-number">30000</span>, <span class="hljs-string">"senior"</span>, <span class="hljs-string">"male"</span>);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> employee <span class="hljs-keyword">values</span> (<span class="hljs-string">"wow"</span>, <span class="hljs-number">35</span>, <span class="hljs-number">27000</span>, <span class="hljs-string">"senior"</span>, <span class="hljs-string">"male"</span>);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> employee <span class="hljs-keyword">values</span> (<span class="hljs-string">"wonder"</span>, <span class="hljs-number">27</span>, <span class="hljs-number">22000</span>, <span class="hljs-string">"junior"</span>, <span class="hljs-string">"female"</span>);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> employee <span class="hljs-keyword">values</span> (<span class="hljs-string">"thunder"</span>, <span class="hljs-number">28</span>, <span class="hljs-number">40000</span>, <span class="hljs-string">"senior"</span>, <span class="hljs-string">"female"</span>);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> employee <span class="hljs-keyword">values</span> (<span class="hljs-string">"tender"</span>, <span class="hljs-number">58</span>, <span class="hljs-number">40000</span>, <span class="hljs-string">"senior"</span>, <span class="hljs-string">"female"</span>);
+</div></code></pre>
+<h2 id="select">Select</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> employee <span class="hljs-keyword">where</span> <span class="hljs-number">25</span>&lt;age <span class="hljs-keyword">and</span> age&lt;<span class="hljs-number">50</span>;
+
+<span class="hljs-keyword">select</span> <span class="hljs-keyword">sum</span>(salary) <span class="hljs-keyword">from</span> employee <span class="hljs-keyword">where</span> <span class="hljs-keyword">position</span> == <span class="hljs-string">"senior"</span>;
+</div></code></pre>
 
 </body>
 </html>

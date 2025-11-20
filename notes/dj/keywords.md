@@ -1,5 +1,6 @@
-DJANJO
+# DJANGO
 
+```txt
 ORM -----------2
 celery ----------4
 Elastic search 
@@ -105,3 +106,4 @@ Cloud
 Architecture
 SQL
 work collaboratively
+```

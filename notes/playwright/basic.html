@@ -365,9 +365,48 @@ code {
           : 'default'
     });
   </script>
-<h1 id="markdown">Markdown</h1>
-<p><a href="https://www.markdownguide.org/cheat-sheet/">Cheatsheet</a></p>
-<p><a href="https://dl.icdst.org/pdfs/files3/c79990b0b853932d36ddc117ce2503e3.pdf">PDF</a></p>
+<h1 id="playwright">Playwright</h1>
+<p>Open the give website in playwright headless browser</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># from playwright.sync_api import sync_playwright</span>
+<span class="hljs-comment"># import time</span>
+
+
+<span class="hljs-comment"># URL = "https://unsplash.com/s/photos/flower"</span>
+
+<span class="hljs-comment"># playwright = sync_playwright().start()</span>
+
+<span class="hljs-comment"># browser = playwright.firefox.launch(headless=False)</span>
+
+<span class="hljs-comment"># page = browser.new_page(</span>
+<span class="hljs-comment">#     java_script_enabled=True,</span>
+<span class="hljs-comment">#     viewport={'width' : 600, 'height' : 400},</span>
+<span class="hljs-comment"># )</span>
+<span class="hljs-comment"># page.goto(URL, wait_until='load')</span>
+
+<span class="hljs-comment"># time.sleep(10)</span>
+
+<span class="hljs-comment"># page.close()</span>
+<span class="hljs-comment"># browser.close()</span>
+<span class="hljs-comment"># playwright.stop()</span>
+</div></code></pre>
+<p>save the content in a html file</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> playwright.sync_api <span class="hljs-keyword">import</span> sync_playwright
+<span class="hljs-keyword">import</span> time
+
+
+<span class="hljs-keyword">with</span> sync_playwright() <span class="hljs-keyword">as</span> p:
+    browser = p.chromium.launch(headless=<span class="hljs-literal">True</span>)
+    page = browser.new_page()
+    page.goto(<span class="hljs-string">"https://unsplash.com/s/photos/flower"</span>)
+    <span class="hljs-comment"># print(page.content())</span>
+    
+    time.sleep(<span class="hljs-number">10</span>)
+    
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">"flowers.html"</span>, <span class="hljs-string">"w"</span>, encoding=<span class="hljs-string">"utf-8"</span>) <span class="hljs-keyword">as</span> f:
+        f.write(page.content()) 
+    
+    browser.close()
+</div></code></pre>
 
 </body>
 </html>

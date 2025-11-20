@@ -1,21 +1,25 @@
-gh auth login
+# gh auth login
 
-git clone xxxxxx
+`git clone xxxxxx`
 
-cd ....
+`cd ....`
 
 ## to fetch all branches
-git fetch --all
+
+`git fetch --all`
 
 ## view all branches
-git branch -r
+
+`git branch -r`
 
 ## checkout current branch and move to dev branch
-git checkout -b dev origin/dev
+
+`git checkout -b dev origin/dev`
 
 ## create new branch
-git checkout -b shelj-dev
+
+`git checkout -b shelj`
 
 ## push your branch
-git push -u origin shelj-dev
 
+`git push -u origin shelj`

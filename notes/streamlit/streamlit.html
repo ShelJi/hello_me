@@ -461,6 +461,45 @@ say_hello = st.checkbox(<span class="hljs-string">"Say hello"</span>, value=<spa
 <a href="https://cheat-sheet.streamlit.app/">cheat-sheet</a>
 <a href="https://docs.streamlit.io/develop/quick-reference/cheat-sheet">docs cheat-sheet</a>
 <a href="https://codemaker2016.medium.com/streamlit-cheatsheet-for-beginners-eb93da97ae1">Streamlit cheatsheet for beginners</a></p>
+<h2 id="example">Example</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> streamlit <span class="hljs-keyword">as</span> st
+<span class="hljs-keyword">import</span> pathlib
+
+
+st.title(<span class="hljs-string">"Hello shelj"</span>)
+st.subheader(<span class="hljs-string">"sub heading"</span>)
+st.header(<span class="hljs-string">"sub heading"</span>)
+st.text(<span class="hljs-string">"sub heading"</span>)
+st.markdown(<span class="hljs-string">"**Hello** *shelj*"</span>)
+
+json = {<span class="hljs-string">"a"</span>:<span class="hljs-number">1</span>, <span class="hljs-string">"b"</span>:<span class="hljs-number">2</span>}
+st.json(json)
+
+code = <span class="hljs-string">"""
+print("Hello world")
+"""</span>
+st.code(code, language=<span class="hljs-string">"python"</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">load_css</span><span class="hljs-params">(file_path)</span>:</span>
+    <span class="hljs-keyword">with</span> open(file_path) <span class="hljs-keyword">as</span> f:
+        st.html(<span class="hljs-string">f"&lt;style&gt;<span class="hljs-subst">{f.read()}</span>&lt;/style&gt;"</span>)
+
+css_path = pathlib.Path(<span class="hljs-string">"style.css"</span>)
+load_css(css_path)
+
+st.button(<span class="hljs-string">"Hello"</span>, key=<span class="hljs-string">"hello"</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">change</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">"Changed"</span>)
+    print(st.session_state.checker)
+
+say_hello = st.checkbox(<span class="hljs-string">"Say hello"</span>, value=<span class="hljs-literal">True</span>, on_change=change, key=<span class="hljs-string">"checker"</span>)
+
+<span class="hljs-keyword">if</span> say_hello:
+    st.write(<span class="hljs-string">"Hellooooooooo"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">pass</span>
+</div></code></pre>
 
 </body>
 </html>
