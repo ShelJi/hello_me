@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>basic.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="ros2">ROS2</h1>
+<h2 id="table-of-content">Table of content</h2>
+<ul>
+<li><a href="#acronym">Acronym</a></li>
+<li><a href="#core-concepts">Core Concept</a></li>
+<li><a href="#basics">Basics</a></li>
+<li><a href="#debug-or-extra-options-availables">Tools</a></li>
+<li><a href="#ros2-begining">Begining</a></li>
+<li><a href="#services">Serices</a></li>
+<li><a href="#urdf">URDF</a>
+<ul>
+<li><a href="#xacro">XACRO</a></li>
+</ul>
+</li>
+<li><a href="#gazebo">GAZEBO</a></li>
+</ul>
+<h2 id="acronym">Acronym</h2>
+<ul>
+<li>
+<p>API: Application Programming Interface</p>
+</li>
+<li>
+<p>DDS: Data Distribution Service</p>
+</li>
+<li>
+<p>UDP: User Datagram Protocol</p>
+</li>
+<li>
+<p>TCP: Transmission Control Protocol</p>
+</li>
+<li>
+<p>CLI: Command Line Interface</p>
+</li>
+<li>
+<p>QoS: Quality of Service</p>
+</li>
+<li>
+<p>SRDF: Semantic Robot Description</p>
+</li>
+<li>
+<p>TF: Transform</p>
+</li>
+<li>
+<p>URDF: Unified Robot Description Format</p>
+</li>
+<li>
+<p>RMW: ROS Middleware</p>
+</li>
+<li>
+<p>msg: Message file (defines a ROS message)</p>
+</li>
+<li>
+<p>srv: Service file (defines a ROS service)</p>
+</li>
+<li>
+<p>node: Executable unit in ROS</p>
+</li>
+<li>
+<p>launch: Used to start/coordinate multiple nodes</p>
+</li>
+<li>
+<p>bag: ROS bag file (used for recording/playback of topics)</p>
+</li>
+<li>
+<p>rclpy: ROS Client Library for Python</p>
+</li>
+<li>
+<p>rclcpp: ROS Client Library for C++</p>
+</li>
+<li>
+<p>colcon: Collective Construction (build tool used in ROS 2)</p>
+</li>
+<li>
+<p>ament: Advanced Meta Build System (build system for ROS 2)</p>
+</li>
+<li>
+<p>Rviz: ROS Visualization</p>
+</li>
+<li>
+<p>Gazebo: Simulation environment for robots</p>
+</li>
+<li>
+<p>SLAM: Simultaneous Localization And Mapping</p>
+</li>
+<li>
+<p>TCP: Transmission Control Protocol</p>
+</li>
+<li>
+<p>UDP: User Datagram Protocol</p>
+</li>
+<li>
+<p>MQTT: Message Queuing Telemetry Transport</p>
+</li>
+<li>
+<p>LAN: Local Area Network</p>
+</li>
+<li>
+<p>WAN: Wide Area Network</p>
+</li>
+<li>
+<p>IP: Internet Protocol</p>
+</li>
+<li>
+<p>open-rmf: Open Robotics Middleware Framework</p>
+</li>
+<li>
+<p>rosdep: ROS dependency installer</p>
+</li>
+<li>
+<p>vcstool: tool for handling multiple Git repositories at once</p>
+</li>
+</ul>
+<h2 id="core-concepts">Core Concepts</h2>
+<ul>
+<li>
+<p>Nodes</p>
+<ul>
+<li>Smallest executable units.</li>
+<li>Performs specific tasks like reading sensors, motor control.</li>
+</ul>
+</li>
+<li>
+<p>Topics</p>
+<ul>
+<li>Channels through which nodes publish or subscribe data.</li>
+<li>Message passing is asynchronous.</li>
+<li>Example: /cmd_vel topic for velocity commands.</li>
+</ul>
+</li>
+<li>
+<p>Services</p>
+<ul>
+<li>Synchronous request-response communication.</li>
+<li>Example: /spawn_robot might be called to create a robot in simulation.</li>
+</ul>
+</li>
+<li>
+<p>Actions</p>
+<ul>
+<li>For long-running tasks.</li>
+<li>Provide feedback and allow cancellation.</li>
+<li>Example: autonomous navigation or docking.</li>
+</ul>
+</li>
+<li>
+<p>Messages</p>
+<ul>
+<li>Data structures used in topics, services, actions.</li>
+<li>Defined using .msg or .srv files.</li>
+</ul>
+</li>
+</ul>
+<h2 id="basics">Basics</h2>
+<p>ROS2 stands for Robotics Operating System 2. It is an open-source software framework and a set of tools, libraries and conventions for building software.</p>
+<p>Reference: Youtube DIGIKEY</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># activate ros env</span>
+<span class="hljs-built_in">source</span> /opt/ros/jazzy/setup.bash
+
+<span class="hljs-comment"># chatter example</span>
+<span class="hljs-comment"># talker</span>
+ros2 run demo_nodes_cpp talker
+
+<span class="hljs-comment"># listerner in new terminal</span>
+ros2 run demo_nodes_py listener
+</div></code></pre>
+<p>This example create a c++ talker which send &quot;Hello World 1&quot; each second and python listener which receives logs data from talker.</p>
+<ul>
+<li>This shows ROS2 can communicate between different languages.</li>
+</ul>
+<h2 id="debug-or-extra-options-availables">Debug or extra options availables</h2>
+<pre class="hljs"><code><div><span class="hljs-comment"># shows all running topics</span>
+ros2 topic list
+
+<span class="hljs-comment"># shows info about the running topic</span>
+ros2 topic info /chatter
+
+<span class="hljs-comment"># quickly receives the message </span>
+ros2 topic <span class="hljs-built_in">echo</span> /chatter
+
+<span class="hljs-comment"># Likewise service,...</span>
+</div></code></pre>
+<h3 id="rqt">RQT</h3>
+<p>rqt is the graphical framework for ROS 2. It provides a suite of tools for visualizing data and the system architecture.</p>
+<pre class="hljs"><code><div>rqt
+<span class="hljs-comment"># or</span>
+rqt_graph
+</div></code></pre>
+<h2 id="ros2-begining">Ros2 begining</h2>
+<p><a href="https://github.com/ShawnHymel/introduction-to-ros/">https://github.com/ShawnHymel/introduction-to-ros/</a></p>
+<pre class="hljs"><code><div><span class="hljs-built_in">source</span> /opt/ros/jazzy/setup.bash
+
+mkdir src
+<span class="hljs-built_in">cd</span> src
+
+ros2 pkg create --build-type ament_python my_py_pkg
+
+</div></code></pre>
+<ul>
+<li>Ament is a build system for Python.</li>
+</ul>
+<p>CREATE FILES (minimal_publisher, minimal_subscriber) inside FOLDERNAME</p>
+<h3 id="add-created-publisher-to-entrypoints-in-setuppy">Add created publisher to entry_points in setup.py</h3>
+<pre class="hljs"><code><div>...
+entry_points={
+        <span class="hljs-string">'console_scripts'</span>: [
+            <span class="hljs-string">"minimal_publisher = my_py_pkg.my_minimal_publisher:main"</span>,
+            ...
+        ],
+    },
+...
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-built_in">cd</span> ..
+
+<span class="hljs-comment"># This builds the project</span>
+colcon build
+
+<span class="hljs-comment"># use this to rebuild the edited package which reduce build time</span>
+colcon build --package-select my_py_pkg
+</div></code></pre>
+<p>New terminal</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Activate ros</span>
+<span class="hljs-built_in">source</span> /opt/ros/jazzy/setup.bash
+
+<span class="hljs-comment"># install our script</span>
+<span class="hljs-built_in">source</span> GitHub/ros-tutorial/install/setup.bash
+
+<span class="hljs-comment"># run the program</span>
+<span class="hljs-comment">#        MY_PKG_NAME  FUNC_NAME</span>
+ros2 run my_py_pkg my_minimal_publisher
+</div></code></pre>
+<p>This create the custom publisher and lisener.</p>
+<h4 id="optional-register-into-packagexml-for-standardise">(optional) Register into package.xml for standardise</h4>
+<pre class="hljs"><code><div>...
+<span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span>rclpy<span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">depend</span>&gt;</span>example_interfaces<span class="hljs-tag">&lt;/<span class="hljs-name">depend</span>&gt;</span>
+...
+</div></code></pre>
+<h2 id="services">Services</h2>
+<pre class="hljs"><code><div>ros2 interface list
+
+<span class="hljs-comment"># Under services</span>
+<span class="hljs-comment"># sample codes</span>
+...
+example_interfaces/srv/AddTwoInts
+example_interfaces/srv/SetBool
+example_interfaces/srv/Trigger
+...
+
+<span class="hljs-comment"># Check the details - returns type of i/p and o/p</span>
+ros2 srv interface show example_interfaces/srv/AddTwoInts
+</div></code></pre>
+<p>Create server(service)</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Run the service</span>
+<span class="hljs-comment"># then check the running service</span>
+ros2 service list
+
+ros2 service info /add_inits
+
+ros2 service call /add_inits example_interfaces/srv/AddTwoInts <span class="hljs-string">"{a: 5, b: 2}"</span>
+<span class="hljs-comment"># Spaces are necessory after colon {a: 2, b: 2}</span>
+</div></code></pre>
+<p>Create Client (minimal_client)</p>
+<h2 id="urdf">URDF</h2>
+<p>The URDF (Unified Robot Description Format) is an XML file format used in ROS (Robot Operating System) to fully describe a robot model.</p>
+<ul>
+<li>Physical each sections are called <strong>links</strong>.</li>
+</ul>
+<h3 id="common-joint-types">Common Joint Types</h3>
+<ul>
+<li>
+<p>Revolute</p>
+<ul>
+<li>Rotational motion with fixed limits.</li>
+</ul>
+</li>
+<li>
+<p>Continuous</p>
+<ul>
+<li>Rotational motions without limits</li>
+</ul>
+</li>
+<li>
+<p>Prismatic</p>
+<ul>
+<li>Linear translational motion</li>
+</ul>
+</li>
+<li>
+<p>Fixed</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="php"><span class="hljs-meta">&lt;?</span> xml version=<span class="hljs-string">"1.0"</span> <span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">robot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"robot"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Each section are called link --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">link</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">joint</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">joint</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">robot</span>&gt;</span>
+</div></code></pre>
+<h3 id="link-tag-and-its-tags">Link tag and its tags</h3>
+<ul>
+<li>visual
+<ul>
+<li>geometry</li>
+<li>orgin</li>
+<li>material</li>
+</ul>
+</li>
+<li>collision
+<ul>
+<li>geometry</li>
+<li>orgin</li>
+</ul>
+</li>
+<li>inertial
+<ul>
+<li>mass</li>
+<li>origin</li>
+<li>inertia</li>
+</ul>
+</li>
+</ul>
+<h3 id="xacro">XACRO</h3>
+<p>Xacro (XML Macros) is an XML macro language used primarily in the Robot Operating System (ROS) ecosystem to create shorter, more readable, and highly reusable URDF (Unified Robot Description Format) files.</p>
+<p>Since standard URDF is pure XML and lacks features like variables, math, or file inclusion, Xacro acts as a preprocessor that resolves these advanced features and outputs a final, standard URDF file.</p>
+<p>Use CDN link to convert urdf to xacro</p>
+<p><code>my_robot.urdf.xacro</code></p>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- Main File --&gt;</span>
+<span class="hljs-meta">&lt;?xml version="1.0"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">robot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"my_diff_bot"</span> <span class="hljs-attr">xmlns:xacro</span>=<span class="hljs-string">"http://www.ros.org/wiki/xacro"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">xacro:default_inertial</span> <span class="hljs-attr">mass</span>=<span class="hljs-string">"5.0"</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">robot</span>&gt;</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">&lt;!-- Sub file --&gt;</span>
+<span class="hljs-meta">&lt;?xml version="1.0"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">robot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"my_diff_bot"</span> <span class="hljs-attr">xmlns:xacro</span>=<span class="hljs-string">"http://www.ros.org/wiki/xacro"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">xacro:macro</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"default_inertial"</span> <span class="hljs-attr">params</span>=<span class="hljs-string">"mass"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">inertial</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">mass</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"${mass}"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">inertia</span> <span class="hljs-attr">ixx</span>=<span class="hljs-string">"1e-3"</span> <span class="hljs-attr">ixy</span>=<span class="hljs-string">"0.0"</span> <span class="hljs-attr">...</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">inertial</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">xacro:macro</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">robot</span>&gt;</span>
+</div></code></pre>
+<h2 id="gazebo">Gazebo</h2>
+<p>gazebo uses sdf file. It also comes with a tool which converts urdf to sdf.</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Launch gazebo with ros integrated</span>
+ros2 launch ros_gz_sim gz_sim.launch.py
+
+</div></code></pre>
+
+</body>
+</html>
