@@ -42,7 +42,7 @@
 
 ## Next
 
--[next](/notes/next%20js/basic.html)
+- [next](/notes/next%20js/basic.html)
 
 ## ngrok
 
