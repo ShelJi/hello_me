@@ -11,6 +11,10 @@
 - [URDF](#urdf)
   - [XACRO](#xacro)
 - [GAZEBO](#gazebo)
+  - [SDF file](#sdf-file)
+  - [World](#gazebo-world-file)
+  - [Meshes](#gazebo-meshes)
+  - [Config](#gazebo-config)
 
 ## Acronym
 
@@ -48,6 +52,7 @@
 - open-rmf: Open Robotics Middleware Framework
 - rosdep: ROS dependency installer
 - vcstool: tool for handling multiple Git repositories at once
+- SDF: Simulation Description Format
 
 ## Core Concepts
 
@@ -297,10 +302,93 @@ Use CDN link to convert urdf to xacro
 
 ## Gazebo
 
-gazebo uses sdf file. It also comes with a tool which converts urdf to sdf.
+**Gazebo Harmonic v 8.9.0** is used in this tutorial
+
+- gazebo uses sdf file. It also comes with a tool which converts urdf to sdf.
+- gazebo and ros talks to each other using `bridge.yaml` file
 
 ```bash
 # Launch gazebo with ros integrated
 ros2 launch ros_gz_sim gz_sim.launch.py
+```
 
+### SDF file
+
+[SDF file cheatsheet](http://sdformat.org/)
+
+To find **sdf file version**, create a new gazebo world and save it in sdf file format. open the file to get the sdf file version.
+
+### Gazebo world file
+
+A Gazebo world file is written in SDF format (Simulation Description Format).
+
+.sdf (most common)
+
+.world (same content, just another extension)
+
+Both .world and .sdf files are exactly the same format.
+
+Three things together make a Gazebo model work.
+
+- `meshes/` Contains 3D model files (STL, DAE, OBJ)
+- `model.config` Metadata that tells Gazebo how to load the model
+- `model.sdf` The actual robot/world description (links, sensors, joints)
+
+#### Gazebo Meshes
+
+Meshes are 3D shapes used to visually represent objects or robots in Gazebo.
+
+- They are the 3D geometry of your robot
+- They define how the robot looks
+- They are NOT used for physics (collision shapes do that)
+
+```bash
+model_name/
+   meshes/
+      front_wheel.dae # (recommended)
+      chassis.stl
+      lidar_sensor.obj
+```
+
+Example:
+
+```xml
+<visual>
+  <geometry>
+    <mesh>
+      <uri>model://my_robot/meshes/chassis.dae</uri>
+    </mesh>
+  </geometry>
+</visual>
+```
+
+#### Gazebo config
+
+This file describes metadata about the model
+
+- Name of model
+- Version
+- Author
+- Description
+- Where the SDF file is
+- Which files belong to the model
+
+Example
+
+```xml
+<?xml version="1.0"?>
+<model>
+  <name>my_robot</name>
+  <version>1.0</version>
+  <sdf version="1.10">model.sdf</sdf>
+
+  <author>
+    <name>John Doe</name>
+    <email>robotics@example.com</email>
+  </author>
+
+  <description>
+    A 4-wheel robot with LiDAR and depth camera.
+  </description>
+</model>
 ```
