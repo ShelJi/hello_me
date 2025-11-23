@@ -306,6 +306,7 @@ Use CDN link to convert urdf to xacro
 
 - gazebo uses sdf file. It also comes with a tool which converts urdf to sdf.
 - gazebo and ros talks to each other using `bridge.yaml` file
+- `gz sim --version` to check the version of gazebo.
 
 ```bash
 # Launch gazebo with ros integrated
