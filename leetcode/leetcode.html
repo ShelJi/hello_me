@@ -366,12 +366,84 @@ code {
     });
   </script>
 <h1 id="leetcode">Leetcode</h1>
+<h2 id="table-of-content">Table of content</h2>
+<ul>
+<li><a href="#hash-table">Hash Table</a></li>
+<li><a href="#functions">Functions</a>
+<ul>
+<li><a href="#counter">Counter</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="hash-table">Hash Table</h2>
 <ul>
 <li>set → implemented using a hash table</li>
 <li>dict → implemented using a hash table</li>
 <li>so both are called hash map in python</li>
 </ul>
+<h2 id="functions">Functions</h2>
+<h3 id="counter">Counter</h3>
+<h4 id="counter-in-python-from-collections">Counter in Python (from collections)</h4>
+<p>Python provides a built-in data structure called Counter inside the collections module.
+It helps count the frequency of elements in O(n) time and is extremely useful in DSA problems.</p>
+<h4 id="1-pattern-recognized">1. Pattern Recognized</h4>
+<p>Hashmap / Frequency Map Pattern</p>
+<p>Counter is just a built-in optimized hashmap (dictionary) used to count occurrences of elements.</p>
+<h5 id="this-pattern-appears-in">This pattern appears in</h5>
+<ul>
+<li>Counting characters</li>
+<li>Counting array elements</li>
+<li>Checking anagrams</li>
+<li>Frequency-based greedy problems</li>
+<li>Sliding window problems</li>
+<li>Top-K frequent problems</li>
+</ul>
+<h4 id="2-thinking-approach">2. Thinking Approach</h4>
+<h5 id="when-you-need">When you need</h5>
+<ul>
+<li>Frequency of items</li>
+<li>Find duplicates</li>
+<li>Compare counts across two lists/strings</li>
+<li>Retrieve the most common elements</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment"># Instead of manually doing:</span>
+freq = {}
+<span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> arr:
+    freq[x] = freq.get(x, <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment"># Use counter</span>
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter
+freq = Counter(arr)
+</div></code></pre>
+<h4 id="example">Example</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> Counter
+
+arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>]
+
+c = Counter(arr)
+print(c)
+<span class="hljs-comment"># Output: Counter({3: 3, 2: 2, 1: 1})</span>
+</div></code></pre>
+<h5 id="count-characters-in-a-string">Count characters in a string</h5>
+<pre class="hljs"><code><div>s = <span class="hljs-string">"banana"</span>
+count = Counter(s)
+print(count)
+<span class="hljs-comment"># Output: Counter({'a': 3, 'n': 2, 'b': 1})</span>
+</div></code></pre>
+<h5 id="most-common-elements">Most common elements</h5>
+<pre class="hljs"><code><div>c = Counter([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>])
+print(c.most_common(<span class="hljs-number">1</span>))  <span class="hljs-comment"># [(3,3)]</span>
+</div></code></pre>
+<h5 id="convert-to-dictionary">Convert to dictionary</h5>
+<pre class="hljs"><code><div>dict(Counter(<span class="hljs-string">"banana"</span>))
+</div></code></pre>
+<h5 id="subtract-counters">Subtract counters</h5>
+<pre class="hljs"><code><div>c1 = Counter(<span class="hljs-string">"aaabb"</span>)
+c2 = Counter(<span class="hljs-string">"ab"</span>)
+c1.subtract(c2)
+print(c1)
+<span class="hljs-comment"># Counter({'a': 2, 'b': 1})</span>
+</div></code></pre>
 
 </body>
 </html>
