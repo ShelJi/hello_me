@@ -5,6 +5,9 @@
 - [Hash Table](#hash-table)
 - [Functions](#functions)
   - [Counter](#counter)
+- [Algorithm](#algorithm)
+  - [Divide and conquer](#divide--conquer-algorithm)
+  - [Bucket Sort](#bucket-sort)
 
 ## Hash Table
 
@@ -101,3 +104,29 @@ c1.subtract(c2)
 print(c1)
 # Counter({'a': 2, 'b': 1})
 ```
+
+## Algorithm
+
+### Divide & Conquer Algorithm
+
+Divide & Conquer always follows three steps:
+
+- Divide → Split the problem into smaller subproblems (usually equal halves).
+- Conquer → Solve the subproblems recursively.
+- Combine → Merge or assemble results from subproblems.
+
+Common examples following this pattern:
+
+- Merge Sort
+- Quick Sort
+- Binary Search
+- Fast Exponentiation (Power function)
+- Karatsuba Multiplication
+- Strassen Matrix Multiplication
+
+### Bucket sort
+
+- few buckets are created based on ranges (Ex,B1: 0-20, B2: 21-40, B3: 41-60,...)
+- [12, 5, 29, 4] => placed each numbers in each bucket of its range
+- each bucket is sorted individualy
+- then merged together.
