@@ -319,7 +319,7 @@ a:-webkit-any-link {
 	margin-bottom: 20px;
 }
 /* project section */
-/* 
+
 .carousel {
 	width: 100%;
 	display: flex;
@@ -355,7 +355,7 @@ a:-webkit-any-link {
 	.carousel {
 		transform: rotateX(-10deg) scale(0.6) translateY(-60px);
 	}
-} */
+}
 
 /* experience */
 #experience div {

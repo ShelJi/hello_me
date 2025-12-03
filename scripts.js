@@ -143,42 +143,42 @@ window.addEventListener("load", async () => {
 	   (Uncomment if needed)
 	------------------------------------- */
 
-	// const images = document.querySelectorAll(".carousel-image");
-	// const radius = 242;
-	// const progress = { value: 0 };
-	// const carousel = document.querySelector(".carousel");
+	const images = document.querySelectorAll(".carousel-image");
+	const radius = 242;
+	const progress = { value: 0 };
+	const carousel = document.querySelector(".carousel");
 
-	// Observer.create({
-	// 	target: carousel,
-	// 	type: "wheel,pointer",
-	// 	onPress: () => (carousel.style.cursor = "grabbing"),
-	// 	onRelease: () => (carousel.style.cursor = "grab"),
-	// 	onChange: (self) => {
-	// 		gsap.killTweensOf(progress);
-	// 		const p =
-	// 			self.event.type === "wheel"
-	// 				? self.deltaY * -0.0005
-	// 				: self.deltaX * 0.05;
-	// 		gsap.to(progress, {
-	// 			duration: 2,
-	// 			ease: "power4.out",
-	// 			value: `+=${p}`,
-	// 		});
-	// 	},
-	// });
+	Observer.create({
+		target: carousel,
+		type: "wheel,pointer",
+		onPress: () => (carousel.style.cursor = "grabbing"),
+		onRelease: () => (carousel.style.cursor = "grab"),
+		onChange: (self) => {
+			gsap.killTweensOf(progress);
+			const p =
+				self.event.type === "wheel"
+					? self.deltaY * -0.0005
+					: self.deltaX * 0.05;
+			gsap.to(progress, {
+				duration: 2,
+				ease: "power4.out",
+				value: `+=${p}`,
+			});
+		},
+	});
 
-	// const animate = () => {
-	// 	images.forEach((image, index) => {
-	// 		const theta = index / images.length - progress.value;
-	// 		const x = -Math.sin(theta * Math.PI * 2) * radius;
-	// 		const y = Math.cos(theta * Math.PI * 2) * radius;
-	// 		image.style.transform = `translate3d(${x}px, 0px, ${y}px) rotateY(${
-	// 			360 * -theta
-	// 		}deg)`;
-	// 	});
-	// };
+	const animate = () => {
+		images.forEach((image, index) => {
+			const theta = index / images.length - progress.value;
+			const x = -Math.sin(theta * Math.PI * 2) * radius;
+			const y = Math.cos(theta * Math.PI * 2) * radius;
+			image.style.transform = `translate3d(${x}px, 0px, ${y}px) rotateY(${
+				360 * -theta
+			}deg)`;
+		});
+	};
 
-	// gsap.ticker.add(animate);
+	gsap.ticker.add(animate);
 });
 if (window.innerWidth <= 768) {
 	document.querySelectorAll("#break-span").forEach((el) => {
