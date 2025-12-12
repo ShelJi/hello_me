@@ -2,12 +2,17 @@
 
 ## Table of content
 
+- [Hints](#hints)
 - [Hash Table](#hash-table)
 - [Functions](#functions)
   - [Counter](#counter)
 - [Algorithm](#algorithm)
   - [Divide and conquer](#divide--conquer-algorithm)
   - [Bucket Sort](#bucket-sort)
+
+### Hints
+
+- 1-indexed array starts from 1 not 0.
 
 ## Hash Table
 
