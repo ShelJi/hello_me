@@ -4,6 +4,10 @@
 
 - [basic](/notes/beautifulsoup/basic.html)
 
+## C
+
+- [Basic](/notes/c/basic.html)
+
 ## CROS header
 
 - [cros header](/notes/cros/crosheaders.html)
@@ -23,6 +27,10 @@
 - [action](/notes/github/action.html)
 - [basic](/notes/github/basic.html)
 - [GH-Cli](/notes/github/gh%20cli.html)
+
+## Leetcode
+
+- [Trick](/notes/leetcode/trick.html)
 
 ## markdown
 
@@ -66,6 +74,10 @@
 ## ros
 
 - [catalog](/notes/ros/catalog.html)
+
+## RTOS
+
+- [basic](/notes/rtos/basic.html)
 
 ## Streamlit
 
