@@ -24,7 +24,7 @@ header:
 
 Expert in connected devices, embedded systems, MQTT, cloud IoT platforms, and sensor integration, delivering secure, low-latency, scalable, fault-tolerant, and high-performance solutions. Skilled in real-time data analytics, edge computing, device-to-cloud communication, ROS 2 integration, Celery, Redis, AI/ML algorithms, and optimizing device performance for diverse industrial and consumer applications.
 
-## WORK EXPERIENCE 
+## WORK EXPERIENCE | 2 Years
 
 **Associate IoT Engineer** | [Foxtech Private Solutions](https://www.foxtechsolutions.com/)
   ~ 03/2025 - Present
