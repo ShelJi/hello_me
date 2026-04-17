@@ -40,6 +40,10 @@
 
 - [ML](/notes/ml/ml.html)
 
+## mqtt
+
+- [basic](/notes/mqtt/basic.md)
+
 ## mysql
 
 - [basic](/notes/mysql/basic.html)
