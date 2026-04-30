@@ -42,7 +42,7 @@
 
 ## mqtt
 
-- [basic](/notes/mqtt/basic.md)
+- [basic](/notes/mqtt/basic.html)
 
 ## mysql
 

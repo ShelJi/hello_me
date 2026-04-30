@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spin Wheel Picker</title>
+  
+  <!-- Modern Typography: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Left/Top Panel: Input and List -->
+    <div class="sidebar">
+      <header>
+        <h1>Spin Wheel</h1>
+        <p>Add names and let fate decide!</p>
+      </header>
+
+      <div class="input-group">
+        <input type="text" id="nameInput" placeholder="Enter a name..." autocomplete="off">
+        <button id="addBtn">Add</button>
+      </div>
+
+      <div class="list-container">
+        <h3>Participants (<span id="count">0</span>)</h3>
+        <ul id="nameList">
+          <!-- List items injected via JS -->
+        </ul>
+      </div>
+      
+      <button id="resetBtn" class="secondary-btn">Reset All</button>
+    </div>
+
+    <!-- Right/Bottom Panel: Wheel Area -->
+    <div class="wheel-area">
+      <div class="wheel-container">
+        <!-- Pointer Indicator -->
+        <div class="pointer"></div>
+        <!-- Canvas for the Wheel -->
+        <canvas id="wheelCanvas" width="500" height="500"></canvas>
+      </div>
+      
+      <button id="spinBtn" class="spin-btn">SPIN!</button>
+    </div>
+
+  </div>
+
+  <!-- Winner Modal -->
+  <div class="modal-overlay" id="winnerModal">
+    <div class="modal-content glass">
+      <h2>🎉 We have a Winner! 🎉</h2>
+      <p id="winnerText" class="winner-name">...</p>
+      <div class="modal-actions">
+        <button id="closeModalBtn">Awesome!</button>
+        <button id="removeWinnerBtn" class="secondary-btn">Remove & Spin Again</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- Main Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
