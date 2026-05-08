@@ -6,10 +6,11 @@
 [github cheetsheets](https://gist.github.com/lucasKoyama/7545e28e857a8045976ab9988d0b0353)
 
 ```bash
-    npx create-next-app@latest
+    npx create-next-app@latest my-app
 ```
 
 ```bash
+    cd my-app
     npm run dev
 ```
 

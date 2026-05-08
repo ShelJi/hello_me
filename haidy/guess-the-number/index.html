@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Animated Guess The Number</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(-45deg,#0f172a,#1e1b4b,#111827,#312e81);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    position:relative;
+}
+
+/* Background Animation */
+
+@keyframes bgMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* Floating Particles */
+
+.particle{
+    position:absolute;
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    animation:float 10s linear infinite;
+}
+
+.particle:nth-child(1){
+    left:10%;
+    animation-duration:8s;
+}
+
+.particle:nth-child(2){
+    left:30%;
+    animation-duration:12s;
+}
+
+.particle:nth-child(3){
+    left:50%;
+    animation-duration:9s;
+}
+
+.particle:nth-child(4){
+    left:70%;
+    animation-duration:13s;
+}
+
+.particle:nth-child(5){
+    left:90%;
+    animation-duration:10s;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh) scale(0);
+    }
+    to{
+        transform:translateY(-120px) scale(1.5);
+    }
+}
+
+/* Card */
+
+.card{
+    width:420px;
+    max-width:90%;
+    padding:40px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+    text-align:center;
+    position:relative;
+    z-index:10;
+    animation:fadeIn 1s ease;
+    transition:0.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px) scale(1.01);
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:scale(0.8) translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+/* Heading */
+
+h1{
+    color:white;
+    font-size:2.5rem;
+    margin-bottom:10px;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #8b5cf6;
+    }
+    to{
+        text-shadow:0 0 25px #06b6d4;
+    }
+}
+
+.subtitle{
+    color:rgba(255,255,255,0.7);
+    margin-bottom:30px;
+}
+
+/* Input */
+
+.input-box{
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:18px;
+    border:none;
+    outline:none;
+    border-radius:18px;
+    background:rgba(255,255,255,0.12);
+    color:white;
+    font-size:1.1rem;
+    text-align:center;
+    transition:0.3s;
+}
+
+input::placeholder{
+    color:rgba(255,255,255,0.5);
+}
+
+input:focus{
+    transform:scale(1.03);
+    box-shadow:0 0 20px rgba(139,92,246,0.5);
+}
+
+/* Buttons */
+
+button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:18px;
+    background:linear-gradient(135deg,#8b5cf6,#06b6d4);
+    color:white;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s ease;
+    margin-top:10px;
+    position:relative;
+    overflow:hidden;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(6,182,212,0.4);
+}
+
+button::before{
+    content:'';
+    position:absolute;
+    width:120px;
+    height:200%;
+    background:rgba(255,255,255,0.2);
+    top:-50%;
+    left:-140px;
+    transform:rotate(25deg);
+    transition:0.7s;
+}
+
+button:hover::before{
+    left:130%;
+}
+
+/* Output */
+
+#output{
+    margin-top:25px;
+    min-height:40px;
+    color:white;
+    font-size:1.3rem;
+    font-weight:600;
+}
+
+/* Attempts */
+
+.attempts,
+.hint{
+    margin-top:15px;
+    color:rgba(255,255,255,0.7);
+}
+
+/* Animations */
+
+.correct{
+    color:#22c55e !important;
+    animation:pop 0.6s ease;
+}
+
+.wrong{
+    color:#facc15 !important;
+    animation:shake 0.4s ease;
+}
+
+@keyframes shake{
+    0%{transform:translateX(0);}
+    25%{transform:translateX(-8px);}
+    50%{transform:translateX(8px);}
+    75%{transform:translateX(-8px);}
+    100%{transform:translateX(0);}
+}
+
+@keyframes pop{
+    0%{
+        transform:scale(0.5);
+        opacity:0;
+    }
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* Win Effect */
+
+.win-effect{
+    animation:winFlash 0.8s infinite alternate;
+}
+
+@keyframes winFlash{
+    from{
+        box-shadow:0 0 20px #22c55e;
+    }
+    to{
+        box-shadow:0 0 60px #22c55e;
+    }
+}
+
+/* Responsive */
+
+@media(max-width:500px){
+
+    h1{
+        font-size:2rem;
+    }
+
+    .card{
+        padding:30px 20px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+<div class="particle"></div>
+
+<div class="card" id="card">
+
+    <h1>Guess The Number</h1>
+
+    <p class="subtitle">
+        Guess a number between 1 and 100
+    </p>
+
+    <div class="input-box">
+        <input
+            type="number"
+            id="number"
+            placeholder="Enter your guess"
+            min="1"
+            max="100"
+        >
+    </div>
+
+    <button onclick="checkNum()">
+        Submit Guess
+    </button>
+
+    <button onclick="restartGame()">
+        Restart Game
+    </button>
+
+    <h2 id="output"></h2>
+
+    <p class="attempts" id="attempts">
+        Attempts: 0
+    </p>
+
+    <p class="hint" id="hint">
+        Hint: Start guessing...
+    </p>
+
+</div>
+
+<script>
+
+let randomNum = Math.floor(Math.random() * 100) + 1;
+
+let tries = 0;
+
+const input = document.getElementById('number');
+const output = document.getElementById('output');
+const attempts = document.getElementById('attempts');
+const hint = document.getElementById('hint');
+const card = document.getElementById('card');
+
+function checkNum(){
+
+    const num = parseInt(input.value);
+
+    if(isNaN(num)){
+        output.innerText = "❗ Please enter a number";
+        output.className = "wrong";
+        return;
+    }
+
+    if(num < 1 || num > 100){
+        output.innerText = "❗ Number must be between 1 and 100";
+        output.className = "wrong";
+        return;
+    }
+
+    tries++;
+
+    attempts.innerText = `Attempts: ${tries}`;
+
+    if(num === randomNum){
+
+        output.innerText = `🎉 Correct! The number was ${randomNum}`;
+        output.className = "correct";
+
+        hint.innerText = "🏆 You won the game!";
+
+        card.classList.add("win-effect");
+
+        input.disabled = true;
+
+    }
+    else if(num > randomNum){
+
+        output.innerText = "📈 Too High!";
+        output.className = "wrong";
+
+        hint.innerText = `Try a LOWER number than ${num}`;
+
+    }
+    else{
+
+        output.innerText = "📉 Too Low!";
+        output.className = "wrong";
+
+        hint.innerText = `Try a HIGHER number than ${num}`;
+
+    }
+
+    if(tries >= 10 && num !== randomNum){
+
+        output.innerText = `💀 Game Over! Number was ${randomNum}`;
+        output.className = "wrong";
+
+        hint.innerText = "Press Restart to play again";
+
+        input.disabled = true;
+    }
+
+    input.value = "";
+    input.focus();
+}
+
+/* Restart Game */
+
+function restartGame(){
+
+    randomNum = Math.floor(Math.random() * 100) + 1;
+
+    tries = 0;
+
+    attempts.innerText = "Attempts: 0";
+
+    output.innerText = "";
+
+    hint.innerText = "Hint: Start guessing...";
+
+    input.disabled = false;
+
+    input.value = "";
+
+    card.classList.remove("win-effect");
+
+    input.focus();
+}
+
+/* Enter Key Support */
+
+input.addEventListener("keypress",function(e){
+
+    if(e.key === "Enter"){
+        checkNum();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
