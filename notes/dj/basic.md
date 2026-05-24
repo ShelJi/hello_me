@@ -8,6 +8,8 @@ CreateView
 UpdateView
 DeleteView
 
+{% raw %}
+
 ## Template Views
 
 These views are used when you simply need to render a template with or without context.
@@ -176,6 +178,12 @@ path("redirect_to/", views.redirect_to, name="redirect"),
 
 ## statics
 
+```django
+{% load static %}
+
+<link rel="stylesheet" href="{% static "style.css" %}">
+```
+
 ## dynamic content
 
 ```html
@@ -278,3 +286,5 @@ environ.Env.read_env(BASE_DIR / '.env')
 
 SECRET_KEY = env("SECRET_KEY")
 ```
+
+{% endraw %}
