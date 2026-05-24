@@ -1,7 +1,8 @@
 # Personal Portfolio
 
-[shelj.in](https://shelj.in)
-hosted in netlify free version.
+- [shelj.in](https://shelj.in) hosted in netlify free version.
+
+- [Github hoisted](https://shelji.github.io/hello_me/)
 
 ## minifier used
 

@@ -12,6 +12,7 @@ DetailView
 CreateView
 UpdateView
 DeleteView</p>
+<p>{% raw %}</p>
 <h2 id="template-views">Template Views</h2>
 <p>These views are used when you simply need to render a template with or without context.</p>
 <pre><code class="language-bash">from django.views.generic import TemplateView
@@ -142,7 +143,7 @@ app_name = &#39;blog&#39;
 
 path(&quot;redirect_to/&quot;, views.redirect_to, name=&quot;redirect&quot;),
 </code></pre>
-<h1 id="statics">statics</h1>
+<h2 id="statics">statics</h2>
 <pre><code class="language-django">{% load static %}
 
 &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static &quot;style.css&quot; %}&quot;&gt;
@@ -235,5 +236,6 @@ environ.Env.read_env(BASE_DIR / &#39;.env&#39;)
 
 SECRET_KEY = env(&quot;SECRET_KEY&quot;)
 </code></pre>
+<p>{% endraw %}</p>
 
 		</body>
