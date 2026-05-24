@@ -1,371 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>basic.md</title>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
-<style>
-/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-
-body {
-	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
-	font-size: var(--vscode-markdown-font-size, 14px);
-	padding: 0 26px;
-	line-height: var(--vscode-markdown-line-height, 22px);
-	word-wrap: break-word;
-}
-
-#code-csp-warning {
-	position: fixed;
-	top: 0;
-	right: 0;
-	color: white;
-	margin: 16px;
-	text-align: center;
-	font-size: 12px;
-	font-family: sans-serif;
-	background-color:#444444;
-	cursor: pointer;
-	padding: 6px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
-}
-
-#code-csp-warning:hover {
-	text-decoration: none;
-	background-color:#007acc;
-	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-}
-
-body.scrollBeyondLastLine {
-	margin-bottom: calc(100vh - 22px);
-}
-
-body.showEditorSelection .code-line {
-	position: relative;
-}
-
-body.showEditorSelection .code-active-line:before,
-body.showEditorSelection .code-line:hover:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -12px;
-	height: 100%;
-}
-
-body.showEditorSelection li.code-active-line:before,
-body.showEditorSelection li.code-line:hover:before {
-	left: -30px;
-}
-
-.vscode-light.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.15);
-}
-
-.vscode-light.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.40);
-}
-
-.vscode-light.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-dark.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.4);
-}
-
-.vscode-dark.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.60);
-}
-
-.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-high-contrast.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 160, 0, 0.7);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 160, 0, 1);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-img {
-	max-width: 100%;
-	max-height: 100%;
-}
-
-a {
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-a:focus,
-input:focus,
-select:focus,
-textarea:focus {
-	outline: 1px solid -webkit-focus-ring-color;
-	outline-offset: -1px;
-}
-
-hr {
-	border: 0;
-	height: 2px;
-	border-bottom: 2px solid;
-}
-
-h1 {
-	padding-bottom: 0.3em;
-	line-height: 1.2;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
-
-h1, h2, h3 {
-	font-weight: normal;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-table > thead > tr > th {
-	text-align: left;
-	border-bottom: 1px solid;
-}
-
-table > thead > tr > th,
-table > thead > tr > td,
-table > tbody > tr > th,
-table > tbody > tr > td {
-	padding: 5px 10px;
-}
-
-table > tbody > tr + tr > td {
-	border-top: 1px solid;
-}
-
-blockquote {
-	margin: 0 7px 0 5px;
-	padding: 0 16px 0 10px;
-	border-left-width: 5px;
-	border-left-style: solid;
-}
-
-code {
-	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
-	font-size: 1em;
-	line-height: 1.357em;
-}
-
-body.wordWrap pre {
-	white-space: pre-wrap;
-}
-
-pre:not(.hljs),
-pre.hljs code > div {
-	padding: 16px;
-	border-radius: 3px;
-	overflow: auto;
-}
-
-pre code {
-	color: var(--vscode-editor-foreground);
-	tab-size: 4;
-}
-
-/** Theming */
-
-.vscode-light pre {
-	background-color: rgba(220, 220, 220, 0.4);
-}
-
-.vscode-dark pre {
-	background-color: rgba(10, 10, 10, 0.4);
-}
-
-.vscode-high-contrast pre {
-	background-color: rgb(0, 0, 0);
-}
-
-.vscode-high-contrast h1 {
-	border-color: rgb(0, 0, 0);
-}
-
-.vscode-light table > thead > tr > th {
-	border-color: rgba(0, 0, 0, 0.69);
-}
-
-.vscode-dark table > thead > tr > th {
-	border-color: rgba(255, 255, 255, 0.69);
-}
-
-.vscode-light h1,
-.vscode-light hr,
-.vscode-light table > tbody > tr + tr > td {
-	border-color: rgba(0, 0, 0, 0.18);
-}
-
-.vscode-dark h1,
-.vscode-dark hr,
-.vscode-dark table > tbody > tr + tr > td {
-	border-color: rgba(255, 255, 255, 0.18);
-}
-
-</style>
-
-<style>
-/* Tomorrow Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-	color: #8e908c;
-}
-
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-	color: #c82829;
-}
-
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-	color: #f5871f;
-}
-
-/* Tomorrow Yellow */
-.hljs-attribute {
-	color: #eab700;
-}
-
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-	color: #718c00;
-}
-
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-	color: #4271ae;
-}
-
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-	color: #8959a8;
-}
-
-.hljs {
-	display: block;
-	overflow-x: auto;
-	color: #4d4d4c;
-	padding: 0.5em;
-}
-
-.hljs-emphasis {
-	font-style: italic;
-}
-
-.hljs-strong {
-	font-weight: bold;
-}
-</style>
-
-<style>
-/*
- * Markdown PDF CSS
- */
-
- body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-	padding: 0 12px;
-}
-
-pre {
-	background-color: #f8f8f8;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	overflow-x: auto;
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
-}
-
-pre:not(.hljs) {
-	padding: 23px;
-	line-height: 19px;
-}
-
-blockquote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
-}
-
-.emoji {
-	height: 1.4em;
-}
-
-code {
-	font-size: 14px;
-	line-height: 19px;
-}
-
-/* for inline code */
-:not(pre):not(.hljs) > code {
-	color: #C9AE75; /* Change the old color so it seems less like an error */
-	font-size: inherit;
-}
-
-/* Page Break : use <div class="page"/> to insert page break
--------------------------------------------------------- */
-.page {
-	page-break-after: always;
-}
-
-</style>
-
-<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-</head>
-<body>
-  <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-          ? 'dark'
-          : 'default'
-    });
-  </script>
-<h1 id="django">Django</h1>
+		<head>
+			<style type="text/css" media="screen">
+				body,html{font-family:var(--markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, "Ubuntu", "Droid Sans", sans-serif);font-size:var(--markdown-font-size,14px);padding:0 26px;line-height:var(--markdown-line-height,22px);word-wrap:break-word}body{padding-top:1em}h1,h2,h3,h4,h5,h6,ol,p,pre,ul{margin-top:0}h2,h3,h4,h5,h6{font-weight:400;margin-bottom:.2em}img{max-width:100%;max-height:100%}a{text-decoration:none}a:hover{text-decoration:underline}a:focus,input:focus,select:focus,textarea:focus{outline:1px solid -webkit-focus-ring-color;outline-offset:-1px}p{margin-bottom:.7em}ol,ul{margin-bottom:.7em}hr{border:0;height:2px;border-bottom:2px solid}h1{padding-bottom:.3em;line-height:1.2;border-bottom-width:1px;border-bottom-style:solid;font-weight:400}table{border-collapse:collapse}th{text-align:left;border-bottom:1px solid}td,th{padding:5px 10px}table>tbody>tr+tr>td{border-top:1px solid}blockquote{margin:0 7px 0 5px;padding:0 16px 0 10px;border-left-width:5px;border-left-style:solid}code{font-family:var(--vscode-editor-font-family, "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace);font-size:1em;line-height:1.357em}body.wordWrap pre{white-space:pre-wrap}pre.hljs code>div,pre:not(.hljs){padding:16px;border-radius:3px;overflow:auto}pre code{color:var(--vscode-editor-foreground);tab-size:4}
+			</style>
+		</head>
+		<body>
+			<h1 id="django">Django</h1>
 <p>TemplateView</p>
 <p>ListView
 DetailView
@@ -374,144 +14,143 @@ UpdateView
 DeleteView</p>
 <h2 id="template-views">Template Views</h2>
 <p>These views are used when you simply need to render a template with or without context.</p>
-<pre class="hljs"><code><div>from django.views.generic import TemplateView
+<pre><code class="language-bash">from django.views.generic import TemplateView
 
 class AboutView(TemplateView):
-    template_name = <span class="hljs-string">'about.html'</span>
-</div></code></pre>
+    template_name = &#39;about.html&#39;
+</code></pre>
 <p>These views are used when you simply need to render a template with or without context.</p>
-<pre class="hljs"><code><div>from django.views.generic import TemplateView
+<pre><code class="language-bash">from django.views.generic import TemplateView
 
 class AboutView(TemplateView):
-    template_name = <span class="hljs-string">'about.html'</span>
-</div></code></pre>
+    template_name = &#39;about.html&#39;
+</code></pre>
 <h2 id="2-views-for-models-crud-operations">2. Views for Models (CRUD Operations)</h2>
 <h2 id="21-listview">2.1 ListView</h2>
 <p>Used to display a list of objects from a database model.</p>
-<pre class="hljs"><code><div>from django.views.generic import ListView
+<pre><code class="language-bash">from django.views.generic import ListView
 from .models import Post
 
 class PostListView(ListView):
     model = Post
-    template_name = <span class="hljs-string">'post_list.html'</span>
-    context_object_name = <span class="hljs-string">'posts'</span>    <span class="hljs-comment"># over ride the object name</span>
-</div></code></pre>
+    template_name = &#39;post_list.html&#39;
+    context_object_name = &#39;posts&#39;    # over ride the object name
+</code></pre>
 <h2 id="22-detailview">2.2 DetailView</h2>
 <p>Used to display details of a single object based on its ID or some identifier.</p>
-<pre class="hljs"><code><div>from django.views.generic import DetailView
+<pre><code class="language-bash">from django.views.generic import DetailView
 from .models import Post
 
 class PostDetailView(DetailView):
     model = Post
-    template_name = <span class="hljs-string">'post_detail.html'</span>
-    context_object_name = <span class="hljs-string">'post'</span>
-</div></code></pre>
+    template_name = &#39;post_detail.html&#39;
+    context_object_name = &#39;post&#39;
+</code></pre>
 <h2 id="23-createview">2.3 CreateView</h2>
 <p>Used to create a new object in the database using a form.</p>
-<pre class="hljs"><code><div>from django.views.generic import CreateView
+<pre><code class="language-bash">from django.views.generic import CreateView
 from .models import Post
 from django.urls import reverse_lazy
 
 class PostCreateView(CreateView):
     model = Post
-    template_name = <span class="hljs-string">'post_form.html'</span>
-    fields = [<span class="hljs-string">'title'</span>, <span class="hljs-string">'content'</span>]
-    success_url = reverse_lazy(<span class="hljs-string">'post_list'</span>)
+    template_name = &#39;post_form.html&#39;
+    fields = [&#39;title&#39;, &#39;content&#39;]
+    success_url = reverse_lazy(&#39;post_list&#39;)
 
-<span class="hljs-comment"># or</span>
+# or
 
 from django.views.generic import FormView
 from django.urls import reverse_lazy
 from .forms import PostForm
 
 class PostCreateView(FormView):
-    template_name = <span class="hljs-string">'post_form.html'</span>
+    template_name = &#39;post_form.html&#39;
     form_class = PostForm
-    success_url = reverse_lazy(<span class="hljs-string">'post_list'</span>)
+    success_url = reverse_lazy(&#39;post_list&#39;)
 
-    <span class="hljs-comment"># these lines are not necessary</span>
+    # these lines are not necessary
     def form_valid(self, form):
-        <span class="hljs-comment"># Here you can handle form submission and manually save to the model</span>
-        title = form.cleaned_data[<span class="hljs-string">'title'</span>]
-        content = form.cleaned_data[<span class="hljs-string">'content'</span>]
+        # Here you can handle form submission and manually save to the model
+        title = form.cleaned_data[&#39;title&#39;]
+        content = form.cleaned_data[&#39;content&#39;]
         
-        <span class="hljs-comment"># Example of saving to the model manually:</span>
+        # Example of saving to the model manually:
         Post.objects.create(title=title, content=content)
         
-        <span class="hljs-built_in">return</span> super().form_valid(form)
-</div></code></pre>
+        return super().form_valid(form)
+</code></pre>
 <h2 id="24-updateview">2.4 UpdateView</h2>
 <p>Used to update an existing object.</p>
-<pre class="hljs"><code><div>from django.views.generic import UpdateView
+<pre><code class="language-bash">from django.views.generic import UpdateView
 from .models import Post
 from django.urls import reverse_lazy
 
 class PostUpdateView(UpdateView):
     model = Post
-    template_name = <span class="hljs-string">'post_form.html'</span>
-    fields = [<span class="hljs-string">'title'</span>, <span class="hljs-string">'content'</span>]
-    success_url = reverse_lazy(<span class="hljs-string">'post_list'</span>)
-</div></code></pre>
+    template_name = &#39;post_form.html&#39;
+    fields = [&#39;title&#39;, &#39;content&#39;]
+    success_url = reverse_lazy(&#39;post_list&#39;)
+</code></pre>
 <h2 id="25-deleteview">2.5 DeleteView</h2>
 <p>Used to delete an object.</p>
-<pre class="hljs"><code><div>from django.views.generic import DeleteView
+<pre><code class="language-bash">from django.views.generic import DeleteView
 from .models import Post
 from django.urls import reverse_lazy
 
 class PostDeleteView(DeleteView):
     model = Post
-    template_name = <span class="hljs-string">'post_confirm_delete.html'</span>
-    success_url = reverse_lazy(<span class="hljs-string">'post_list'</span>)
-</div></code></pre>
+    template_name = &#39;post_confirm_delete.html&#39;
+    success_url = reverse_lazy(&#39;post_list&#39;)
+</code></pre>
 <h2 id="main-command">Main command</h2>
 <p><code>django-admin</code>  #shows all available comands</p>
 <h2 id="msql">msql</h2>
-<pre class="hljs"><code><div>pip install mysqlclient
+<pre><code class="language-bash">pip install mysqlclient
 
 django-admin startproject newApp
-<span class="hljs-built_in">cd</span> newApp
+cd newApp
 django-admin startapp blog
 
 python manage.py runserver
 
 python manage.py makemigrations
 python manage.py migrate
-</div></code></pre>
+</code></pre>
 <h2 id="url-path-redirect">url path redirect</h2>
-<pre class="hljs"><code><div><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
-<span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path, include
+<pre><code class="language-py">from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path(<span class="hljs-string">''</span>, include(<span class="hljs-string">"blog.urls"</span>)),
-    path(<span class="hljs-string">'admin/'</span>, admin.site.urls),
+    path(&#39;&#39;, include(&quot;blog.urls&quot;)),
+    path(&#39;admin/&#39;, admin.site.urls),
 ]
 
 
-<span class="hljs-comment"># dynamic urls</span>
-path(<span class="hljs-string">"post/&lt;int:post_id&gt;"</span>)
-path(<span class="hljs-string">"post/&lt;str:post_str&gt;"</span>)
+# dynamic urls
+path(&quot;post/&lt;int:post_id&gt;&quot;)
+path(&quot;post/&lt;str:post_str&gt;&quot;)
 
 
-<span class="hljs-comment"># reversed nad named url</span>
-<span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> reverse
+# reversed nad named url
+from django.urls import reverse
 
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">for_reverse</span><span class="hljs-params">(request)</span>:</span>
-    <span class="hljs-keyword">return</span> redirect(reverse(<span class="hljs-string">"blog:redirect"</span>))
+def for_reverse(request):
+    return redirect(reverse(&quot;blog:redirect&quot;))
 
-app_name = <span class="hljs-string">'blog'</span>
+app_name = &#39;blog&#39;
 
-path(<span class="hljs-string">"redirect_to/"</span>, views.redirect_to, name=<span class="hljs-string">"redirect"</span>),
+path(&quot;redirect_to/&quot;, views.redirect_to, name=&quot;redirect&quot;),
+</code></pre>
+<h1 id="statics">statics</h1>
+<pre><code class="language-django">{% load static %}
 
-<span class="hljs-comment"># statics</span>
-
-{% load static %}
-
-&lt;link rel=<span class="hljs-string">"stylesheet"</span> href=<span class="hljs-string">"{% static "</span>style.css<span class="hljs-string">" %}"</span>&gt;
-</div></code></pre>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;{% static &quot;style.css&quot; %}&quot;&gt;
+</code></pre>
 <h2 id="dynamic-content">dynamic content</h2>
-<pre class="hljs"><code><div>
+<pre><code class="language-html">
 main html file
-{% extends "header_footer.html" %}
+{% extends &quot;header_footer.html&quot; %}
 {% block content %}
 {% endblock %}
 
@@ -520,45 +159,45 @@ extended header footer html file
 {% block content %}
 {% endblock %}
 
-<span class="hljs-comment">&lt;!-- Includes --&gt;</span>
+&lt;!-- Includes --&gt;
 
-{% include "header.html" %}
+{% include &quot;header.html&quot; %}
 
-<span class="hljs-comment">&lt;!-- variable interpolation --&gt;</span>
+&lt;!-- variable interpolation --&gt;
 
 {{ data }}
 
-<span class="hljs-comment">&lt;!-- filters --&gt;</span>
+&lt;!-- filters --&gt;
 
 {{ data | upper }}
 {{ data | length }}
 {{ data | truncatewords:1 }}
-{{ data | default:"no data" }}
+{{ data | default:&quot;no data&quot; }}
 
- <span class="hljs-comment">&lt;!-- url tag dynamic url  --&gt;</span>
+ &lt;!-- url tag dynamic url  --&gt;
 access through reverse
 1.40 jvl
-{% url 'appname:name' post_id=post.id %}
-</div></code></pre>
+{% url &#39;appname:name&#39; post_id=post.id %}
+</code></pre>
 <h2 id="404-page">404 page</h2>
-<pre class="hljs"><code><div>handler404 = <span class="hljs-string">'app.views.custom_page'</span>
+<pre><code class="language-py">handler404 = &#39;app.views.custom_page&#39;
 
-set debug = <span class="hljs-literal">False</span>
-<span class="hljs-comment"># set templates--&gt;DIR--&gt; the template folder path</span>
+set debug = False
+# set templates--&gt;DIR--&gt; the template folder path
 set localhost
 
-<span class="hljs-comment"># models</span>
+# models
 
-models.BooleanField(default=<span class="hljs-literal">False</span>, help_text=<span class="hljs-string">"0-show,1-hidden"</span>)
-models.DateTimeField(auto_now_add=<span class="hljs-literal">True</span>)
+models.BooleanField(default=False, help_text=&quot;0-show,1-hidden&quot;)
+models.DateTimeField(auto_now_add=True)
 
-<span class="hljs-comment"># img model</span>
+# img model
 
-<span class="hljs-string">"""
+&quot;&quot;&quot;
 1)settings--&gt; import os
---&gt; below--&gt;STATIC_URL='static/'
---&gt;MEDIA_ROOT=os.Path.join(BASE_DIR, "media")
-MEDIA_URL = "/media/"
+--&gt; below--&gt;STATIC_URL=&#39;static/&#39;
+--&gt;MEDIA_ROOT=os.Path.join(BASE_DIR, &quot;media&quot;)
+MEDIA_URL = &quot;/media/&quot;
 
 2)from django.conf import settings
 from django.conf.urls.static import static
@@ -568,34 +207,33 @@ urls--&gt;UrlPatterns=[]+static(settings.MEDIA_URL, document_root=settings.MEDIA
 3)views--&gt; instance=data(used in function where data is called to save)
 
 4)HTML--&gt; after Method=POST--&gt; enctype=multipart/formdata
-"""</span>
-</div></code></pre>
+&quot;&quot;&quot;
+</code></pre>
 <h2 id="super-user">super user</h2>
 <p><code>py manage.py createsuperuser</code></p>
 <h2 id="access-previleage">access previleage</h2>
-<pre class="hljs"><code><div>admin jazzmin
+<pre><code class="language-py">admin jazzmin
 pip install django-jazzmin
-<span class="hljs-comment"># settings---&gt; installed apps---&gt; 'jazzmin',</span>
+# settings---&gt; installed apps---&gt; &#39;jazzmin&#39;,
 
 
-<span class="hljs-comment">#  super user</span>
+#  super user
 
 py manage.py createsuperuser
-admin--&gt; <span class="hljs-keyword">from</span> models <span class="hljs-keyword">import</span> *
+admin--&gt; from models import *
 admin.site.register(product)
 
-models--&gt; <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span> <span class="hljs-params">(self)</span>:</span>
-<span class="hljs-keyword">return</span> self.productname + self.productdata
-</div></code></pre>
+models--&gt; def __str__ (self):
+return self.productname + self.productdata
+</code></pre>
 <h2 id="environ">ENVIRON</h2>
 <p><code>pip install django-environ</code></p>
-<pre class="hljs"><code><div><span class="hljs-keyword">import</span> environ
+<pre><code class="language-python">import environ
 
 env = environ.Env()
-environ.Env.read_env(BASE_DIR / <span class="hljs-string">'.env'</span>)
+environ.Env.read_env(BASE_DIR / &#39;.env&#39;)
 
-SECRET_KEY = env(<span class="hljs-string">"SECRET_KEY"</span>)
-</div></code></pre>
+SECRET_KEY = env(&quot;SECRET_KEY&quot;)
+</code></pre>
 
-</body>
-</html>
+		</body>

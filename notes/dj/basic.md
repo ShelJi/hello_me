@@ -172,9 +172,11 @@ def for_reverse(request):
 app_name = 'blog'
 
 path("redirect_to/", views.redirect_to, name="redirect"),
+```
 
 # statics
 
+```django
 {% load static %}
 
 <link rel="stylesheet" href="{% static "style.css" %}">
