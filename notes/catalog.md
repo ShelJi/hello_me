@@ -22,6 +22,10 @@
 - [simple jwt token](/notes/drf/simple_jwt.html)
 - [Swagger UI](/notes/drf/swaggerui.html)
 
+## fastapi
+
+- [basic](/notes/fastapi/basic.html)
+
 ## github
 
 - [action](/notes/github/action.html)
@@ -74,6 +78,7 @@
 ## react js
 
 - [vite](/notes/react/vite.html)
+- [react native expo](/notes/react/native/native.html)
 
 ## ros
 

@@ -1,0 +1,88 @@
+
+		<head>
+			<style type="text/css" media="screen">
+				body,html{font-family:var(--markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, "Ubuntu", "Droid Sans", sans-serif);font-size:var(--markdown-font-size,14px);padding:0 26px;line-height:var(--markdown-line-height,22px);word-wrap:break-word}body{padding-top:1em}h1,h2,h3,h4,h5,h6,ol,p,pre,ul{margin-top:0}h2,h3,h4,h5,h6{font-weight:400;margin-bottom:.2em}img{max-width:100%;max-height:100%}a{text-decoration:none}a:hover{text-decoration:underline}a:focus,input:focus,select:focus,textarea:focus{outline:1px solid -webkit-focus-ring-color;outline-offset:-1px}p{margin-bottom:.7em}ol,ul{margin-bottom:.7em}hr{border:0;height:2px;border-bottom:2px solid}h1{padding-bottom:.3em;line-height:1.2;border-bottom-width:1px;border-bottom-style:solid;font-weight:400}table{border-collapse:collapse}th{text-align:left;border-bottom:1px solid}td,th{padding:5px 10px}table>tbody>tr+tr>td{border-top:1px solid}blockquote{margin:0 7px 0 5px;padding:0 16px 0 10px;border-left-width:5px;border-left-style:solid}code{font-family:var(--vscode-editor-font-family, "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace);font-size:1em;line-height:1.357em}body.wordWrap pre{white-space:pre-wrap}pre.hljs code>div,pre:not(.hljs){padding:16px;border-radius:3px;overflow:auto}pre code{color:var(--vscode-editor-foreground);tab-size:4}
+			</style>
+		</head>
+		<body>
+			<h1 id="react-native-expo">React Native Expo</h1>
+<h2 id="eas">EAS</h2>
+<ul>
+<li>Expo Application Services</li>
+</ul>
+<h2 id="tutorial-steps">Tutorial Steps</h2>
+<p><a href="https://github.com/ShelJi/macrozone-react-native-tutor/blob/master/STEPS.md">Github tutoral steps</a></p>
+<ul>
+<li><p>Cheatsheet: <a href="https://zerotomastery.io/cheatsheets/react-native-cheat-sheet/">Zero To Mastery</a></p>
+</li>
+<li><p><a href="https://reactnative.dev/docs/getting-started">React Native official Docs for components</a></p>
+</li>
+<li><p>Youtube tutorial: <a href="https://youtu.be/XCifkDC0yXA?si=YB1LwD_agp_p83Vd">React Native Expo Tutorial for Beginners</a></p>
+</li>
+</ul>
+<p>Use playstore version which is compactible wit expo-go. Otherwise, you will encounter error when running the app in expo-go.</p>
+<pre><code class="language-bash">npx create-expo-app my-app
+cd my-app
+npx eas-cli@latest login
+npx eas-cli@latest init
+</code></pre>
+<h2 id="error">Error</h2>
+<pre><code class="language-bash">npx expo install --fix
+</code></pre>
+<ul>
+<li>Expo doctor</li>
+</ul>
+<p><code>npx expo-doctor</code></p>
+<h2 id="start">Start</h2>
+<p><code>npx expo start</code></p>
+<h2 id="build-preview-apk-uses-cloud-build">Build Preview APK (Uses Cloud Build)</h2>
+<p>Create <code>eas.json</code></p>
+<pre><code class="language-json">{
+  &quot;build&quot;: {
+    &quot;preview&quot;: {
+      &quot;distribution&quot;: &quot;internal&quot;,
+      &quot;android&quot;: {
+        &quot;buildType&quot;: &quot;apk&quot;
+      }
+    }
+  }
+}
+</code></pre>
+<p><code>npx eas build --platform android --profile preview</code></p>
+<h2 id="build-locally-internal-apk">Build locally internal APK</h2>
+<ul>
+<li>Recommended to add these lines to <code>app.json</code></li>
+</ul>
+<pre><code class="language-json">{
+  &quot;expo&quot;: {
+    &quot;android&quot;: {
+      &quot;package&quot;: &quot;com.yourcompany.myapp&quot;,
+      &quot;versionCode&quot;: 1
+    },
+    &quot;version&quot;: &quot;1.0.0&quot;
+  }
+}
+</code></pre>
+<h3 id="offline-prebuild-commands">Offline prebuild commands</h3>
+<ul>
+<li>It requires java 17 is preferred.</li>
+<li><code>npx expo prebuild</code> to generate native code, then run the following command to build the apk.</li>
+</ul>
+<pre><code class="language-bash">npx expo prebuild
+cd android
+.\gradlew assembleRelease
+</code></pre>
+<p>Find Output file here:</p>
+<p><code>android/app/build/outputs/apk/release/app-release.apk</code></p>
+<ul>
+<li>Error</li>
+</ul>
+<p>SDK not found</p>
+<ul>
+<li>create <code>local.properties</code> in <code>android</code> folder with the following content:</li>
+<li>which is the actua path of sdk</li>
+</ul>
+<pre><code class="language-properties">sdk.dir=C:\\Users\\shelj\\AppData\\Local\\Android\\Sdk
+</code></pre>
+
+		</body>
