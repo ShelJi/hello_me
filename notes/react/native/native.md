@@ -97,3 +97,80 @@ SDK not found
 ```properties
 sdk.dir=C:\\Users\\shelj\\AppData\\Local\\Android\\Sdk
 ```
+
+## Webview
+
+`npx expo install react-native-webview` install webview package
+
+- index.tsx
+
+```tsx
+import { WebView } from 'react-native-webview';
+import Constants from 'expo-constants';
+import { StyleSheet } from 'react-native';
+
+export default function App() {
+  return (
+    <WebView
+      style={styles.container}
+      source={{ uri: 'https://mobile.plsofttech.com' }}
+    />
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+  },
+});
+```
+
+- _layout.tsx
+
+```tsx
+import { Stack } from "expo-router";
+
+export default function Layout() {
+  return (
+    <Stack
+      screenOptions={{
+        headerShown: false,
+      }}
+    />
+  );
+}
+```
+
+## Error expo-doctor
+
+```bash
+npx expo-doctor
+17/18 checks passed. 1 checks failed. Possible issues detected:
+Use the --verbose flag to see more details about passed checks.
+
+✖ Check for issues with Metro config
+It looks like that you are using a custom metro.config.js that does not extend "expo/metro-config". This can lead to unexpected and hard to debug issues. Learn more: https://docs.expo.dev/guides/customizing-metro/
+Advice:
+Update your "metro.config.js" to extend "expo/metro-config".
+
+1 check failed, indicating possible issues with the project.
+```
+
+Create `metro.config.js` in the root folder with the following content:
+
+```js
+const { getDefaultConfig } = require('expo/metro-config');
+
+const config = getDefaultConfig(__dirname);
+
+module.exports = config;
+```
+
+Then run `npx expo-doctor`.
+
+```bash
+npx expo-doctor
+18/18 checks passed. No issues detected!
+PS D:\github\react-native-web-viewer>
+```

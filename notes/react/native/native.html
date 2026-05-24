@@ -84,5 +84,69 @@ cd android
 </ul>
 <pre><code class="language-properties">sdk.dir=C:\\Users\\shelj\\AppData\\Local\\Android\\Sdk
 </code></pre>
+<h2 id="webview">Webview</h2>
+<p><code>npx expo install react-native-webview</code> install webview package</p>
+<ul>
+<li>index.tsx</li>
+</ul>
+<pre><code class="language-tsx">import { WebView } from &#39;react-native-webview&#39;;
+import Constants from &#39;expo-constants&#39;;
+import { StyleSheet } from &#39;react-native&#39;;
+
+export default function App() {
+  return (
+    &lt;WebView
+      style={styles.container}
+      source={{ uri: &#39;https://mobile.plsofttech.com&#39; }}
+    /&gt;
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: Constants.statusBarHeight,
+  },
+});
+</code></pre>
+<ul>
+<li>_layout.tsx</li>
+</ul>
+<pre><code class="language-tsx">import { Stack } from &quot;expo-router&quot;;
+
+export default function Layout() {
+  return (
+    &lt;Stack
+      screenOptions={{
+        headerShown: false,
+      }}
+    /&gt;
+  );
+}
+</code></pre>
+<h2 id="error-expo-doctor">Error expo-doctor</h2>
+<pre><code class="language-bash">npx expo-doctor
+17/18 checks passed. 1 checks failed. Possible issues detected:
+Use the --verbose flag to see more details about passed checks.
+
+✖ Check for issues with Metro config
+It looks like that you are using a custom metro.config.js that does not extend &quot;expo/metro-config&quot;. This can lead to unexpected and hard to debug issues. Learn more: https://docs.expo.dev/guides/customizing-metro/
+Advice:
+Update your &quot;metro.config.js&quot; to extend &quot;expo/metro-config&quot;.
+
+1 check failed, indicating possible issues with the project.
+</code></pre>
+<p>Create <code>metro.config.js</code> in the root folder with the following content:</p>
+<pre><code class="language-js">const { getDefaultConfig } = require(&#39;expo/metro-config&#39;);
+
+const config = getDefaultConfig(__dirname);
+
+module.exports = config;
+</code></pre>
+<p>Then run <code>npx expo-doctor</code>.</p>
+<pre><code class="language-bash">npx expo-doctor
+18/18 checks passed. No issues detected!
+PS D:\github\react-native-web-viewer&gt;
+</code></pre>
 
 		</body>
