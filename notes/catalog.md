@@ -32,6 +32,10 @@
 - [basic](/notes/github/basic.html)
 - [GH-Cli](/notes/github/gh%20cli.html)
 
+## IoT
+
+- [basic](/notes/iot/basic.html)
+
 ## Leetcode
 
 - [Trick](/notes/leetcode/trick.html)
