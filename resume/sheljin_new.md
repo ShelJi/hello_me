@@ -2,15 +2,15 @@
 name: SHELJIN S.A
 header:
   - text: |
-      <span style="font-size: 1.2em; font-weight: bold;">IoT & Web Solutions Engineer</span>
+      <span style="font-size: 1.2em; font-weight: bold;">Embedded AI | Robotics | IoT | Backend Engineer</span>
   - text: <span class="iconify" data-icon="tabler:phone"></span> +91 9488231905
     newLine: true
     
   - text: <span class="iconify" data-icon="tabler:mail"></span> shelj.dev@gmail.com
     link: mailto:shelj.dev@gmail.com
     
-  - text: <span class="iconify" data-icon="charm:person"></span> https://shelj.in
-    link: https://shelj.in
+  - text: <span class="iconify" data-icon="charm:person"></span> https://shelj.fun
+    link: https://shelj.fun
 
   - text: <span class="iconify" data-icon="uit:linkedin-alt"></span> https://www.linkedin.com/in/sheljin-sa
     link: https://www.linkedin.com/in/sheljin-sa
@@ -22,11 +22,11 @@ header:
 
 ## PROFESSIONAL SUMMARY
 
-Expert in connected devices, embedded systems, MQTT, cloud IoT platforms, and sensor integration, delivering secure, low-latency, scalable, fault-tolerant, and high-performance solutions. Skilled in real-time data analytics, edge computing, device-to-cloud communication, ROS 2 integration, Celery, Redis, AI/ML algorithms, and optimizing device performance for diverse industrial and consumer applications.
+Embedded AI and Robotics Engineer with 4+ years of experience designing intelligent robotic systems, embedded firmware, IoT platforms, and scalable backend applications. Experienced in Raspberry Pi, ROS 2, FastAPI, Django, MQTT, Computer Vision, and autonomous systems. Passionate about building production-grade embedded software, robotics platforms, and edge AI solutions.
 
-## WORK EXPERIENCE | 2 Years
+## WORK EXPERIENCE | 4 Years
 
-**Associate IoT Engineer** | [Foxtech Private Solutions](https://www.foxtechsolutions.com/)
+**IoT Engineer** | [Foxtech Private Solutions](https://www.foxtechsolutions.com/)
   ~ 03/2025 - Present
 
 **AI Rover** 
@@ -43,13 +43,20 @@ Expert in connected devices, embedded systems, MQTT, cloud IoT platforms, and se
 - Implemented SLAM algorithms for precise localization and 3D reconstruction, achieving sub-5 cm spatial accuracy.
 - Simulated and tested in Gazebo, optimizing data processing pipelines for low-latency mapping and scalable integration with robotics platforms.
 
-**Python/Django Developer** | [Clovion Tech Solutions Pvt., Ltd. ](https://clovion.org/)
-  ~ 05/2024 - 02/2025
+**IoT & Python/Django Developer** | [Clovion Tech Solutions Pvt., Ltd. ](https://clovion.org/)
+  ~ 09/2022 – 02/2025 (2 Years 6 Months)
+
+**Smart Bike Lock System**
+
+- Designed and developed an IoT-enabled smart bike locking system integrating embedded hardware, backend services, and a mobile application for secure remote access.
+- Developed backend services and REST APIs for real-time communication between the mobile application and IoT devices.
+- Integrated Arduino, Bluetooth, and embedded controllers for secure lock/unlock operations.
 
 **E-Commerce API** 
 - Designed and implemented scalable RESTful APIs using DRF, Swagger UI, Celery, Redis, 2FA, JWT, and Eraser.io. 
 - Optimized backend performance by 25%, improving system stability and response times. 
 - Collaborated within a 5-member agile team, focusing on microservices, asynchronous tasks, and real-time API design using WebSockets.
+- Collaborated with cross-functional teams to deliver a production-ready IoT solution for client deployment.
 
 **Billing Software** 
 - Built a high-performance billing system using Django, ReportLab, and Celery for automated invoice generation. 
@@ -69,8 +76,7 @@ Expert in connected devices, embedded systems, MQTT, cloud IoT platforms, and se
 - Integrated a microphone sensor and multiple lighting control modes, achieving a 25% improvement in reaction accuracy and enhanced real-time responsiveness through optimized interrupt handling and hardware-level tuning.
 
 [**Bike Locker -** <u>https://github.com/ShelJi/bike_lock</u>](https://github.com/ShelJi/bike_lock) 
-- Developed an IoT-based smart bike locker system using Arduino and a Bluetooth module for secure, real-time lock/unlock operations. 
-- Implemented mobile control to enhance user interaction and improved response time by 30% through optimized asynchronous communication between hardware and server, ensuring reliability and scalability.
+- Implemented mobile control to enhance user interaction and improved response time by 30%.
 
 [**Web Scrapper Image Download –** <u>https://web-scrapper-image-downloader.streamlit.app/</u>](https://web-scrapper-image-downloader.streamlit.app/)
 - Built with Python, Streamlit, and Playwright to extract 1000+ high-quality images from Unsplash, including premium, watermark-free content in maximum resolution via automated scraping.
@@ -83,50 +89,36 @@ Expert in connected devices, embedded systems, MQTT, cloud IoT platforms, and se
 
 [**Plant-Moisture Data Analyzer -** <u>https://github.com/ShelJi/-raspberry_pi_pico_w_Thingspeak_DHT</u>](https://github.com/ShelJi/-raspberry_pi_pico_w_Thingspeak_DHT) <br/>
 
-[**E-Commerce Website -** <u>https://shelj.pythonanywhere.com/</u>](https://shelj.pythonanywhere.com/) 
-
-[**Gamers World –** <u>https://gamer.shelj.in/</u>](https://gamer.shelj.in/)
-
 ## SKILLS
 
-**Programming Languages:** Python, JavaScript, HTML, CSS, C++, PHP, SQL (MySQL, PostgreSQL), Bash/Shell
+**Programming Languages:** Python, C, C++, JavaScript, SQL, HTML, CSS, Bash
 
-**Wired & Wireless Technologies:** I2C, ADC, SPI, UART, CAN, Ethernet, WI-FI, Bluetooth, RS-232
+**Embedded Systems & IoT:** Raspberry Pi, Raspberry Pi Pico, Arduino, ESP32, ESP8266, MicroPython, Embedded Linux, GPIO, PWM, ADC, Interrupts, Timers, Sensor Interfacing
 
-**Networking Technologies:** TCP/IP, DNS, DHCP, HTTP, MQTT, SSL/TLS
+**Robotics & Autonomous Systems:** ROS 2, Gazebo, RViz, SLAM, Sensor Fusion, LiDAR, IMU, Autonomous Navigation, Computer Vision, AI Rover, Mission Planner, MAVLink, Drone Systems
 
-**Development Boards & Embedded Systems:** Micro Python, Arduino, Raspberry Pi, ESP8266, Sensors (IMU, LiDAR), IoT Devices
+**Communication Protocols:** MQTT, HiveMQ Cloud, Eclipse Mosquitto, TCP/IP, HTTP/HTTPS, WebSocket, SSL/TLS, UART, SPI, I²C, CAN, Ethernet, Wi-Fi, Bluetooth, RS-232
 
-**Backend:** Django, Django REST Framework (DRF), FastAPI, Celery, MQTT, Redis
+**Backend Development:** Django, Django REST Framework (DRF), FastAPI, REST APIs, JWT Authentication, Celery, Redis, Swagger/OpenAPI, WebSockets
 
-**Frontend:** React.js, HTMX, Tailwind CSS, Bootstrap, GSAP, lenis
+**Frontend:** React.js, HTMX, Tailwind CSS, Bootstrap, GSAP
 
 **AI & Computer Vision:** YOLO, OpenCV, NumPy, Pandas
 
-**Automation & Tools:** Selenium, ReportLab, Eraser.io
+**Databases:** MySQL, PostgreSQL, SQLite, Redis
 
-**API & Documentation:** RESTful APIs, Swagger UI, Postman
+**Operating Systems:** Linux, Ubuntu, AlmaLinux, Raspberry Pi OS (Raspbian), Windows
 
-**OS & Cloud:** Amazon Web Services, Linux, Raspbian, Windows, cPanel, PythonAnywhere, Hostinger, Netlify, IoT Cloud Platforms (ThingSpeak, MQTT brokers, Blynk)
+**Cloud, DevOps & Infrastructure:** AWS, Docker, Kubernetes (K3s), Git, GitHub, GitHub Actions, CI/CD, Nginx, cPanel
 
-**Tools & Version Control:** Git, GitHub, CI/CD pipelines, Version Control, Streamlit
+**Tools & Platforms:** Postman, Streamlit, Selenium, ReportLab, Eraser.io, ThingSpeak, Blynk, Mission Planner
 
-**Technologies & Concepts:** Microservices Architecture, Web Scraping, Asynchronous Programming (async/await, threading), Edge Computing, IoT Integration, Real-time Data Analytics, ROS 2, MQTT, Sensor Fusion
+**Core Competencies:** Embedded Systems, Robotics, Internet of Things (IoT), Edge AI, Real-Time Systems, Embedded Firmware Development, Hardware–Software Integration, Sensor Integration, Device-to-Cloud Communication, Asynchronous Programming, Multithreading, Microservices Architecture, System Design
 
 ## COMPETITIVE CODING PROFILE
 - [**CodeChef** - codechef.com/users/sheljin](http://www.codechef.com/users/sheljin) 
 
 - [**Leetcode** - leetcode.com/u/shelj/](https://leetcode.com/u/shelj/)
-
-## Certificates
-
-- [**Python/Django** - https://shelj.in/certificates/](https://shelj.in/certificates/)
-
-- [**Mechatronics - Acutro Technologies Pvt Ltd (India, Germany)** - https://shelj.in/certificates/](https://shelj.in/certificates/)
-
-- [**National Cadet Corps** - https://shelj.in/certificates/](https://shelj.in/certificates/)
-
-- [**Competitions** - https://shelj.in/certificates/](https://shelj.in/certificates/)
 
 ## EDUCATION
 
