@@ -9,8 +9,8 @@ header:
   - text: <span class="iconify" data-icon="tabler:mail"></span> shelj.dev@gmail.com
     link: mailto:shelj.dev@gmail.com
     
-  - text: <span class="iconify" data-icon="charm:person"></span> https://shelj.in
-    link: https://shelj.in
+  - text: <span class="iconify" data-icon="charm:person"></span> https://shelj.fun
+    link: https://shelj.fun
 
   - text: <span class="iconify" data-icon="uit:linkedin-alt"></span> https://www.linkedin.com/in/sheljin-sa
     link: https://www.linkedin.com/in/sheljin-sa
@@ -85,7 +85,7 @@ Expert in connected devices, embedded systems, MQTT, cloud IoT platforms, and se
 
 [**E-Commerce Website -** <u>https://shelj.pythonanywhere.com/</u>](https://shelj.pythonanywhere.com/) 
 
-[**Gamers World –** <u>https://gamer.shelj.in/</u>](https://gamer.shelj.in/)
+[**Gamers World –** <u>https://gamer.shelj.fun/</u>](https://gamer.shelj.fun/)
 
 ## SKILLS
 
@@ -120,13 +120,13 @@ Expert in connected devices, embedded systems, MQTT, cloud IoT platforms, and se
 
 ## Certificates
 
-- [**Python/Django** - https://shelj.in/certificates/](https://shelj.in/certificates/)
+- [**Python/Django** - https://shelj.fun/certificates/](https://shelj.fun/certificates/)
 
-- [**Mechatronics - Acutro Technologies Pvt Ltd (India, Germany)** - https://shelj.in/certificates/](https://shelj.in/certificates/)
+- [**Mechatronics - Acutro Technologies Pvt Ltd (India, Germany)** - https://shelj.fun/certificates/](https://shelj.fun/certificates/)
 
-- [**National Cadet Corps** - https://shelj.in/certificates/](https://shelj.in/certificates/)
+- [**National Cadet Corps** - https://shelj.fun/certificates/](https://shelj.fun/certificates/)
 
-- [**Competitions** - https://shelj.in/certificates/](https://shelj.in/certificates/)
+- [**Competitions** - https://shelj.fun/certificates/](https://shelj.fun/certificates/)
 
 ## EDUCATION
 

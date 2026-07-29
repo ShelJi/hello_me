@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-- [shelj.in](https://shelj.in) hosted in netlify free version.
+- [shelj.fun](https://shelj.fun) hosted in netlify free version.
 
 - [Github hoisted](https://shelji.github.io/hello_me/)
 
