@@ -1,16 +1,20 @@
-
-		<head>
-			<style type="text/css" media="screen">
-				body,html{font-family:var(--markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, "Ubuntu", "Droid Sans", sans-serif);font-size:var(--markdown-font-size,14px);padding:0 26px;line-height:var(--markdown-line-height,22px);word-wrap:break-word}body{padding-top:1em}h1,h2,h3,h4,h5,h6,ol,p,pre,ul{margin-top:0}h2,h3,h4,h5,h6{font-weight:400;margin-bottom:.2em}img{max-width:100%;max-height:100%}a{text-decoration:none}a:hover{text-decoration:underline}a:focus,input:focus,select:focus,textarea:focus{outline:1px solid -webkit-focus-ring-color;outline-offset:-1px}p{margin-bottom:.7em}ol,ul{margin-bottom:.7em}hr{border:0;height:2px;border-bottom:2px solid}h1{padding-bottom:.3em;line-height:1.2;border-bottom-width:1px;border-bottom-style:solid;font-weight:400}table{border-collapse:collapse}th{text-align:left;border-bottom:1px solid}td,th{padding:5px 10px}table>tbody>tr+tr>td{border-top:1px solid}blockquote{margin:0 7px 0 5px;padding:0 16px 0 10px;border-left-width:5px;border-left-style:solid}code{font-family:var(--vscode-editor-font-family, "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace);font-size:1em;line-height:1.357em}body.wordWrap pre{white-space:pre-wrap}pre.hljs code>div,pre:not(.hljs){padding:16px;border-radius:3px;overflow:auto}pre code{color:var(--vscode-editor-foreground);tab-size:4}
-			</style>
-		</head>
-		<body>
-			<h1 id="react-native-expo">React Native Expo</h1>
-<h2 id="eas">EAS</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>React Native Expo</title>
+<link rel="stylesheet" href="../../notes.css">
+</head>
+<body>
+<nav class="crumb"><a href="../../catalog.html">← Catalog</a></nav>
+<main class="markdown-body">
+<h1>React Native Expo</h1>
+<h2>EAS</h2>
 <ul>
 <li>Expo Application Services</li>
 </ul>
-<h2 id="tutorial-steps">Tutorial Steps</h2>
+<h2>Tutorial Steps</h2>
 <p><a href="https://github.com/ShelJi/macrozone-react-native-tutor/blob/master/STEPS.md">Github tutoral steps</a></p>
 <ul>
 <li><p>Cheatsheet: <a href="https://zerotomastery.io/cheatsheets/react-native-cheat-sheet/">Zero To Mastery</a></p>
@@ -26,16 +30,16 @@ cd my-app
 npx eas-cli@latest login
 npx eas-cli@latest init
 </code></pre>
-<h2 id="error">Error</h2>
+<h2>Error</h2>
 <pre><code class="language-bash">npx expo install --fix
 </code></pre>
 <ul>
 <li>Expo doctor</li>
 </ul>
 <p><code>npx expo-doctor</code></p>
-<h2 id="start">Start</h2>
+<h2>Start</h2>
 <p><code>npx expo start</code></p>
-<h2 id="build-preview-apk-uses-cloud-build">Build Preview APK (Uses Cloud Build)</h2>
+<h2>Build Preview APK (Uses Cloud Build)</h2>
 <p>Create <code>eas.json</code></p>
 <pre><code class="language-json">{
   &quot;build&quot;: {
@@ -49,7 +53,7 @@ npx eas-cli@latest init
 }
 </code></pre>
 <p><code>npx eas build --platform android --profile preview</code></p>
-<h2 id="build-locally-internal-apk">Build locally internal APK</h2>
+<h2>Build locally internal APK</h2>
 <ul>
 <li>Recommended to add these lines to <code>app.json</code></li>
 </ul>
@@ -63,7 +67,7 @@ npx eas-cli@latest init
   }
 }
 </code></pre>
-<h3 id="offline-prebuild-commands">Offline prebuild commands</h3>
+<h3>Offline prebuild commands</h3>
 <ul>
 <li>It requires java 17 is preferred.</li>
 <li><code>npx expo prebuild</code> to generate native code, then run the following command to build the apk.</li>
@@ -84,7 +88,7 @@ cd android
 </ul>
 <pre><code class="language-properties">sdk.dir=C:\\Users\\shelj\\AppData\\Local\\Android\\Sdk
 </code></pre>
-<h2 id="webview">Webview</h2>
+<h2>Webview</h2>
 <p><code>npx expo install react-native-webview</code> install webview package</p>
 <ul>
 <li>index.tsx</li>
@@ -124,7 +128,7 @@ export default function Layout() {
   );
 }
 </code></pre>
-<h2 id="error-expo-doctor">Error expo-doctor</h2>
+<h2>Error expo-doctor</h2>
 <pre><code class="language-bash">npx expo-doctor
 17/18 checks passed. 1 checks failed. Possible issues detected:
 Use the --verbose flag to see more details about passed checks.
@@ -149,4 +153,6 @@ module.exports = config;
 PS D:\github\react-native-web-viewer&gt;
 </code></pre>
 
-		</body>
+</main>
+</body>
+</html>

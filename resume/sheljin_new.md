@@ -9,8 +9,8 @@ header:
   - text: <span class="iconify" data-icon="tabler:mail"></span> shelj.dev@gmail.com
     link: mailto:shelj.dev@gmail.com
     
-  - text: <span class="iconify" data-icon="charm:person"></span> https://shelj.fun
-    link: https://shelj.fun
+  - text: <span class="iconify" data-icon="charm:person"></span> https://shelj.in
+    link: https://shelj.in
 
   - text: <span class="iconify" data-icon="uit:linkedin-alt"></span> https://www.linkedin.com/in/sheljin-sa
     link: https://www.linkedin.com/in/sheljin-sa

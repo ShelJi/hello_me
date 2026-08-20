@@ -1,11 +1,15 @@
-
-		<head>
-			<style type="text/css" media="screen">
-				body,html{font-family:var(--markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, "Ubuntu", "Droid Sans", sans-serif);font-size:var(--markdown-font-size,14px);padding:0 26px;line-height:var(--markdown-line-height,22px);word-wrap:break-word}body{padding-top:1em}h1,h2,h3,h4,h5,h6,ol,p,pre,ul{margin-top:0}h2,h3,h4,h5,h6{font-weight:400;margin-bottom:.2em}img{max-width:100%;max-height:100%}a{text-decoration:none}a:hover{text-decoration:underline}a:focus,input:focus,select:focus,textarea:focus{outline:1px solid -webkit-focus-ring-color;outline-offset:-1px}p{margin-bottom:.7em}ol,ul{margin-bottom:.7em}hr{border:0;height:2px;border-bottom:2px solid}h1{padding-bottom:.3em;line-height:1.2;border-bottom-width:1px;border-bottom-style:solid;font-weight:400}table{border-collapse:collapse}th{text-align:left;border-bottom:1px solid}td,th{padding:5px 10px}table>tbody>tr+tr>td{border-top:1px solid}blockquote{margin:0 7px 0 5px;padding:0 16px 0 10px;border-left-width:5px;border-left-style:solid}code{font-family:var(--vscode-editor-font-family, "SF Mono", Monaco, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace);font-size:1em;line-height:1.357em}body.wordWrap pre{white-space:pre-wrap}pre.hljs code>div,pre:not(.hljs){padding:16px;border-radius:3px;overflow:auto}pre code{color:var(--vscode-editor-foreground);tab-size:4}
-			</style>
-		</head>
-		<body>
-			<h1 id="django">Django</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Django</title>
+<link rel="stylesheet" href="../notes.css">
+</head>
+<body>
+<nav class="crumb"><a href="../catalog.html">← Catalog</a></nav>
+<main class="markdown-body">
+<h1>Django</h1>
 <p>TemplateView</p>
 <p>ListView
 DetailView
@@ -13,7 +17,7 @@ CreateView
 UpdateView
 DeleteView</p>
 <p>{% raw %}</p>
-<h2 id="template-views">Template Views</h2>
+<h2>Template Views</h2>
 <p>These views are used when you simply need to render a template with or without context.</p>
 <pre><code class="language-bash">from django.views.generic import TemplateView
 
@@ -26,8 +30,8 @@ class AboutView(TemplateView):
 class AboutView(TemplateView):
     template_name = &#39;about.html&#39;
 </code></pre>
-<h2 id="2-views-for-models-crud-operations">2. Views for Models (CRUD Operations)</h2>
-<h2 id="21-listview">2.1 ListView</h2>
+<h2>2. Views for Models (CRUD Operations)</h2>
+<h2>2.1 ListView</h2>
 <p>Used to display a list of objects from a database model.</p>
 <pre><code class="language-bash">from django.views.generic import ListView
 from .models import Post
@@ -37,7 +41,7 @@ class PostListView(ListView):
     template_name = &#39;post_list.html&#39;
     context_object_name = &#39;posts&#39;    # over ride the object name
 </code></pre>
-<h2 id="22-detailview">2.2 DetailView</h2>
+<h2>2.2 DetailView</h2>
 <p>Used to display details of a single object based on its ID or some identifier.</p>
 <pre><code class="language-bash">from django.views.generic import DetailView
 from .models import Post
@@ -47,7 +51,7 @@ class PostDetailView(DetailView):
     template_name = &#39;post_detail.html&#39;
     context_object_name = &#39;post&#39;
 </code></pre>
-<h2 id="23-createview">2.3 CreateView</h2>
+<h2>2.3 CreateView</h2>
 <p>Used to create a new object in the database using a form.</p>
 <pre><code class="language-bash">from django.views.generic import CreateView
 from .models import Post
@@ -81,7 +85,7 @@ class PostCreateView(FormView):
         
         return super().form_valid(form)
 </code></pre>
-<h2 id="24-updateview">2.4 UpdateView</h2>
+<h2>2.4 UpdateView</h2>
 <p>Used to update an existing object.</p>
 <pre><code class="language-bash">from django.views.generic import UpdateView
 from .models import Post
@@ -93,7 +97,7 @@ class PostUpdateView(UpdateView):
     fields = [&#39;title&#39;, &#39;content&#39;]
     success_url = reverse_lazy(&#39;post_list&#39;)
 </code></pre>
-<h2 id="25-deleteview">2.5 DeleteView</h2>
+<h2>2.5 DeleteView</h2>
 <p>Used to delete an object.</p>
 <pre><code class="language-bash">from django.views.generic import DeleteView
 from .models import Post
@@ -104,9 +108,9 @@ class PostDeleteView(DeleteView):
     template_name = &#39;post_confirm_delete.html&#39;
     success_url = reverse_lazy(&#39;post_list&#39;)
 </code></pre>
-<h2 id="main-command">Main command</h2>
+<h2>Main command</h2>
 <p><code>django-admin</code>  #shows all available comands</p>
-<h2 id="msql">msql</h2>
+<h2>msql</h2>
 <pre><code class="language-bash">pip install mysqlclient
 
 django-admin startproject newApp
@@ -118,7 +122,7 @@ python manage.py runserver
 python manage.py makemigrations
 python manage.py migrate
 </code></pre>
-<h2 id="url-path-redirect">url path redirect</h2>
+<h2>url path redirect</h2>
 <pre><code class="language-py">from django.contrib import admin
 from django.urls import path, include
 
@@ -143,12 +147,12 @@ app_name = &#39;blog&#39;
 
 path(&quot;redirect_to/&quot;, views.redirect_to, name=&quot;redirect&quot;),
 </code></pre>
-<h2 id="statics">statics</h2>
+<h2>statics</h2>
 <pre><code class="language-django">{% load static %}
 
 &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static &quot;style.css&quot; %}&quot;&gt;
 </code></pre>
-<h2 id="dynamic-content">dynamic content</h2>
+<h2>dynamic content</h2>
 <pre><code class="language-html">
 main html file
 {% extends &quot;header_footer.html&quot; %}
@@ -180,7 +184,7 @@ access through reverse
 1.40 jvl
 {% url &#39;appname:name&#39; post_id=post.id %}
 </code></pre>
-<h2 id="404-page">404 page</h2>
+<h2>404 page</h2>
 <pre><code class="language-py">handler404 = &#39;app.views.custom_page&#39;
 
 set debug = False
@@ -210,9 +214,9 @@ urls--&gt;UrlPatterns=[]+static(settings.MEDIA_URL, document_root=settings.MEDIA
 4)HTML--&gt; after Method=POST--&gt; enctype=multipart/formdata
 &quot;&quot;&quot;
 </code></pre>
-<h2 id="super-user">super user</h2>
+<h2>super user</h2>
 <p><code>py manage.py createsuperuser</code></p>
-<h2 id="access-previleage">access previleage</h2>
+<h2>access previleage</h2>
 <pre><code class="language-py">admin jazzmin
 pip install django-jazzmin
 # settings---&gt; installed apps---&gt; &#39;jazzmin&#39;,
@@ -227,7 +231,7 @@ admin.site.register(product)
 models--&gt; def __str__ (self):
 return self.productname + self.productdata
 </code></pre>
-<h2 id="environ">ENVIRON</h2>
+<h2>ENVIRON</h2>
 <p><code>pip install django-environ</code></p>
 <pre><code class="language-python">import environ
 
@@ -238,4 +242,6 @@ SECRET_KEY = env(&quot;SECRET_KEY&quot;)
 </code></pre>
 <p>{% endraw %}</p>
 
-		</body>
+</main>
+</body>
+</html>

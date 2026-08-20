@@ -1,0 +1,13 @@
+{
+  "name": "hello_me-notes",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Build pipeline for the notes wiki under notes/",
+  "scripts": {
+    "notes:build": "node scripts/build-notes.js",
+    "notes:watch": "node scripts/build-notes.js --watch"
+  },
+  "devDependencies": {
+    "marked": "^18.0.10"
+  }
+}

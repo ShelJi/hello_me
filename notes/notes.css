@@ -1,0 +1,247 @@
+/* Shared stylesheet for all generated note pages — branded to match shelj.in.
+   Edit here, not per-file; regenerated pages all pick this up automatically. */
+
+@import url("https://fonts.googleapis.com/css2?family=Delius&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400..600;1,400..600&display=swap");
+
+:root {
+  --nt-accent: #7556cc;
+  --nt-accent-2: #d569a7;
+  --nt-bg: #fbfaf9;
+  --nt-fg: #1c1726;
+  --nt-muted: #6c6478;
+  --nt-border: rgba(117, 86, 204, 0.2);
+  --nt-tint: rgba(117, 86, 204, 0.08);
+  --nt-code-bg: #17121f;
+  --nt-code-fg: #ece7f7;
+  --nt-radius: 10px;
+  --nt-radius-sm: 6px;
+  --nt-shadow: 3px 6px 20px rgba(45, 24, 74, 0.1);
+  --nt-grad: linear-gradient(100deg, #17121f 0%, var(--nt-accent) 55%, var(--nt-accent-2) 100%);
+}
+
+* { box-sizing: border-box; }
+
+::selection {
+  background: var(--nt-accent);
+  color: #fff;
+}
+
+html, body {
+  background: var(--nt-bg);
+}
+
+body {
+  position: relative;
+  color: var(--nt-fg);
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  margin: 0;
+  padding: 0 24px 80px;
+  isolation: isolate;
+}
+
+/* faint brand grain texture, kept subtle so long text stays easy to read */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuZGV2L3N2Z2pzIiB2aWV3Qm94PSIwIDAgNzAwIDcwMCIgd2lkdGg9IjcwMCIgaGVpZ2h0PSI3MDAiPjxkZWZzPjxmaWx0ZXIgaWQ9Im5ubm9pc2UtZmlsdGVyIiB4PSItMjAlIiB5PSItMjAlIiB3aWR0aD0iMTQwJSIgaGVpZ2h0PSIxNDAlIiBmaWx0ZXJVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHByaW1pdGl2ZVVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJsaW5lYXJSR0IiPgoJPGZlVHVyYnVsZW5jZSB0eXBlPSJ0dXJidWxlbmNlIiBiYXNlRnJlcXVlbmN5PSIwLjIiIG51bU9jdGF2ZXM9IjQiIHNlZWQ9IjE1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIiB4PSIwJSIgeT0iMCUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHJlc3VsdD0idHVyYnVsZW5jZSI+PC9mZVR1cmJ1bGVuY2U+Cgk8ZmVTcGVjdWxhckxpZ2h0aW5nIHN1cmZhY2VTY2FsZT0iNyIgc3BlY3VsYXJDb25zdGFudD0iMS4zIiBzcGVjdWxhckV4cG9uZW50PSIyMCIgbGlnaHRpbmctY29sb3I9IiM3OTU3QTgiIHg9IjAlIiB5PSIwJSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgaW49InR1cmJ1bGVuY2UiIHJlc3VsdD0ic3BlY3VsYXJMaWdodGluZyI+CiAgICAJCTxmZURpc3RhbnRMaWdodCBhemltdXRoPSIzIiBlbGV2YXRpb249IjEiPjwvZmVEaXN0YW50TGlnaHQ+CiAgCTwvZmVTcGVjdWxhckxpZ2h0aW5nPgogIAo8L2ZpbHRlcj48L2RlZnM+PHJlY3Qgd2lkdGg9IjcwMCIgaGVpZ2h0PSI3MDAiIGZpbGw9IiNmZmZmZmZmZiI+PC9yZWN0PjxyZWN0IHdpZHRoPSI3MDAiIGhlaWdodD0iNzAwIiBmaWxsPSIjNzk1N2E4IiBmaWx0ZXI9InVybCgjbm5ub2lzZS1maWx0ZXIpIj48L3JlY3Q+PC9zdmc+");
+  background-size: 700px 700px;
+}
+
+.crumb {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 22px 0 0;
+}
+
+.crumb a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--nt-accent);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 6px 12px;
+  border: 1px solid var(--nt-border);
+  border-radius: 999px;
+  transition: background-color 0.25s, box-shadow 0.25s;
+}
+
+.crumb a:hover {
+  background: var(--nt-tint);
+  box-shadow: var(--nt-shadow);
+}
+
+main.markdown-body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding-top: 12px;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.3;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+}
+
+h1 {
+  font-family: "Delius", cursive;
+  font-size: clamp(2rem, 4vw, 2.65rem);
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  margin-top: 0.2em;
+  background-image: var(--nt-grad);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.2em;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin-top: 0.35em;
+  border-radius: 999px;
+  background-image: var(--nt-grad);
+}
+
+h2 {
+  font-size: 1.32em;
+  font-weight: 700;
+  color: var(--nt-accent);
+}
+
+h3 {
+  font-size: 1.08em;
+  font-weight: 700;
+  color: var(--nt-fg);
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: 700;
+  color: var(--nt-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+p, ul, ol, table, blockquote { margin: 1em 0; }
+
+a {
+  color: var(--nt-accent);
+  text-decoration: none;
+  background-image: var(--nt-grad);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.25s ease-out;
+  padding-bottom: 1px;
+}
+
+a:hover { background-size: 100% 2px; }
+
+strong { color: var(--nt-fg); }
+
+code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  background: var(--nt-tint);
+  color: #4a3785;
+  padding: 0.15em 0.45em;
+  border-radius: var(--nt-radius-sm);
+  font-size: 0.87em;
+}
+
+pre {
+  background: var(--nt-code-bg);
+  color: var(--nt-code-fg);
+  padding: 18px 20px;
+  border-radius: var(--nt-radius);
+  border: 1px solid rgba(117, 86, 204, 0.35);
+  box-shadow: var(--nt-shadow);
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: 0.87em;
+  line-height: 1.6;
+}
+
+pre::-webkit-scrollbar { height: 8px; }
+pre::-webkit-scrollbar-thumb {
+  background: var(--nt-accent);
+  border-radius: 999px;
+}
+pre::-webkit-scrollbar-track { background: transparent; }
+
+blockquote {
+  margin: 1.2em 0;
+  padding: 0.4em 1.2em;
+  color: var(--nt-muted);
+  font-style: italic;
+  border-left: 3px solid var(--nt-accent);
+  background: var(--nt-tint);
+  border-radius: 0 var(--nt-radius-sm) var(--nt-radius-sm) 0;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid var(--nt-border);
+  border-radius: var(--nt-radius);
+  overflow: hidden;
+}
+
+th, td {
+  padding: 8px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--nt-border);
+}
+
+th {
+  background: var(--nt-tint);
+  color: var(--nt-fg);
+  font-weight: 700;
+}
+
+tr:last-child td { border-bottom: none; }
+
+img {
+  max-width: 100%;
+  border-radius: var(--nt-radius-sm);
+}
+
+ul, ol { padding-left: 1.5em; }
+li { margin: 0.3em 0; }
+li::marker { color: var(--nt-accent); }
+
+hr {
+  border: none;
+  height: 2px;
+  border-radius: 999px;
+  background-image: var(--nt-grad);
+  opacity: 0.5;
+  margin: 2.5em 0;
+}
+
+@media (max-width: 640px) {
+  body { font-size: 16px; padding: 0 16px 60px; }
+  pre { padding: 14px 16px; }
+}

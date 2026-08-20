@@ -1,0 +1,11 @@
+#!/bin/sh
+# Regenerates notes/**/*.html from notes/**/*.md whenever a note is staged,
+# so the Markdown source and its HTML export can never drift apart again.
+
+staged_notes_md=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^notes/.*\.md$')
+
+if [ -n "$staged_notes_md" ]; then
+  echo "notes changed -> regenerating HTML..."
+  node scripts/build-notes.js || exit 1
+  git add notes
+fi
