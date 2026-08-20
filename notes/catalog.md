@@ -75,6 +75,10 @@
 - [py](/notes/py/py.html)
 - [uv](/notes/py/uv.html)
 
+## raspberry pi
+
+- [basic](/notes/raspberry%20pi/basic.html)
+
 ## react js
 
 - [vite](/notes/react/vite.html)
