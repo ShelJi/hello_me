@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "tools": [
+    {
+      "id": "example-json-formatter",
+      "name": "JSON Formatter",
+      "description": "Format, validate, and inspect JSON data with readable indentation.",
+      "topic": "Development",
+      "ranking": 8,
+      "tags": ["json", "formatter", "developer"],
+      "notes": "Example record. Replace or extend this dataset using JSONDB Builder.",
+      "link": "https://jsonformatter.org/",
+      "fields": {
+        "input_types": ["JSON", "Text"],
+        "features": ["Format", "Validate", "Minify"],
+        "offline": false,
+        "pricing": "free",
+        "platforms": ["web"]
+      }
+    },
+    {
+      "id": "example-regex",
+      "name": "Regex101",
+      "description": "Test regular expressions, inspect matches, and debug pattern behavior.",
+      "topic": "Development",
+      "ranking": 9,
+      "tags": ["regex", "testing", "developer"],
+      "notes": "Useful for testing regular expression patterns.",
+      "link": "https://regex101.com/",
+      "fields": {
+        "input_types": ["Text", "Pattern"],
+        "features": ["Match testing", "Explanation", "Code generation"],
+        "offline": false,
+        "pricing": "freemium",
+        "platforms": ["web"]
+      }
+    },
+    {
+      "id": "example-photopea",
+      "name": "Photopea",
+      "description": "Browser-based image editor for raster graphics, layers, and common design formats.",
+      "topic": "Design",
+      "ranking": 8,
+      "tags": ["image", "design", "editor"],
+      "notes": "Runs in the browser and supports many common image formats.",
+      "link": "https://www.photopea.com/",
+      "fields": {
+        "input_types": ["PSD", "PNG", "JPG", "SVG"],
+        "features": ["Layers", "Image editing", "Export"],
+        "offline": false,
+        "pricing": "freemium",
+        "platforms": ["web"]
+      }
+    }
+  ]
+}
