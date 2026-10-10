@@ -14,7 +14,7 @@ const removeWinnerBtn = document.getElementById('removeWinnerBtn');
 
 // State
 let names = JSON.parse(localStorage.getItem('spinWheelNames')) || [
-  "Alice", "Bob", "Charlie", "Diana"
+  "SUbramani", "RUkumani", "CHekkumani", "PIkumani"
 ];
 let colors = [];
 let currentAngle = 0;

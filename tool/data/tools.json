@@ -18,7 +18,7 @@
         "platforms": ["web"]
       }
     },
-    {
+    { 
       "id": "example-regex",
       "name": "Regex101",
       "description": "Test regular expressions, inspect matches, and debug pattern behavior.",
