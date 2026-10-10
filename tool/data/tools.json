@@ -2,37 +2,93 @@
   "schema_version": 1,
   "tools": [
     {
+      "id": "tool-1791657624440",
+      "name": "Floci",
+      "description": " Any cloud. Locally. The local cloud for AI agents.\n\nAWS, Azure, GCP and OCI emulators that start in 24 ms. Give your coding agents a real cloud to build and test against: no credentials, no bill, no blast radius. ",
+      "topic": "DevOps",
+      "ranking": 10,
+      "tags": [
+        "utility",
+        "developer",
+        "aws",
+        "devops"
+      ],
+      "notes": "Local AWS",
+      "link": "https://floci.io/",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": true,
+        "pricing": "free",
+        "platforms": [
+          "web",
+          "windows",
+          "linux"
+        ]
+      }
+    },
+    {
       "id": "example-json-formatter",
       "name": "JSON Formatter",
       "description": "Format, validate, and inspect JSON data with readable indentation.",
       "topic": "Development",
       "ranking": 8,
-      "tags": ["json", "formatter", "developer"],
+      "tags": [
+        "json",
+        "formatter",
+        "developer"
+      ],
       "notes": "Example record. Replace or extend this dataset using JSONDB Builder.",
       "link": "https://jsonformatter.org/",
       "fields": {
-        "input_types": ["JSON", "Text"],
-        "features": ["Format", "Validate", "Minify"],
+        "input_types": [
+          "JSON",
+          "Text"
+        ],
+        "features": [
+          "Format",
+          "Validate",
+          "Minify"
+        ],
         "offline": false,
         "pricing": "free",
-        "platforms": ["web"]
+        "platforms": [
+          "web"
+        ]
       }
     },
-    { 
+    {
       "id": "example-regex",
       "name": "Regex101",
       "description": "Test regular expressions, inspect matches, and debug pattern behavior.",
       "topic": "Development",
       "ranking": 9,
-      "tags": ["regex", "testing", "developer"],
+      "tags": [
+        "regex",
+        "testing",
+        "developer"
+      ],
       "notes": "Useful for testing regular expression patterns.",
       "link": "https://regex101.com/",
       "fields": {
-        "input_types": ["Text", "Pattern"],
-        "features": ["Match testing", "Explanation", "Code generation"],
+        "input_types": [
+          "Text",
+          "Pattern"
+        ],
+        "features": [
+          "Match testing",
+          "Explanation",
+          "Code generation"
+        ],
         "offline": false,
         "pricing": "freemium",
-        "platforms": ["web"]
+        "platforms": [
+          "web"
+        ]
       }
     },
     {
@@ -41,15 +97,31 @@
       "description": "Browser-based image editor for raster graphics, layers, and common design formats.",
       "topic": "Design",
       "ranking": 8,
-      "tags": ["image", "design", "editor"],
+      "tags": [
+        "image",
+        "design",
+        "editor"
+      ],
       "notes": "Runs in the browser and supports many common image formats.",
       "link": "https://www.photopea.com/",
       "fields": {
-        "input_types": ["PSD", "PNG", "JPG", "SVG"],
-        "features": ["Layers", "Image editing", "Export"],
+        "input_types": [
+          "PSD",
+          "PNG",
+          "JPG",
+          "SVG"
+        ],
+        "features": [
+          "Layers",
+          "Image editing",
+          "Export"
+        ],
         "offline": false,
-        "pricing": "freemium",
-        "platforms": ["web"]
+        "pricing": "paid",
+        "platforms": [
+          "web",
+          "windows"
+        ]
       }
     }
   ]
