@@ -151,6 +151,244 @@
           "desktop"
         ]
       }
+    },
+        {
+      "id": "remote-anydesk",
+      "name": "AnyDesk",
+      "description": "Remote desktop software for accessing and controlling computers remotely.",
+      "topic": "Remote Desktop",
+      "ranking": 9,
+      "tags": ["remote-desktop", "remote-access", "utility"],
+      "notes": "Remote support and cross-platform desktop access.",
+      "link": "https://anydesk.com/",
+      "fields": {
+        "input_types": ["Remote address"],
+        "features": ["Remote control", "File transfer"],
+        "offline": false,
+        "pricing": "freemium",
+        "platforms": ["windows", "linux", "macos"]
+      }
+    },
+    {
+      "id": "remote-freerdp",
+      "name": "FreeRDP",
+      "description": "Open-source implementation of the Remote Desktop Protocol (RDP).",
+      "topic": "Remote Desktop",
+      "ranking": 9,
+      "tags": ["remote-desktop", "rdp", "developer", "open-source"],
+      "notes": "Useful for RDP connections and command-line automation.",
+      "link": "https://www.freerdp.com/",
+      "fields": {
+        "input_types": ["Hostname", "IP address", "Credentials"],
+        "features": ["RDP connection", "Remote desktop", "Command-line"],
+        "offline": false,
+        "pricing": "free",
+        "platforms": ["windows", "linux", "macos"]
+      }
+    },
+    {
+      "id": "remote-guacamole",
+      "name": "Apache Guacamole",
+      "description": "Clientless remote desktop gateway accessible through a web browser.",
+      "topic": "Remote Desktop",
+      "ranking": 10,
+      "tags": ["remote-desktop", "browser", "rdp", "vnc", "ssh", "open-source"],
+      "notes": "Useful for building a self-hosted browser-based remote access portal.",
+      "link": "https://guacamole.apache.org/",
+      "fields": {
+        "input_types": ["RDP", "VNC", "SSH"],
+        "features": ["Browser access", "Remote desktop", "Remote terminal"],
+        "offline": false,
+        "pricing": "free",
+        "platforms": ["web"]
+      }
+    },
+    {
+      "id": "remote-hoptodesk",
+      "name": "HopToDesk",
+      "description": "Remote desktop and remote support software.",
+      "topic": "Remote Desktop",
+      "ranking": 8,
+      "tags": ["remote-desktop", "remote-access", "open-source"],
+      "notes": "Cross-platform remote support.",
+      "link": "https://www.hoptodesk.com/",
+      "fields": {
+        "input_types": ["Remote address"],
+        "features": ["Remote control", "File transfer"],
+        "offline": false,
+        "pricing": "free",
+        "platforms": ["windows", "linux", "macos"]
+      }
+    },
+    {
+      "id": "remote-remmina",
+      "name": "Remmina",
+      "description": "Remote desktop client for managing connections to remote computers and servers.",
+      "topic": "Remote Desktop",
+      "ranking": 9,
+      "tags": ["remote-desktop", "linux", "rdp", "vnc", "ssh"],
+      "notes": "Useful for Linux system administration.",
+      "link": "https://remmina.org/",
+      "fields": {
+        "input_types": ["Hostname", "IP address", "Connection profile"],
+        "features": ["RDP", "VNC", "SSH", "Connection management"],
+        "offline": false,
+        "pricing": "free",
+        "platforms": ["linux"]
+      }
+    },
+    {
+      "id": "remote-rustdesk",
+      "name": "RustDesk",
+      "description": "Open-source remote desktop software with optional self-hosted server infrastructure.",
+      "topic": "Remote Desktop",
+      "ranking": 10,
+      "tags": ["remote-desktop", "self-hosted", "remote-access", "open-source"],
+      "notes": "Suitable for personal remote access and self-hosted remote support.",
+      "link": "https://rustdesk.com/",
+      "fields": {
+        "input_types": ["Remote ID", "Password"],
+        "features": ["Remote control", "File transfer", "Self-hosting"],
+        "offline": false,
+        "pricing": "free",
+        "platforms": ["windows", "linux", "macos"]
+      }
+    },
+    {
+      "id": "remote-teamviewer",
+      "name": "TeamViewer",
+      "description": "Remote access and remote support software.",
+      "topic": "Remote Desktop",
+      "ranking": 8,
+      "tags": ["remote-desktop", "remote-support", "utility"],
+      "notes": "Remote support and device access.",
+      "link": "https://www.teamviewer.com/",
+      "fields": {
+        "input_types": ["Partner ID", "Password"],
+        "features": ["Remote control", "File transfer", "Remote support"],
+        "offline": false,
+        "pricing": "freemium",
+        "platforms": ["windows", "linux", "macos"]
+      }
+    },
+    {
+      "id": "remote-tigervnc",
+      "name": "TigerVNC",
+      "description": "Open-source VNC software for remote desktop access.",
+      "topic": "Remote Desktop",
+      "ranking": 8,
+      "tags": ["vnc", "remote-desktop", "linux", "open-source"],
+      "notes": "Useful for VNC-based remote desktop connections.",
+      "link": "https://tigervnc.org/",
+      "fields": {
+        "input_types": ["Hostname", "IP address"],
+        "features": ["VNC client", "VNC server", "Remote desktop"],
+        "offline": false,
+        "pricing": "free",
+        "platforms": ["windows", "linux"]
+      }
+    },
+    {
+      "id": "remote-tightvnc",
+      "name": "TightVNC",
+      "description": "VNC-based remote desktop software.",
+      "topic": "Remote Desktop",
+      "ranking": 7,
+      "tags": ["vnc", "remote-desktop", "windows"],
+      "notes": "Primarily useful for Windows-based VNC remote access.",
+      "link": "https://www.tightvnc.com/",
+      "fields": {
+        "input_types": ["Hostname", "IP address"],
+        "features": ["Remote control", "VNC server", "VNC viewer"],
+        "offline": false,
+        "pricing": "free",
+        "platforms": ["windows", "linux"]
+      }
+    },
+    {
+      "id": "remote-turbovnc",
+      "name": "TurboVNC",
+      "description": "VNC software optimized for high-performance remote desktop sessions.",
+      "topic": "Remote Desktop",
+      "ranking": 7,
+      "tags": ["vnc", "remote-desktop", "performance", "linux"],
+      "notes": "Designed for demanding remote visualization workloads.",
+      "link": "https://turbovnc.org/",
+      "fields": {
+        "input_types": ["Hostname", "IP address"],
+        "features": ["VNC", "Performance optimization", "Remote visualization"],
+        "offline": false,
+        "pricing": "free",
+        "platforms": ["windows", "linux"]
+      }
+    },
+    {
+      "id": "remote-ultravnc",
+      "name": "UltraVNC",
+      "description": "Remote desktop and support software for Windows.",
+      "topic": "Remote Desktop",
+      "ranking": 7,
+      "tags": ["vnc", "remote-desktop", "windows", "remote-support"],
+      "notes": "Useful for Windows-to-Windows remote access.",
+      "link": "https://uvnc.com/",
+      "fields": {
+        "input_types": ["Hostname", "IP address"],
+        "features": ["Remote control", "File transfer", "Remote support"],
+        "offline": false,
+        "pricing": "free",
+        "platforms": ["windows"]
+      }
+    },
+    {
+      "id": "remote-windows-app",
+      "name": "Windows App",
+      "description": "Microsoft client for accessing supported remote Windows desktops and cloud PCs.",
+      "topic": "Remote Desktop",
+      "ranking": 8,
+      "tags": ["remote-desktop", "windows", "microsoft"],
+      "notes": "Use with compatible Windows and Microsoft remote desktop services.",
+      "link": "https://learn.microsoft.com/en-us/windows-app/",
+      "fields": {
+        "input_types": ["Remote PC", "Workspace"],
+        "features": ["Remote desktop", "Workspace access"],
+        "offline": false,
+        "pricing": "free",
+        "platforms": ["windows", "macos", "ios", "android", "web"]
+      }
+    },
+    {
+      "id": "remote-x2go",
+      "name": "X2Go",
+      "description": "Remote desktop solution for accessing Linux graphical sessions over SSH.",
+      "topic": "Remote Desktop",
+      "ranking": 8,
+      "tags": ["remote-desktop", "linux", "ssh", "open-source"],
+      "notes": "Useful for remote Linux desktop sessions.",
+      "link": "https://wiki.x2go.org/",
+      "fields": {
+        "input_types": ["Hostname", "Username", "SSH credentials"],
+        "features": ["Remote Linux desktop", "SSH transport", "Session management"],
+        "offline": false,
+        "pricing": "free",
+        "platforms": ["windows", "linux", "macos"]
+      }
+    },
+    {
+      "id": "remote-xpra",
+      "name": "Xpra",
+      "description": "Persistent remote application and desktop forwarding for X11 and supported environments.",
+      "topic": "Remote Desktop",
+      "ranking": 7,
+      "tags": ["remote-desktop", "linux", "x11", "remote-applications"],
+      "notes": "Useful for forwarding individual graphical applications or persistent sessions.",
+      "link": "https://xpra.org/",
+      "fields": {
+        "input_types": ["Hostname", "Display"],
+        "features": ["Application forwarding", "Persistent sessions", "Remote desktop"],
+        "offline": false,
+        "pricing": "free",
+        "platforms": ["windows", "linux", "macos"]
+      }
     }
   ]
 }
