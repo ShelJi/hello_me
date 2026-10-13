@@ -123,6 +123,33 @@
           "windows"
         ]
       }
-    }
+    },
+    {
+      "id": "tool-1791916393523",
+      "name": "FreeRDP",
+      "description": "free remote desktop tool.\nhttps://github.com/FreeRDP/FreeRDP",
+      "topic": "Utilities",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "productivity"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://www.freerdp.com/",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web",
+          "desktop"
+        ]
+      }
   ]
 }
