@@ -1,0 +1,759 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Music World | Shelj's Vibe</title>
+
+  <link rel="stylesheet" href="css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 30px 20px;
+      background-color: moccasin;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      color: #46233f;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      color: #8c2878;
+      font-size: clamp(30px, 5vw, 48px);
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .spotify-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 22px;
+      border-radius: 18px;
+      background: #f5d9ed;
+      border: 2px solid #d89acb;
+      color: #63245a;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .spotify-card:hover {
+      background: #eec4e3;
+      transform: translateY(-3px);
+    }
+
+    .spotify-card i {
+      font-size: 25px;
+      color: #1db954;
+    }
+
+    /* Main slider */
+
+    .vibe-slider {
+      position: relative;
+      max-width: 1100px;
+      height: 580px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 25px;
+      background: #f8e2ef;
+      border: 3px solid #dca4d0;
+      box-shadow: 0 12px 30px #9c5d8a35;
+    }
+
+    .vibe-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      width: 100%;
+      height: 100%;
+      padding: 28px;
+      overflow-y: auto;
+    }
+
+    .panel {
+      min-width: 0;
+      padding: 22px;
+      border-radius: 20px;
+      background: #fff8fc;
+      border: 2px solid #ebc2e0;
+    }
+
+    .panel h2 {
+      margin-bottom: 16px;
+      color: #922d7d;
+      font-size: 24px;
+    }
+
+    .panel-intro {
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    /* Song list */
+
+    .song-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .song-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 12px;
+      background: #f8e3f1;
+      overflow-wrap: anywhere;
+    }
+
+    .song-list li i {
+      color: #a12d86;
+    }
+
+    .song-list a {
+      flex: 1;
+      color: #67235c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .song-list a:hover {
+      text-decoration: underline;
+    }
+
+    .delete-button {
+      flex-shrink: 0;
+      border: none;
+      border-radius: 8px;
+      padding: 2px 3px;
+      color: white;
+      background: #b74678;
+    }
+
+    /* Buttons */
+
+    .action-button,
+    .save-button {
+      border: none;
+      border-radius: 12px;
+      padding: 11px 16px;
+      background: #a83d91;
+      color: white;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .action-button:hover,
+    .save-button:hover {
+      background: #7e276e;
+      transform: translateY(-2px);
+    }
+
+    .action-button i {
+      margin-right: 7px;
+    }
+
+    /* Forms */
+
+    .entry-form {
+      display: none;
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 15px;
+      background: #f7e1f0;
+      border: 1px solid #e3b3d7;
+    }
+
+    .entry-form.visible {
+      display: grid;
+      gap: 12px;
+    }
+
+    .entry-form label {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .entry-form input,
+    .entry-form textarea {
+      width: 100%;
+      padding: 11px;
+      border: 1px solid #d5a1c8;
+      border-radius: 10px;
+      outline: none;
+      background: #fffaff;
+      color: #46233f;
+    }
+
+    .entry-form input:focus,
+    .entry-form textarea:focus {
+      border-color: #a83d91;
+      box-shadow: 0 0 0 3px #a83d9120;
+    }
+
+    .entry-form textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .message {
+      font-size: 13px;
+      color: #65245a;
+      overflow-wrap: anywhere;
+    }
+
+    /* Saved roasts */
+
+    .saved-roasts {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .roast-card {
+      position: relative;
+      padding: 15px 45px 15px 15px;
+      border-radius: 14px;
+      background: #f7e1f0;
+      border-left: 4px solid #a83d91;
+      overflow-wrap: anywhere;
+    }
+
+    .roast-card h3 {
+      color: #8c2878;
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .roast-card p {
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    .roast-card .delete-button {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        margin-top: 0;
+
+    }
+
+    /* Cat image overlay */
+
+    .cat-slider {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 50%;
+      height: 100%;
+      z-index: 5;
+      background: #e8b7db;
+      transition: transform 0.8s ease-in-out;
+      overflow: hidden;
+    }
+
+    .cat-slider img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .vibe-slider.open .cat-slider {
+      transform: translateX(100%);
+    }
+
+    /* Arrow buttons */
+
+    .arrow-button {
+      position: absolute;
+      top: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid white;
+      border-radius: 50%;
+      background: #a83d91;
+      color: white;
+      font-size: 21px;
+      box-shadow: 0 4px 12px #46233f35;
+      z-index: 10;
+      transform: translateY(-50%);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .arrow-button:hover {
+      background: #74245f;
+    }
+
+    .right-arrow {
+      right: 16px;
+    }
+
+    .left-arrow {
+      display: none;
+      left: 7%;
+      right: auto;
+      transform: translate(-50%, -50%);
+    }
+
+    .vibe-slider.open .left-arrow {
+      display: flex;
+    }
+
+    .vibe-slider.open .right-arrow {
+      display: none;
+    }
+
+    .left-arrow:hover {
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    .right-arrow:hover {
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 20px;
+      color: #77456c;
+      font-size: 13px;
+    }
+
+    @media (max-width: 650px) {
+      body {
+        padding: 20px 12px;
+      }
+
+      .vibe-slider {
+        height: 720px;
+      }
+
+      .vibe-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 15px;
+      }
+
+      .panel {
+        padding: 17px;
+      }
+
+      .cat-slider {
+        width: 100%;
+      }
+
+      .vibe-slider.open .cat-slider {
+        transform: translateX(100%);
+      }
+
+      .arrow-button {
+        width: 46px;
+        height: 46px;
+      }
+
+      .left-arrow {
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+      }
+
+      .left-arrow:hover {
+        transform: translate(-50%, -50%) scale(1.08);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cat-slider,
+      .action-button,
+      .save-button,
+      .arrow-button {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <h1>Hello! Shelj 😻</h1>
+    <p>Let's find Shelj's Vibe?, La la la la Zzz ✨ · Press play &amp; chill! 🎶</p>
+
+    <a class="spotify-card" href="https://open.spotify.com/playlist/53Hc807n4qxZttds9zaT9O" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-spotify"></i>
+      <span>Shelj's MUSIC CORNER</span>
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+  </header>
+
+  <main>
+    <section class="vibe-slider" id="vibeSlider">
+
+      <div class="vibe-content">
+
+        <!-- LEFT SIDE: SONGS -->
+
+        <section class="panel songs-panel">
+          <h2><i class="fa-solid fa-music"></i> Shelj's Favourite Songs 🎧</h2>
+
+          <p class="panel-intro">
+            Her favourite songs, collected in one cute little place. 💕
+          </p>
+
+          <ul class="song-list" id="songList">
+            <li>
+              <i class="fa-solid fa-heart"></i>
+              <a href="https://youtu.be/Be89qUX6_5g" target="_blank" rel="noopener noreferrer">Kadhaippoma</a>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-heart"></i>
+              <a href="https://youtube.com/shorts/pHp8_QTiCvY" target="_blank" rel="noopener noreferrer">Yennai Maatrum Kadhale</a>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-heart"></i>
+              <a href="https://youtu.be/M658ZcCnAqU" target="_blank" rel="noopener noreferrer">Dhom Dhom</a>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-heart"></i>
+              <a href="https://youtu.be/tB8Q9ybvnng" target="_blank" rel="noopener noreferrer">Thean Kudika</a>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-heart"></i>
+              <a href="https://www.instagram.com/reel/DcX4mAPRw8D/" target="_blank" rel="noopener noreferrer">Arz Kiya Hai</a>
+            </li>
+          </ul>
+
+          <button class="action-button" id="addSongButton" type="button" aria-expanded="false">
+            <i class="fa-solid fa-plus"></i>
+            Add Favourite Song
+          </button>
+
+          <form class="entry-form" id="songForm">
+            <div>
+              <label for="songName">Song name</label>
+              <input type="text" id="songName" placeholder="Enter song name" required="" maxlength="120">
+            </div>
+
+            <div>
+              <label for="songUrl">Song URL</label>
+              <input type="url" id="songUrl" placeholder="https://..." required="">
+            </div>
+
+            <button class="save-button" type="submit">
+              <i class="fa-solid fa-floppy-disk"></i> Save Song
+            </button>
+
+            <p class="message" id="songMessage" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <!-- RIGHT SIDE: ROASTS -->
+
+        <section class="panel roast-panel">
+          <h2><i class="fa-solid fa-face-grin-squint"></i> Roast Visha × Shelji 😂</h2>
+
+          <p class="panel-intro">
+            Song repeat panradhu Shelj-ku hobby illa...
+            adhu oru full-time job! 🎧🤣
+          </p>
+
+          <button class="action-button" id="addRoastButton" type="button" aria-expanded="false">
+            <i class="fa-solid fa-fire"></i>
+            Roast Shelj
+          </button>
+
+          <form class="entry-form" id="roastForm">
+            <div>
+              <label for="roastHeading">Roast heading</label>
+              <input type="text" id="roastHeading" placeholder="Example: king of Laziness 😂" required="" maxlength="120">
+            </div>
+
+            <div>
+              <label for="roastContent">Roast content</label>
+              <textarea id="roastContent" placeholder="Write your roast here..." required="" maxlength="1500"></textarea>
+            </div>
+
+            <button class="save-button" type="submit">
+              <i class="fa-solid fa-floppy-disk"></i> Save Roast
+            </button>
+
+            <p class="message" id="roastMessage" aria-live="polite"></p>
+          </form>
+
+          <div class="saved-roasts" id="savedRoasts"></div>
+        </section>
+
+      </div>
+
+      <!-- CAT IMAGE OVERLAY -->
+
+      <div class="cat-slider" id="catSlider">
+        <img src="images/cat.png" alt="Cute cat covering Shelj's page">
+
+        <button class="arrow-button right-arrow" id="rightArrow" type="button" aria-label="Move cat image right and reveal content">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <button class="arrow-button left-arrow" id="leftArrow" type="button" aria-label="Move cat image left">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <p class="footer-note">
+    Made with 💗 for Shelj · Music, memories &amp; mischief 🎀
+  </p>
+
+  <script>
+    const vibeSlider = document.getElementById("vibeSlider");
+    const rightArrow = document.getElementById("rightArrow");
+    const leftArrow = document.getElementById("leftArrow");
+
+    const songForm = document.getElementById("songForm");
+    const roastForm = document.getElementById("roastForm");
+
+    const addSongButton = document.getElementById("addSongButton");
+    const addRoastButton = document.getElementById("addRoastButton");
+
+    const songList = document.getElementById("songList");
+    const savedRoasts = document.getElementById("savedRoasts");
+
+    const songMessage = document.getElementById("songMessage");
+    const roastMessage = document.getElementById("roastMessage");
+
+    const SONGS_KEY = "sheljFavouriteSongs";
+    const ROASTS_KEY = "sheljRoastEntries";
+
+    // Move the cat image without changing the original concept.
+
+    rightArrow.addEventListener("click", () => {
+      vibeSlider.classList.add("open");
+    });
+
+    leftArrow.addEventListener("click", () => {
+      vibeSlider.classList.remove("open");
+    });
+
+    // Open and close the entry forms.
+
+    function toggleForm(form, button) {
+      const isVisible = form.classList.toggle("visible");
+
+      button.setAttribute("aria-expanded", String(isVisible));
+
+      if (isVisible) {
+        const firstInput = form.querySelector("input, textarea");
+        if (firstInput) firstInput.focus();
+      }
+    }
+
+    addSongButton.addEventListener("click", () => {
+      toggleForm(songForm, addSongButton);
+      songMessage.textContent = "";
+    });
+
+    addRoastButton.addEventListener("click", () => {
+      toggleForm(roastForm, addRoastButton);
+      roastMessage.textContent = "";
+    });
+
+    // Read and write browser storage safely.
+
+    function readStorage(key) {
+      try {
+        const data = JSON.parse(localStorage.getItem(key) || "[]");
+        return Array.isArray(data) ? data : [];
+      } catch (error) {
+        return [];
+      }
+    }
+
+    function writeStorage(key, data) {
+      try {
+        localStorage.setItem(key, JSON.stringify(data));
+        return true;
+      } catch (error) {
+        alert("Browser storage is unavailable. Please check your browser settings.");
+        return false;
+      }
+    }
+
+    function validWebUrl(value) {
+      try {
+        const url = new URL(value);
+        return url.protocol === "https:" || url.protocol === "http:";
+      } catch (error) {
+        return false;
+      }
+    }
+
+    // Create HTML elements safely using textContent.
+
+    function createDeleteButton(label, onClick) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "delete-button";
+      button.textContent = "✕";
+      button.setAttribute("aria-label", label);
+      button.addEventListener("click", onClick);
+      return button;
+    }
+
+    // Render saved songs underneath the original songs.
+
+    function renderSongs() {
+      songList.querySelectorAll("[data-custom-song]").forEach((item) => {
+        item.remove();
+      });
+
+      const songs = readStorage(SONGS_KEY);
+
+      songs.forEach((song, index) => {
+        const li = document.createElement("li");
+        li.dataset.customSong = "true";
+
+        const icon = document.createElement("i");
+        icon.className = "fa-solid fa-heart";
+
+        const link = document.createElement("a");
+        link.textContent = song.name;
+        link.href = song.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+
+        const deleteButton = createDeleteButton(
+          "Delete " + song.name,
+          () => {
+            const updatedSongs = readStorage(SONGS_KEY);
+            updatedSongs.splice(index, 1);
+
+            if (writeStorage(SONGS_KEY, updatedSongs)) {
+              renderSongs();
+            }
+          }
+        );
+
+        li.append(icon, link, deleteButton);
+        songList.appendChild(li);
+      });
+    }
+
+    songForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("songName").value.trim();
+      const url = document.getElementById("songUrl").value.trim();
+
+      if (!name || !url) return;
+
+      if (!validWebUrl(url)) {
+        songMessage.textContent = "Please enter a valid HTTP or HTTPS URL.";
+        return;
+      }
+
+      const songs = readStorage(SONGS_KEY);
+      songs.push({ name, url });
+
+      if (writeStorage(SONGS_KEY, songs)) {
+        renderSongs();
+        songForm.reset();
+        songMessage.textContent = "Song saved successfully! 💗";
+      }
+    });
+
+    // Render saved roast cards.
+
+    function renderRoasts() {
+      savedRoasts.replaceChildren();
+
+      const roasts = readStorage(ROASTS_KEY);
+
+      roasts.forEach((roast, index) => {
+        const card = document.createElement("article");
+        card.className = "roast-card";
+
+        const heading = document.createElement("h3");
+        heading.textContent = roast.heading;
+
+        const content = document.createElement("p");
+        content.textContent = roast.content;
+
+        const deleteButton = createDeleteButton(
+          "Delete roast: " + roast.heading,
+          () => {
+            const updatedRoasts = readStorage(ROASTS_KEY);
+            updatedRoasts.splice(index, 1);
+
+            if (writeStorage(ROASTS_KEY, updatedRoasts)) {
+              renderRoasts();
+            }
+          }
+        );
+
+        card.append(heading, content, deleteButton);
+        savedRoasts.appendChild(card);
+      });
+    }
+
+    roastForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const heading = document.getElementById("roastHeading").value.trim();
+      const content = document.getElementById("roastContent").value.trim();
+
+      if (!heading || !content) return;
+
+      const roasts = readStorage(ROASTS_KEY);
+      roasts.push({ heading, content });
+
+      if (writeStorage(ROASTS_KEY, roasts)) {
+        renderRoasts();
+        roastForm.reset();
+        roastMessage.textContent = "Roast saved! Shelj, be ready! 😂";
+      }
+    });
+
+    // Display previously saved entries when the page opens.
+
+    renderSongs();
+    renderRoasts();
+  </script>
+
+</body></html>
