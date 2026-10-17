@@ -12,7 +12,7 @@ export const DEFAULT_STYLES = {
     fontFamily: "HKST"
   },
   fontEN: {
-    name: "Minion Pro"
+    name: "Arial"
   },
   fontSize: 15,
   paper: "A4"

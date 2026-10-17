@@ -2,8 +2,8 @@
   <TabsRoot
     class="pane-container overflow-hidden bg-background"
     flex="~ col"
-    default-value="markdown"
-    @update:model-value="(payload) => activateModel(payload)"
+    v-model="mode"
+    @update:model-value="(payload) => payload !== 'fields' && activateModel(payload as 'markdown' | 'css')"
   >
     <TabsList
       class="relative shrink-0 hstack w-full text-sm h-9 border-b px-4"
@@ -14,15 +14,18 @@
       />
 
       <TabsTrigger value="markdown" p="x-2" :disabled="loading">Markdown</TabsTrigger>
+      <TabsTrigger value="fields" p="x-2" :disabled="loading">Input fields</TabsTrigger>
       <TabsTrigger value="css" p="x-4" :disabled="loading">CSS</TabsTrigger>
     </TabsList>
 
-    <div ref="editor" flex-1 />
+    <EditorFields v-if="mode === 'fields'" />
+    <div v-show="mode !== 'fields'" ref="editor" flex-1 />
   </TabsRoot>
 </template>
 
 <script lang="ts" setup>
 const editor = ref<HTMLDivElement>();
+const mode = ref('markdown');
 const { setup, activateModel, dispose, loading } = useMonaco();
 
 onMounted(async () => {

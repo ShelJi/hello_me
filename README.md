@@ -36,6 +36,13 @@ Serve the repository root, not the `build-resume` folder alone; do not open
 
 - Click **Create My Resume**, then the **+** card to create a resume.
 - **Markdown** edits the content; the middle pane previews it live. **CSS** edits custom styling.
+- **Input fields** is the second editing mode: fill your name, contact details and
+  resume sections, then choose **Apply ATS-friendly format** and **Save**. Applying
+  replaces the layout with a single-column Arial format; export Markdown first
+  to back up custom formatting. Apply field edits before switching tabs.
+  Use standard headings (Experience, Education, Skills) and truthful keywords
+  relevant to the job. No universal 100% ATS score is guaranteed. After PDF export,
+  check that copying its text keeps the correct reading order.
 - The right toolbar controls paper size, color, fonts, margins and spacing.
   On a narrow screen, use the sidebar toggle in the top bar to open the toolbar.
 - Click **Save** or press **Ctrl+S** to save edits. Preview updates do not automatically save.

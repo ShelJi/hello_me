@@ -44,7 +44,9 @@ const { data } = useDataStore();
 const saveName = computed(() => data.resumeName.trim().replace(/\s+/g, "_"));
 
 // Export as PDF
-const exportPDF = () => {
+const exportPDF = async () => {
+  await document.fonts.ready;
+  await nextTick();
   const title = document.title;
 
   document.title = saveName.value;
