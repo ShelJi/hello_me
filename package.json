@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "Build pipeline for the notes wiki under notes/",
   "scripts": {
+    "resume:build": "node scripts/build-resume.js",
+    "resume:serve": "node scripts/serve-resume.js",
+    "resume:dev": "corepack pnpm --dir vendor/oh-my-cv dev",
     "notes:build": "node scripts/build-notes.js",
     "notes:watch": "node scripts/build-notes.js --watch"
   },
