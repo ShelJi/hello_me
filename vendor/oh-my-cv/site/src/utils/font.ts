@@ -12,8 +12,7 @@ export class GoogleFontsService {
     this._loader = null;
   }
 
-  public includes = (font: Font) => !FONT.LOCAL.some(local =>
-    (local.fontFamily || local.name) === (font.fontFamily || font.name));
+  public includes = (font: Font) => !FONT.LOCAL.includes(font);
 
   /**
    * Whether the font is a CJK Google Font
