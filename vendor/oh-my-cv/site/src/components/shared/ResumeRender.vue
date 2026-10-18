@@ -5,6 +5,7 @@
 <script lang="ts" setup>
 import { useSmartPages } from "@ohmycv/vue-smart-pages";
 import type { ResumeStyles } from "~/composables/stores/style";
+import { setPreviewPreparation } from '~/utils/preview';
 
 const props = defineProps<{
   id: string | number;
@@ -26,7 +27,9 @@ const margins = computed(() => ({
   left: props.styles.marginH,
   right: props.styles.marginH
 }));
-const html = computed(() => markdownService.renderResume(props.markdown));
+const markdown = ref(props.markdown);
+watchDebounced(() => props.markdown, value => { markdown.value = value; }, { debounce: 300, maxWait: 1000 });
+const html = computed(() => markdownService.renderResume(markdown.value));
 
 const { render } = useSmartPages(target, html, size, margins, {
   beforeRender: async () => {
@@ -57,4 +60,12 @@ watchThrottled(
 defineExpose({
   render
 });
+onMounted(() => {
+  if (props.id === 'preview') setPreviewPreparation(async () => {
+    markdown.value = props.markdown;
+    await nextTick();
+    await render();
+  });
+});
+onBeforeUnmount(() => { if (props.id === 'preview') setPreviewPreparation(); });
 </script>

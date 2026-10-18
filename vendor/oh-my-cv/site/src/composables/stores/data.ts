@@ -25,8 +25,7 @@ export const useDataStore = defineStore("data", () => {
   const setAndSyncToMonaco = (key: "markdown" | "css", value: string) => {
     setData(key, value);
 
-    const { setContent } = useMonaco();
-    setContent(key, value);
+    // The lightweight editors bind directly to this store.
   };
 
   return {

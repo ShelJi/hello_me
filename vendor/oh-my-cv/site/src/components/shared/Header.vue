@@ -1,7 +1,7 @@
 <template>
   <header class="hstack justify-between pl-4 pr-1">
     <nuxt-link class="hstack gap-x-2" :to="$nuxt.$localePath('/')">
-      <SharedLogo text-base />
+      <span class="i-tabler:file-cv text-base" aria-hidden="true" />
       <div text-lg><SharedBrandName /></div>
     </nuxt-link>
 
@@ -54,16 +54,6 @@
 
       <SharedToggleDark />
 
-      <UiButton
-        as="a"
-        variant="ghost-secondary"
-        size="round"
-        href="http://github.com/Renovamen/oh-my-cv"
-        target="_blank"
-        rel="nofollow noopener"
-      >
-        <span i-tabler:brand-github text-lg />
-      </UiButton>
     </div>
   </header>
 </template>

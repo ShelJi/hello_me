@@ -1,1 +1,1 @@
-<template>Oh<span text-primary>My</span>CV</template>
+<template>Sheljin<span text-primary> · Resume</span></template>

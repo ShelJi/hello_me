@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://shelj.in/sitemap.xml
+Disallow: /build-resume

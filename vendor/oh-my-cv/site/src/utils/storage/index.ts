@@ -154,7 +154,7 @@ export class StorageService {
       data
     };
 
-    downloadFile("ohmycv_data.json", JSON.stringify(json));
+    downloadFile("sheljin_resumes.json", JSON.stringify(json));
   }
 
   /**

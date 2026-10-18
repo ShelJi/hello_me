@@ -47,9 +47,14 @@ export const useSmartPages = (
     watchThrottledOptions?: WatchThrottledOptions<Readonly<boolean>>;
   } = {}
 ) => {
+  let revision = 0;
   const render = async () => {
+    const current = ++revision;
     const element = unrefElement(target) as HTMLElement | undefined | null;
     if (!element) return;
+
+    if (options.beforeRender) await options.beforeRender();
+    if (current !== revision || !element.isConnected) return;
 
     const { width, height } = toValue(size);
     const { top = 0, bottom = 0, left = 0, right = 0 } = toValue(margins);
@@ -60,24 +65,22 @@ export const useSmartPages = (
     // To calculate the correct child heights for breaking the page, we first apply the content,
     // size, and margins to a clone of the element, instead of the original element.
     // This is to avoid flickering when the original element is modified.
-    const copy = element.cloneNode(true) as HTMLElement;
+    const copy = element.cloneNode(false) as HTMLElement;
 
     copy.innerHTML = toValue(html);
     setWidthAndMargins(copy, _size, _margins);
 
     // Attach it to the body temporarily to get the correct computed styles
+    Object.assign(copy.style, { position: 'absolute', left: '-100000px', top: '0', visibility: 'hidden', pointerEvents: 'none' });
     document.body.appendChild(copy);
 
-    if (options.beforeRender) await options.beforeRender();
-
-    // Break the page based on the given size and margins
-    breakPage(copy, _size, _margins);
-
-    // Replace the original element with the modified copy
-    element.innerHTML = copy.innerHTML;
-
-    // Remove the copy from the body
-    document.body.removeChild(copy);
+    try {
+      // Break the page based on the given size and margins.
+      breakPage(copy, _size, _margins);
+      element.innerHTML = copy.innerHTML;
+    } finally {
+      copy.remove();
+    }
 
     if (options.afterRender) await options.afterRender();
   };

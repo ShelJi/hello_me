@@ -1,6 +1,6 @@
 <template>
   <div
-    class="pane-container overflow-scroll hide-scrollbar bg-secondary"
+    class="pane-container preview-container bg-secondary"
     border="4 secondary"
   >
     <VueZoom ref="zoom" :scale="scale">
@@ -14,13 +14,12 @@
 
     <div
       id="zoom-bar"
-      class="hstack fixed bottom-4 ml-2 shadow-c rounded-full overflow-hidden text-primary-foreground bg-blue-500"
-      lg="bottom-auto top-15 opacity-0 hover:opacity-100 focus-within:opacity-100"
+      class="hstack sticky bottom-2 ml-2 w-fit shadow-c rounded-full overflow-hidden text-primary-foreground bg-blue-500"
     >
-      <button @click="scale *= 1.1" aria-label="Zoom in">
+      <button @click="scale = Math.min(2, scale * 1.1)" aria-label="Zoom in">
         <span i-lucide:zoom-in />
       </button>
-      <button @click="scale /= 1.1" aria-label="Zoom out">
+      <button @click="scale = Math.max(0.2, scale / 1.1)" aria-label="Zoom out">
         <span i-lucide:zoom-out />
       </button>
       <button @click="fitWidth" aria-label="Fit width">
@@ -45,17 +44,18 @@ const { data } = useDataStore();
 const { PAPER } = useConstant();
 
 const fitWidth = () => {
-  scale.value = width.value / PAPER.sizeToPx(styles.paper, "w");
+  if (width.value > 0) scale.value = Math.max(0.2, Math.min(2, width.value / PAPER.sizeToPx(styles.paper, "w")));
 };
 
 const fitHeight = () => {
-  scale.value = height.value / PAPER.sizeToPx(styles.paper, "h");
+  if (height.value > 0) scale.value = Math.max(0.2, Math.min(2, height.value / PAPER.sizeToPx(styles.paper, "h")));
 };
 
-watch(width, fitWidth);
+watch([width, () => styles.paper], fitWidth);
 </script>
 
 <style scoped>
+.preview-container { overflow: auto; position: relative; }
 #zoom-bar button {
   @apply flex-center size-10 text-lg hover:bg-blue-600 focus-visible:bg-blue-600;
 }

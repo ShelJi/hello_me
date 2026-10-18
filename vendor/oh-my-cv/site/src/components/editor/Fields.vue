@@ -2,9 +2,13 @@
   <form class="fields" @submit.prevent="apply">
     <h2>Fill your resume</h2>
     <p>Use standard headings and relevant, truthful keywords from the job description.
-      Applying creates a plain, single-column resume using Arial. No ATS score is guaranteed.</p>
-    <p>Your current resume stays unchanged until you apply. Custom layout and styling will be replaced.
-      Export Markdown first if you want a backup. Apply before switching tabs to keep field edits.</p>
+      The preview updates as you type. No ATS score is guaranteed.</p>
+    <p>Use Save to keep your changes. Apply ATS-friendly format switches to a plain Arial layout.
+      Export Markdown first to back up custom formatting. Field drafts stay available while switching tabs.</p>
+    <div v-if="data.markdown !== sourceMarkdown" role="status">
+      Markdown has changed since these fields were loaded. Load the latest version before applying.
+      <button type="button" @click="$emit('reload')">Load latest Markdown (replace field draft)</button>
+    </div>
     <label>Full name<input v-model="name" autocomplete="name" required /></label>
     <label>Contact details<textarea v-model="contact" rows="3"
       placeholder="Email, phone, city, LinkedIn and portfolio (plain text, one per line)" /></label>
@@ -15,18 +19,20 @@
       <button type="button" @click="sections.splice(index, 1)">Remove section</button>
     </section>
     <button type="button" @click="sections.push({ title: 'Additional Information', body: '' })">Add section</button>
-    <button type="submit">Apply ATS-friendly format</button>
+    <button type="submit" :disabled="data.markdown !== sourceMarkdown">Apply ATS-friendly format</button>
     <p role="status">{{ status }}</p>
-    <p>After applying, use Save to keep the resume. You can switch to Markdown for further edits.
+    <p>Use Save to keep the resume. You can switch to Markdown for further edits.
       Export PDF as text, then check that selecting and copying its text preserves the reading order.</p>
   </form>
 </template>
 
 <script setup lang="ts">
 import { FrontMatterParser } from '@ohmycv/front-matter';
+defineEmits(['reload']);
 
 const { data, setAndSyncToMonaco } = useDataStore();
 const { setStyle } = useStyleStore();
+const sourceMarkdown = ref(data.markdown);
 const status = ref('');
 const plain = (html: string) => {
   const doc = new DOMParser().parseFromString(html, 'text/html');
@@ -70,7 +76,9 @@ if (!sections.value.length) {
 // Escape HTML and Markdown punctuation in plain fields; details support Markdown bullets.
 const escape = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;')
   .replace(/>/g, '&gt;').replace(/([\\`*_{}\[\]()#+!|])/g, '\\$1');
-const apply = async () => {
+const syncContent = () => {
+  // A retained field draft must not overwrite edits made in Markdown mode.
+  if (data.markdown !== sourceMarkdown.value) return;
   const htmlText = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const header = contact.value.trim().split('\n').filter(Boolean).map(line =>
     `  - text: ${JSON.stringify(htmlText(line))}\n    newLine: true`).join('\n');
@@ -78,6 +86,15 @@ const apply = async () => {
     ...sections.value.filter(section => section.body.trim()).map(section =>
       `## ${escape(section.title.trim())}\n\n${section.body.trim()}`)].filter(Boolean).join('\n\n');
   setAndSyncToMonaco('markdown', markdown);
+  sourceMarkdown.value = markdown;
+};
+
+// Sync text immediately; the shared preview debounces expensive pagination.
+watch([name, contact, sections], syncContent, { deep: true, flush: 'sync' });
+
+const apply = async () => {
+  if (data.markdown !== sourceMarkdown.value) return;
+  syncContent();
   const selector = '#resume-preview';
   setAndSyncToMonaco('css', `
 ${selector} { font-family: Arial, Helvetica, sans-serif; color: #111; }
@@ -102,7 +119,7 @@ ${selector} a { color: #111; text-decoration: underline; }
 </script>
 
 <style scoped>
-.fields { overflow: auto; padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+.fields { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
 h2 { font-weight: 700; }
 p { font-size: 13px; line-height: 1.5; }
 label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
@@ -110,4 +127,5 @@ input, textarea { border: 1px solid #888; border-radius: 5px; padding: 8px; back
 section { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #888; padding-top: 14px; }
 button { border: 1px solid #888; border-radius: 5px; padding: 8px; }
 button[type="submit"] { background: #2563eb; color: white; }
+button:disabled { opacity: .5; cursor: not-allowed; }
 </style>

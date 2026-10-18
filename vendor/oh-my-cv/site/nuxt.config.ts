@@ -15,7 +15,6 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxtjs/color-mode",
     "@vite-pwa/nuxt",
-    "nuxt-simple-sitemap",
     "radix-vue/nuxt",
     "shadcn-nuxt"
   ],
@@ -53,8 +52,9 @@ export default defineNuxtConfig({
       ],
       meta: [
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { name: "application-name", content: "Oh My CV!" },
-        { name: "apple-mobile-web-app-title", content: "Oh My CV!" },
+        { name: "application-name", content: "Sheljin · Resume" },
+        { name: "apple-mobile-web-app-title", content: "Sheljin · Resume" },
+        { name: "robots", content: "noindex, nofollow, noarchive" },
         { name: "msapplication-TileColor", content: "#fff" },
         { property: "og:url", content: "https://shelj.in/build-resume/" },
         { property: "og:type", content: "website" }

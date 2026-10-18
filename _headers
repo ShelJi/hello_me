@@ -1,0 +1,4 @@
+/build-resume
+  X-Robots-Tag: noindex, nofollow, noarchive
+/build-resume/*
+  X-Robots-Tag: noindex, nofollow, noarchive

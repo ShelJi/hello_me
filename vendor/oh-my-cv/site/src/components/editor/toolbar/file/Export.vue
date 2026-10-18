@@ -16,9 +16,6 @@
         <UiAlert variant="destructive" class="border-none rounded-none">
           <UiAlertTitle>
             {{ $t("toolbar.file.export_pdf.alert.title") }}
-            <span class="text-foreground font-normal text-xs">
-              (<SharedIssueLink issue="13" />, <SharedIssueLink issue="16" />)
-            </span>
           </UiAlertTitle>
           <UiAlertDescription v-html="$t('toolbar.file.export_pdf.alert.content')" />
         </UiAlert>
@@ -39,12 +36,14 @@
 
 <script lang="ts" setup>
 import { downloadFile } from "@renovamen/utils";
+import { preparePreview } from '~/utils/preview';
 
 const { data } = useDataStore();
 const saveName = computed(() => data.resumeName.trim().replace(/\s+/g, "_"));
 
 // Export as PDF
 const exportPDF = async () => {
+  await preparePreview();
   await document.fonts.ready;
   await nextTick();
   const title = document.title;

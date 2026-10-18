@@ -21,7 +21,7 @@
     </SharedHeader>
 
     <div class="workspace flex pb-2">
-      <SplitterGroup id="splitter-editor" direction="horizontal" class="px-3">
+      <SplitterGroup id="splitter-editor" :direction="width < 768 ? 'vertical' : 'horizontal'" class="px-3">
         <SplitterPanel id="code-pane">
           <EditorCode v-if="data.loaded" />
           <div v-else class="flex flex-col gap-y-2 h-full">
@@ -32,7 +32,7 @@
 
         <SplitterResizeHandle
           id="code-preview-handle"
-          class="w-3 relative after:(content-[''] absolute bg-gray-400/40 w-1 h-10 rounded-full inset-0 m-auto)"
+          class="resize-handle"
         />
 
         <SplitterPanel id="preview-pane">
@@ -70,3 +70,12 @@ onMounted(() => {
 const { width } = useWindowSize();
 const isToolbarOpen = ref(width.value > 1024);
 </script>
+
+<style scoped>
+.resize-handle { flex-shrink: 0; width: 12px; background: transparent; }
+.resize-handle::after { content: ''; display: block; width: 4px; height: 40px; border-radius: 4px; background: #8886; margin: auto; position: relative; top: 40%; }
+@media (max-width: 767px) {
+  .resize-handle { width: 100%; height: 12px; }
+  .resize-handle::after { width: 40px; height: 4px; top: 4px; }
+}
+</style>

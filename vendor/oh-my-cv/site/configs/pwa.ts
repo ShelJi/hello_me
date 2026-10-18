@@ -13,8 +13,8 @@ export const pwa: ModuleOptions = {
     theme_color: "#F3F4F6",
     background_color: "#F3F4F6",
     display: "standalone",
-    name: "Oh My CV!",
-    short_name: "Oh My CV!",
+    name: "Sheljin · Resume",
+    short_name: "Sheljin Resume",
     icons: [
       {
         src: `${scope}pwa-192x192.png`,
@@ -37,7 +37,8 @@ export const pwa: ModuleOptions = {
   workbox: {
     navigateFallback: `${scope}index.html`,
     cacheId: "hello-me-build-resume",
-    globPatterns: ["**/*.{js,css,html,otf,ttf,woff2,png,svg}"],
+    // Font families load on demand; do not download every bundled font at startup.
+    globPatterns: ["**/*.{js,css,html,png,svg}"],
     maximumFileSizeToCacheInBytes: 16000000,
     cleanupOutdatedCaches: true,
     runtimeCaching: [

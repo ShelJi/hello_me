@@ -10,6 +10,8 @@ const outputLogic = script.slice(script.indexOf('const escape ='));
 async function check(contact) {
   const changes = {};
   const styles = {};
+  const data = { markdown: '' };
+  let onFieldChange;
   const context = {
     name: { value: 'Jane "JJ" Doe <Engineer>' },
     contact: { value: contact },
@@ -19,7 +21,10 @@ async function check(contact) {
       { title: 'Empty section', body: '' }
     ] },
     status: { value: '' },
-    setAndSyncToMonaco: (key, value) => { changes[key] = value; },
+    sourceMarkdown: { value: '' },
+    data,
+    watch: (_sources, callback) => { onFieldChange = callback; },
+    setAndSyncToMonaco: (key, value) => { changes[key] = value; data[key] = value; },
     setStyle: async (key, value) => { styles[key] = value; }
   };
   vm.createContext(context);
@@ -27,6 +32,23 @@ async function check(contact) {
     compilerOptions: { target: ts.ScriptTarget.ES2022 }
   }).outputText;
   vm.runInContext(js, context);
+  // Typing synchronizes text without requiring Apply or changing the CSS.
+  onFieldChange();
+  assert.ok(data.markdown.includes('Jane'));
+  assert.equal(changes.css, undefined);
+  context.name.value = 'Updated while typing';
+  onFieldChange();
+  assert.ok(data.markdown.includes('Updated while typing'));
+  // External Markdown edits block stale form updates.
+  data.markdown = '# Edited in Markdown';
+  context.name.value = 'Stale field edit';
+  onFieldChange();
+  assert.equal(data.markdown, '# Edited in Markdown');
+  await context.run();
+  assert.equal(data.markdown, '# Edited in Markdown');
+  data.markdown = context.sourceMarkdown.value;
+  context.name.value = 'Jane "JJ" Doe <Engineer>';
+  onFieldChange();
   await context.run();
   const parsed = new FrontMatterParser().parse(changes.markdown);
   assert.equal(parsed.frontMatter.name, 'Jane "JJ" Doe &lt;Engineer&gt;');
