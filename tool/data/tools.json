@@ -1,4 +1,4 @@
-{
+n{
   "schema_version": 1,
   "tools": [
     {
@@ -389,6 +389,344 @@
         "pricing": "free",
         "platforms": ["windows", "linux", "macos"]
       }
+    },
+    
+    {
+      "id": "tool-1792867083930",
+      "name": "jigsaw game",
+      "description": "Jigsaw Explorer is a free online jigsaw puzzle platform featuring daily challenges, customizable difficulty levels, mystery puzzles, and multiplayer games. Create puzzles from your own photos and share them with friends to solve together.",
+      "topic": "game",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "friends",
+        "games",
+        "play"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://www.jigsawexplorer.com/",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1792866814617",
+      "name": "andrej-karpathy-skills",
+      "description": "Andrej Karpathy Skills is an open-source set of AI coding guidelines for Claude Code and Cursor that helps AI assistants write simpler, more reliable code by avoiding incorrect assumptions, unnecessary complexity, and unrelated code changes.",
+      "topic": "skills",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "productivity",
+        "skills",
+        "claude",
+        "project development skills"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1792865897243",
+      "name": "famelack",
+      "description": "Famelack is a free online platform for watching live TV channels, listening to radio stations, and exploring live webcams worldwide. Browse by country, category, or interactive 3D globe without registration or subscriptions.",
+      "topic": "Utilities",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "live tv",
+        "tv",
+        "television",
+        "radio"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://famelack.com/",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1792865776445",
+      "name": "reel mimic skills",
+      "description": "Show it a video you love. Get a new video in the same style. An AI crew (Claude Code or Codex) plans, builds and reviews it with you.",
+      "topic": "AI",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "reels",
+        "skills",
+        "mimic",
+        "video",
+        "generator",
+        "ai"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://github.com/edenfunf/reelmimic",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1792865489044",
+      "name": "hound",
+      "description": "Hound is a simple and light tool for information gathering and capture exact GPS coordinates",
+      "topic": "linux",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "linux",
+        "hacking",
+        "location",
+        "tracker"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://github.com/techchipnet/hound",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "linux"
+        ]
+      }
+    },
+    {
+      "id": "tool-1792865162544",
+      "name": "omarchy meeting recorder",
+      "description": "Record meetings on Omarchy: mic and computer audio as two tracks, transcribed on your own machine, with speakers, chapters and a player.",
+      "topic": "Utilities",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "screen recorder",
+        "record",
+        "meet",
+        "google meet"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://github.com/jankeesvw/omarchy-meeting-recorder",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1792864897065",
+      "name": "CO OP builder skill",
+      "description": "Co-op Anything: point your AI agent at any single-player game and play it with friends (online and/or splitscreen!). MCP server and playbook to let you reverse engineer, fix, test, ship and share what it learns. \nhttps://coopanything.app/",
+      "topic": "skills",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "skills",
+        "coop",
+        "co op",
+        "builder",
+        "productivity"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://github.com/cranebeaker/coop-anything",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1792864737725",
+      "name": "Brag",
+      "description": "Brag is an open-source AI agent skill that turns your website or project into a polished, shareable launch video with animations, background music, and ready-to-use social media captions—all with a single command.",
+      "topic": "AI",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "skills",
+        "ai",
+        "video",
+        "editing",
+        "generator"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "npx skills add https://github.com/latent-spaces/brag --skill brag",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": true,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1792864627194",
+      "name": "end4 pc",
+      "description": "end4-pC is an open-source, highly customizable Linux desktop shell for Hyprland, featuring modern Material Design aesthetics, interactive widgets, dynamic wallpapers, configurable panels, and community themes for a beautiful, personalized desktop experience.",
+      "topic": "Productivity",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "linux",
+        "theme",
+        "terminal",
+        "style"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://github.com/pctrade/end4-pC",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1792863563174",
+      "name": "Touch Type",
+      "description": "letters styling for gifts",
+      "topic": "Design",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "image",
+        "color",
+        "ai",
+        "gift",
+        "ui",
+        "letters",
+        "word"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://touch-type.runable.site/",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1792862227287",
+      "name": "Ponytail skils",
+      "description": "Ponytail is an AI coding assistant skill that helps AI agents write clean, minimal, and efficient code by reusing existing functionality, avoiding unnecessary complexity, and maintaining code quality, security, and testing. https://www.skills.sh/dietrichgebert/ponytail/ponytail https://github.com/DietrichGebert/ponytail",
+      "topic": "skills",
+      "ranking": 10,
+      "tags": [
+        "utility",
+        "developer",
+        "ai",
+        "productivity",
+        "skills",
+        "claude"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://www.skills.sh/dietrichgebert/ponytail/ponytail",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": true,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
     }
+ 
   ]
 }
