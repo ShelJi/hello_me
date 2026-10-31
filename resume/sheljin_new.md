@@ -22,11 +22,11 @@ header:
 
 ## PROFESSIONAL SUMMARY
 
-Embedded AI and Robotics Engineer with 4+ years of experience designing intelligent robotic systems, embedded firmware, IoT platforms, and scalable backend applications. Experienced in Raspberry Pi, ROS 2, FastAPI, Django, MQTT, Computer Vision, and autonomous systems. Passionate about building production-grade embedded software, robotics platforms, and edge AI solutions.
+Embedded AI and Robotics Engineer with experience designing intelligent robotic systems, embedded firmware, IoT platforms, and scalable backend applications. Experienced in Raspberry Pi, ROS 2, FastAPI, Django, MQTT, Computer Vision, and autonomous systems. Passionate about building production-grade embedded software, robotics platforms, and edge AI solutions.
 
-## WORK EXPERIENCE | 4 Years
+## WORK EXPERIENCE
 
-**IoT Engineer** | [Foxtech Private Solutions](https://www.foxtechsolutions.com/)
+**Associate IoT Engineer** | [Foxtech Private Solutions](https://www.foxtechsolutions.com/)
   ~ 03/2025 - Present
 
 **AI Rover** 
@@ -43,8 +43,8 @@ Embedded AI and Robotics Engineer with 4+ years of experience designing intellig
 - Implemented SLAM algorithms for precise localization and 3D reconstruction, achieving sub-5 cm spatial accuracy.
 - Simulated and tested in Gazebo, optimizing data processing pipelines for low-latency mapping and scalable integration with robotics platforms.
 
-**IoT & Python/Django Developer** | [Clovion Tech Solutions Pvt., Ltd. ](https://clovion.org/)
-  ~ 09/2022 – 02/2025 (2 Years 6 Months)
+**Junior Python/Django Developer** | [Clovion Tech Solutions Pvt. Ltd.](https://clovion.org/)
+  ~ 09/2023 - 02/2025
 
 **Smart Bike Lock System**
 

@@ -24,7 +24,7 @@ header:
 
 Expert in connected devices, embedded systems, MQTT, cloud IoT platforms, and sensor integration, delivering secure, low-latency, scalable, fault-tolerant, and high-performance solutions. Skilled in real-time data analytics, edge computing, device-to-cloud communication, ROS 2 integration, Celery, Redis, AI/ML algorithms, and optimizing device performance for diverse industrial and consumer applications.
 
-## WORK EXPERIENCE | 2 Years
+## WORK EXPERIENCE
 
 **Associate IoT Engineer** | [Foxtech Private Solutions](https://www.foxtechsolutions.com/)
   ~ 03/2025 - Present
@@ -43,8 +43,8 @@ Expert in connected devices, embedded systems, MQTT, cloud IoT platforms, and se
 - Implemented SLAM algorithms for precise localization and 3D reconstruction, achieving sub-5 cm spatial accuracy.
 - Simulated and tested in Gazebo, optimizing data processing pipelines for low-latency mapping and scalable integration with robotics platforms.
 
-**Python/Django Developer** | [Clovion Tech Solutions Pvt., Ltd. ](https://clovion.org/)
-  ~ 05/2024 - 02/2025
+**Junior Python/Django Developer** | [Clovion Tech Solutions Pvt. Ltd.](https://clovion.org/)
+  ~ 09/2023 - 02/2025
 
 **E-Commerce API** 
 - Designed and implemented scalable RESTful APIs using DRF, Swagger UI, Celery, Redis, 2FA, JWT, and Eraser.io. 
