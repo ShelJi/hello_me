@@ -12,7 +12,7 @@ export const DEFAULT_STYLES = {
     fontFamily: "HKST"
   },
   fontEN: {
-    name: "Arial"
+    name: "Open Sans"
   },
   fontSize: 15,
   paper: "A4"

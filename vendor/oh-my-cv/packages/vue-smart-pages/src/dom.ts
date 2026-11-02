@@ -5,10 +5,10 @@ const NEW_PAGE_CLASS = "md-it-newpage";
 const _elementHeight = (element: Element) => {
   const style = window.getComputedStyle(element);
 
-  const marginTop = parseInt(style.marginTop) || 0;
-  const marginBottom = parseInt(style.marginBottom) || 0;
+  const marginTop = parseFloat(style.marginTop) || 0;
+  const marginBottom = parseFloat(style.marginBottom) || 0;
 
-  return element.clientHeight + marginTop + marginBottom;
+  return element.offsetHeight + marginTop + marginBottom;
 };
 
 const _createPage = (size: PageSize, margins: Required<PageMargins>) => {
@@ -17,7 +17,8 @@ const _createPage = (size: PageSize, margins: Required<PageMargins>) => {
   page.dataset.scope = "vue-smart-pages";
   page.dataset.part = "page";
 
-  page.style.height = `${size.height}px`;
+  page.style.minHeight = `${size.height}px`;
+  page.style.display = "flow-root";
   setWidthAndMargins(page, size, margins);
 
   return page;
@@ -28,6 +29,7 @@ export const setWidthAndMargins = (
   size: PageSize,
   margins: Required<PageMargins>
 ) => {
+  element.style.boxSizing = "border-box";
   element.style.width = `${size.width}mm`;
   element.style.padding = `${margins.top}px ${margins.right}px ${margins.bottom}px ${margins.left}px`;
 };
@@ -44,9 +46,18 @@ export const breakPage = (
   let page = _createPage(size, margins);
 
   Array.from(target.children).forEach((child) => {
+    if (child.classList.contains(NEW_PAGE_CLASS)) {
+      if (page.childElementCount) {
+        pages.appendChild(page);
+        page = _createPage(size, margins);
+        accHeight = 0;
+      }
+      return;
+    }
     const childHeight = _elementHeight(child);
+    if (childHeight === 0 && !child.textContent?.trim()) return;
 
-    if (accHeight + childHeight > maxHeight || child.className === NEW_PAGE_CLASS) {
+    if (page.childElementCount && accHeight + childHeight > maxHeight) {
       pages.appendChild(page);
 
       accHeight = 0;
@@ -57,6 +68,6 @@ export const breakPage = (
     accHeight += childHeight;
   });
 
-  pages.appendChild(page);
+  if (page.childElementCount || !pages.childElementCount) pages.appendChild(page);
   target.innerHTML = pages.innerHTML;
 };

@@ -67,6 +67,7 @@ export const useSmartPages = (
     // This is to avoid flickering when the original element is modified.
     const copy = element.cloneNode(false) as HTMLElement;
 
+    copy.dataset.paginationMeasure = "";
     copy.innerHTML = toValue(html);
     setWidthAndMargins(copy, _size, _margins);
 

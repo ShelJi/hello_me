@@ -11,52 +11,55 @@
   @apply h-full rounded-xl;
 }
 
-/* Print mode */
-
+/* Print the resume in normal document flow, outside the editor's clipped panes. */
 @media print {
-  @page {
-    margin: 0;
-  }
+  @page { margin: 0; }
 
-  #editor-page {
-    height: auto;
-  }
-
-  .workspace,
-  [data-panel-group-id="splitter-editor"] {
+  html, body, #__nuxt, #editor-page, .workspace,
+  [data-panel-group-id="splitter-editor"], #preview-pane,
+  .preview-container, .vue-zoom-container, .vue-zoom {
     display: block !important;
-    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    position: static !important;
+    transform: none !important;
   }
 
-  header,
-  .toaster.group,
-  #zoom-bar,
-  #code-pane,
-  #code-preview-handle,
-  #tools-pane,
-  #nuxt-devtools-container,
-  [data-radix-popper-content-wrapper] {
+  html, body, #__nuxt, #editor-page, .workspace,
+  [data-panel-group-id="splitter-editor"], #preview-pane,
+  .preview-container, .vue-zoom-container, .vue-zoom {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: white !important;
+  }
+
+  #editor-page > header, .toaster.group, #zoom-bar, #code-pane,
+  #code-preview-handle, #tools-pane, #nuxt-devtools-container,
+  [data-radix-popper-content-wrapper], [data-pagination-measure] {
     display: none !important;
   }
 
-  .pane-container {
-    border: none;
-    border-radius: 0;
-  }
-
-  .vue-zoom {
-    transform: scale(1) !important;
-    margin: 0 !important;
-  }
-
   #resume-preview {
+    display: block !important;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
-    gap: 0;
   }
 
   #resume-preview [data-scope="vue-smart-pages"][data-part="page"] {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    break-before: auto;
+  }
+
+  #resume-preview [data-part="page"] + [data-part="page"] {
     break-before: page;
-    height: 100vh !important;
   }
 }

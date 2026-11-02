@@ -6,6 +6,7 @@
           class="gap-x-1.5 w-full h-8 justify-start"
           variant="ghost"
           size="sm"
+          :disabled="exporting"
           @click="exportPDF"
         >
           <span i-mdi:file-pdf text-base />
@@ -41,16 +42,24 @@ import { preparePreview } from '~/utils/preview';
 const { data } = useDataStore();
 const saveName = computed(() => data.resumeName.trim().replace(/\s+/g, "_"));
 
+const exporting = ref(false);
+
 // Export as PDF
 const exportPDF = async () => {
-  await preparePreview();
-  await document.fonts.ready;
-  await nextTick();
+  if (exporting.value) return;
+  exporting.value = true;
   const title = document.title;
-
-  document.title = saveName.value;
-  window.print();
-  document.title = title;
+  try {
+    await preparePreview();
+    await document.fonts.ready;
+    await nextTick();
+    await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+    document.title = saveName.value || "Resume";
+    window.print();
+  } finally {
+    document.title = title;
+    exporting.value = false;
+  }
 };
 
 // Export as Markdown

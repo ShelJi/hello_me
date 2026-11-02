@@ -35,6 +35,7 @@ const { render } = useSmartPages(target, html, size, margins, {
   beforeRender: async () => {
     // Wait for the fonts to be loaded
     await googleFontsService.presetObserver(props.styles);
+    await document.fonts.ready;
   },
   watchThrottledOptions: {
     throttle: 200
@@ -64,6 +65,10 @@ onMounted(() => {
   if (props.id === 'preview') setPreviewPreparation(async () => {
     markdown.value = props.markdown;
     await nextTick();
+    await render();
+    await Promise.all(Array.from(target.value?.querySelectorAll("img") ?? []).map(async image => {
+      try { await image.decode(); } catch { /* Broken images must not block export. */ }
+    }));
     await render();
   });
 });

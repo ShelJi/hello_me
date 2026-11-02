@@ -34,6 +34,9 @@ export const LOCAL_EN_FONTS: Font[] = [
     name: "Minion Pro"
   },
   {
+    name: "Open Sans"
+  },
+  {
     name: "Palatino"
   },
   {

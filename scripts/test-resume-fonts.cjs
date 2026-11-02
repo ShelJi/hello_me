@@ -28,7 +28,7 @@ function load(file) {
   const service = new GoogleFontsService();
   let remoteLoads = 0;
   service.loader = async () => { remoteLoads++; return null; };
-  for (const font of [{name:'Arial'}, {name:'Times New Roman'}, {name:'华康宋体',fontFamily:'HKST'}]) {
+  for (const font of [{name:'Open Sans'}, {name:'Arial'}, {name:'Times New Roman'}, {name:'华康宋体',fontFamily:'HKST'}]) {
     assert.equal(service.includes(font), false);
     await service.resolve(font);
   }
