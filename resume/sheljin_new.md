@@ -44,7 +44,7 @@ Embedded AI and Robotics Engineer with experience designing intelligent robotic 
 - Simulated and tested in Gazebo, optimizing data processing pipelines for low-latency mapping and scalable integration with robotics platforms.
 
 **Junior Python/Django Developer** | [Clovion Tech Solutions Pvt. Ltd.](https://clovion.org/)
-  ~ 09/2023 - 02/2025
+  ~ 09/2024 - 02/2025
 
 **Smart Bike Lock System**
 

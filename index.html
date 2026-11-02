@@ -340,6 +340,16 @@
 			width: 100%;
 		}
 
+		.github-contrib-scroll {
+			width: 100%;
+			overflow-x: auto;
+		}
+
+		.github-contrib-scroll img {
+			display: block;
+			max-width: none;
+		}
+
 		#graph {
 			width: 100% !important;
 		}
@@ -731,9 +741,6 @@
 				transform: scale(1.15) rotate(-8deg);
 			}
 		}
-
-
-	.social-label { display:inline-block; font-size:.75rem; margin-right:10px; }
 .icon { max-width:100%; display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
 .icon a { display:inline-flex; align-items:center; }
 #faq h3 { margin:1.2rem 0 .5rem; }
@@ -765,17 +772,17 @@
 
 						<div class="icon">
 							<a href="https://github.com/shelji" target="_blank" rel="noopener noreferrer">
-								<img src="ico/github.png" alt="GitHub Profile of Sheljin S.A" width="26" height="26" loading="eager" decoding="async" /><span class="social-label">GitHub Profile of Sheljin S.A</span></a>
+								<img src="ico/github.png" alt="GitHub Profile of Sheljin S.A" width="26" height="26" loading="eager" decoding="async" /></a>
 							<a href="https://www.linkedin.com/in/sheljin-sa" target="_blank" rel="noopener noreferrer">
-								<img src="ico/linkedin1.png" alt="LinkedIn Profile of Sheljin S.A" width="26" height="26" loading="eager" decoding="async" /><span class="social-label">LinkedIn Profile of Sheljin S.A</span></a>
+								<img src="ico/linkedin1.png" alt="LinkedIn Profile of Sheljin S.A" width="26" height="26" loading="eager" decoding="async" /></a>
 							<a href="mailto:shelj.dev@gmail.com">
-								<img src="ico/mail1.png" alt="Email Sheljin S.A" width="26" height="26" loading="eager" decoding="async" /><span class="social-label">Email Sheljin S.A</span></a>
+								<img src="ico/mail1.png" alt="Email Sheljin S.A" width="26" height="26" loading="eager" decoding="async" /></a>
 							<a href="https://www.codechef.com/users/sheljin" target="_blank" rel="noopener noreferrer">
-								<img src="ico/codechef.png" alt="CodeChef Profile of Sheljin S.A" width="26" height="26" loading="eager" decoding="async" /><span class="social-label">CodeChef Profile of Sheljin S.A</span></a>
+								<img src="ico/codechef.png" alt="CodeChef Profile of Sheljin S.A" width="26" height="26" loading="eager" decoding="async" /></a>
 							<a href="https://leetcode.com/u/shelj/" target="_blank" rel="noopener noreferrer">
-								<img src="ico/leetcode.png" alt="LeetCode Profile of Sheljin S.A" width="26" height="26" loading="eager" decoding="async" /><span class="social-label">LeetCode Profile of Sheljin S.A</span></a>
+								<img src="ico/leetcode.png" alt="LeetCode Profile of Sheljin S.A" width="26" height="26" loading="eager" decoding="async" /></a>
 							<a href="https://instagram.com/shelj__" target="_blank" rel="noopener noreferrer">
-								<img src="ico/instagram-48.png" alt="Instagram Profile of Sheljin S.A" width="26" height="26" loading="eager" decoding="async" /><span class="social-label">Instagram Profile of Sheljin S.A</span></a>
+								<img src="ico/instagram-48.png" alt="Instagram Profile of Sheljin S.A" width="26" height="26" loading="eager" decoding="async" /></a>
 							<div class="cv">
 								<a href="resume/Sheljin.S.A.pdf" target="_blank">
 
@@ -816,7 +823,7 @@
 					<a href="https://github.com/shelji">
 						<h3 class="split">GITHUB</h3>
 					</a>
-					<div>
+					<div class="github-contrib-scroll" tabindex="0" role="region" aria-label="GitHub contributions, scroll to view earlier activity">
 						<a href="#" target="_blank" rel="noopener">
  <picture>
   <source srcset="https://sakura-garden.vercel.app/api/svg?username=shelji&theme=kawaii-dark" media="(prefers-color-scheme: dark)" width="846" height="132" style="height:auto" />
@@ -828,30 +835,6 @@
 								src="https://github-readme-streak-stats.herokuapp.com/?user=shelji&theme=light"
 								width="100%"
 							/> -->
-						<br />
-						<br />
-						<link rel="stylesheet"
-							href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
-						<style>
-							.contrib-column {
-								display: none !important;
-							}
-
-							[href="#year-link-2025"] {
-								display: none !important;
-							}
-
-							.calendar {
-								margin: 0 auto;
-							}
-						</style>
-						<div class="calendar">Loading GitHub contributions...</div>
-						<div id="graph">
-							<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
-						</div>
-						<script>
-							GitHubCalendar(".calendar", "shelji");
-						</script>
 					</div>
 					<!-- <img
 								src="https://github-profile-trophy.vercel.app/?username=shelji&theme=algolia"
@@ -938,7 +921,7 @@
 					<h3>Junior Python/Django Developer</h3>
 					<h4>Clovion Tech Solutions Pvt. Ltd.</h4>
 					<p class="experience-duration">
-						September 2023 – February 2025
+						September 2024 – February 2025
 					</p>
 
 					<div class="experience-projects">
@@ -1158,14 +1141,14 @@
 					<div class="contact-icons">
 						<a href="mailto:shelj.dev@gmail.com" title="Email">
 							<img src="ico/mail1.png" alt="Email" width="32" height="32" loading="lazy" decoding="async" />
-						<span class="social-label">Email</span></a>
+						</a>
 						<a href="https://www.linkedin.com/in/sheljin-sa" target="_blank" rel="noopener noreferrer"
 							title="LinkedIn">
 							<img src="ico/linkedin1.png" alt="LinkedIn" width="32" height="32" loading="lazy" decoding="async" />
-						<span class="social-label">LinkedIn</span></a>
+						</a>
 						<a href="https://github.com/shelji" target="_blank" rel="noopener noreferrer" title="GitHub">
 							<img src="ico/github.png" alt="GitHub" width="32" height="32" loading="lazy" decoding="async" />
-						<span class="social-label">GitHub</span></a>
+						</a>
 					</div>
 					<div id="heart-touching-slogan">
 						“Let’s turn technology into something that shapes tomorrow — Together”
@@ -1173,7 +1156,7 @@
 				</div>
 			</div>
 
-			<p class="content">Last updated: <time datetime="2026-10-31">31 October 2026</time></p><div class="end"></div>
+			<p class="content" hidden>Last updated: <time datetime="2026-10-31">31 October 2026</time></p><div class="end"></div>
 		</main>
 	</div>
 
@@ -1189,6 +1172,7 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/InertiaPlugin.min.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Draggable.min.js" defer></script>
+	<script src="github-contrib.js" defer></script>
 	<script src="home.js" defer></script>
 	<script src="citybird/minified_city_bird_ctx.js" defer></script>
 </body>

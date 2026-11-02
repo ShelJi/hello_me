@@ -44,7 +44,7 @@ Expert in connected devices, embedded systems, MQTT, cloud IoT platforms, and se
 - Simulated and tested in Gazebo, optimizing data processing pipelines for low-latency mapping and scalable integration with robotics platforms.
 
 **Junior Python/Django Developer** | [Clovion Tech Solutions Pvt. Ltd.](https://clovion.org/)
-  ~ 09/2023 - 02/2025
+  ~ 09/2024 - 02/2025
 
 **E-Commerce API** 
 - Designed and implemented scalable RESTful APIs using DRF, Swagger UI, Celery, Redis, 2FA, JWT, and Eraser.io. 
