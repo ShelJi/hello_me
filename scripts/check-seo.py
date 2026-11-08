@@ -1,6 +1,7 @@
 """Check homepage SEO invariants without third-party dependencies."""
 import json
 import re
+from datetime import datetime
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -77,14 +78,24 @@ for script in scripts:
     if not urlsplit(script['src']).scheme:
         assert (ROOT / script['src']).is_file(), script
 graph = page.schema[0]['@graph']
-webpage = next(node for node in graph if 'ProfilePage' in node.get('@type', []))
-assert webpage['dateModified'] == '2026-10-31'
+webpage = next(node for node in graph if node['@type'] == 'ProfilePage')
+person = next(node for node in graph if node['@type'] == 'Person')
+assert webpage['mainEntity'] == {'@id': person['@id']}, 'ProfilePage must identify the Person'
+modified = datetime.fromisoformat(webpage['dateModified'])
+assert modified.utcoffset() is not None, 'ProfilePage dateModified must include a time zone'
+assert modified.date().isoformat() == '2026-10-31'
 for selector in webpage['speakable']['cssSelector']:
     assert selector.startswith('#') and selector[1:] in ids
-for question in webpage['mainEntity']:
-    if question.get('@type') == 'Question':
-        assert question['name'] in source
-        assert question['acceptedAnswer']['text'] in source
+faq = next(node for node in graph if node['@type'] == 'FAQPage')
+assert faq['isPartOf'] == {'@id': webpage['@id']}
+assert urlsplit(faq['@id']).fragment in ids
+assert faq['mainEntity'], 'FAQPage must have questions'
+visible_text = ' '.join(' '.join(page.text).split())
+for question in faq['mainEntity']:
+    assert question['@type'] == 'Question'
+    assert question['name'] in visible_text
+    assert question['acceptedAnswer']['@type'] == 'Answer'
+    assert question['acceptedAnswer']['text'] in visible_text
 assert descriptions[0] == webpage['description']
 words = len(re.findall(r"\b[\w'-]+\b", ' '.join(page.text)))
 assert words >= 300, words

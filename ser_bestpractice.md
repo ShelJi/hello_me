@@ -16,10 +16,10 @@ These changes address the supplied homepage report. The user-provided baseline w
 
 - A concise homepage description is shared across description, Open Graph, Twitter and structured data.
 - The existing HTTPS canonical, English language declaration, descriptive title, social image, author and indexing directives remain in place.
-- The schema graph connects Person, WebSite and the homepage through stable URL identifiers. The homepage uses ProfilePage and FAQPage types for the content it contains.
+- The schema graph connects the Person, WebSite and homepage through stable URL identifiers. The ProfilePage identifies the Person as its main entity. A separate FAQPage node identifies the questions in the FAQ section.
 - A visible last-updated date, dateModified, og:updated_time and sitemap lastmod reflect this edit on 31 October 2026. An original datePublished is deliberately absent because the actual first public publication date is unverified. A Git commit date alone is not proof of publication.
 - SpeakableSpecification points to the visible profile summary and first FAQ answer. Google's speakable feature has specific news and Assistant eligibility; this portfolio is not promised that feature. See [Google's speakable documentation](https://developers.google.com/search/docs/appearance/structured-data/speakable).
-- FAQ markup describes real answers. Rich-result availability and eligibility are controlled by search engines; markup alone does not promise a special result. See [Google's FAQ feature changes](https://developers.google.com/search/blog/2023/08/howto-faq-changes).
+- FAQ markup describes the visible answers. Google Search retired FAQ rich results in May 2026. See [Google Search documentation updates](https://developers.google.com/search/updates).
 
 ## Media and performance used
 

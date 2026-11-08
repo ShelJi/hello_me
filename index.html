@@ -93,7 +93,7 @@
 						}
 					},
 					{
-						"@type": ["ProfilePage", "FAQPage"],
+						"@type": "ProfilePage",
 						"@id": "https://shelj.in/#webpage",
 						"url": "https://shelj.in/",
 						"name": "Sheljin S.A | IoT Systems Engineer, Robotics & Python",
@@ -105,15 +105,22 @@
 						"about": {
 							"@id": "https://shelj.in/#person"
 						},
-						"dateModified": "2026-10-31",
+						"dateModified": "2026-10-31T23:42:24+05:30",
 						"speakable": {
 							"@type": "SpeakableSpecification",
 							"cssSelector": ["#profile-summary", "#faq-answer-0"]
 						},
+						"mainEntity": {
+							"@id": "https://shelj.in/#person"
+						}
+					},
+					{
+						"@type": "FAQPage",
+						"@id": "https://shelj.in/#faq",
+						"isPartOf": {
+							"@id": "https://shelj.in/#webpage"
+						},
 						"mainEntity": [
-							{
-								"@id": "https://shelj.in/#person"
-							},
 							{
 								"@type": "Question",
 								"name": "What does Sheljin S.A work on?",
