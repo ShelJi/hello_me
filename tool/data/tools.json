@@ -697,6 +697,319 @@
         ]
       }
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+      "id": "tool-1793469388533",
+      "name": "SAGE - AI SEO, AEO & GEO Engine",
+      "description": "SEO checker, AEO & GEO analyzer — audit meta tags, schema markup, headings, AI search optimization & SERP rankings in one click.\n\nSAGE is a free AI-powered SEO checker, AEO analyzer, GEO optimization tool, and AI View analyzer built as a Chrome extension for the new search landscape. Audit any webpage for search engine optimization, answer engine readiness, generative AI visibility, and machine readability in one click. 100% local analysis: your data never leaves your browser.\n\nSAGE runs 200+ checks across 15 categories, scores your page 0-100 across SEO, GEO, AEO, and AI View, and tells you exactly what to fix and why. Whether you're optimizing for Google, AI Overviews, ChatGPT, Claude, Gemini, voice search, or AI agents, SAGE gives you a clear, actionable report in seconds.",
+      "topic": "Testing tool",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "seo",
+        "tester",
+        "optimisation",
+        "tool",
+        "testing"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://chromewebstore.google.com/detail/sage-ai-seo-aeo-geo-engin/hjnhkojlmnmnfnajhcdlihimhaaimigi",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1793468728526",
+      "name": "esp32lab",
+      "description": "Turn any ESP32 into a browser-controlled sensor lab — no coding required",
+      "topic": "learning iot",
+      "ranking": 8,
+      "tags": [
+        "developer",
+        "iot",
+        "esp32",
+        "simulation",
+        "gui"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://github.com/idltd/esp32lab",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1793468430849",
+      "name": "graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "topic": "skills",
+      "ranking": 8,
+      "tags": [
+        "developer",
+        "skills",
+        "productivity"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://github.com/Graphify-Labs/graphify",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1793467848916",
+      "name": "vocatype.app",
+      "description": "typing class",
+      "topic": "learning",
+      "ranking": 8,
+      "tags": [
+        "typing",
+        "learning",
+        "keyboard"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://vocatype.app/",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1793467441139",
+      "name": "mit courses",
+      "description": "courses from mit.",
+      "topic": "courses",
+      "ranking": 8,
+      "tags": [
+        "courses",
+        "free",
+        "mit",
+        "learning"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://ocw.mit.edu/",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1793467059951",
+      "name": "Unlocktool",
+      "description": "phone unlock",
+      "topic": "crack",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "unlock phone",
+        "crack",
+        "hack"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://unlocktool.net/",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1793466643276",
+      "name": "Sakura garden",
+      "description": "Generates a sakura garden from your GitHub contributions. github graph style.",
+      "topic": "portfolio",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer",
+        "style",
+        "portfolio",
+        "design"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://github.com/marketplace/actions/sakura-garden-generator",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1793466492848",
+      "name": "nectarlink",
+      "description": "Your Android phone and your Windows PC, working as one. Local-first, end-to-end encrypted, no account.\nphone link alternative",
+      "topic": "tool",
+      "ranking": 8,
+      "tags": [
+        "developer",
+        "desktop"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://github.com/thtbee/nectarlink",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1793465760675",
+      "name": "domain-digger",
+      "description": "Describe the tool, its core functionality, and use cases.",
+      "topic": "Development",
+      "ranking": 8,
+      "tags": [
+        "utility",
+        "developer"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://github.com/wotschofsky/domain-digger",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "tool-1793374563198",
+      "name": "Dossier",
+      "description": "A self-hosted job search app that writes tailored resumes and cover letters from your profile.",
+      "topic": "job",
+      "ranking": 8,
+      "tags": [
+        "job",
+        "ai",
+        "skills"
+      ],
+      "notes": "Added via JSONDB Builder.",
+      "link": "https://github.com/AienTech/dossier",
+      "fields": {
+        "input_types": [
+          "Text"
+        ],
+        "features": [
+          "Inspect"
+        ],
+        "offline": false,
+        "pricing": "free",
+        "platforms": [
+          "web"
+        ]
+      }
+    },
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    
     {
       "id": "tool-1792862227287",
       "name": "Ponytail skils",
