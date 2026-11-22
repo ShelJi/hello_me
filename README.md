@@ -71,6 +71,7 @@ The HTML is generated, not hand-written — never edit `.html` files under `note
 
 - Edit or add a `.md` note (and add a link for it in `notes/catalog.md` if it's new).
 - `npm install` once, then `npm run notes:build` to regenerate all HTML, or `npm run notes:watch` to rebuild on save while editing.
-- A git pre-commit hook (`githooks/pre-commit`, wired up via `git config core.hooksPath githooks`) also regenerates and stages the HTML automatically whenever a staged commit touches `notes/**/*.md`, so the Markdown and its HTML export can't drift out of sync.
+- Enable the pre-commit hook once in each clone, from the repository root: `git config core.hooksPath githooks`. This tells Git to use the hook in `githooks/`; the setting is local to this clone. Confirm it with `git config --get core.hooksPath`, which should print `githooks`.
+- When a commit includes staged changes to `notes/**/*.md`, the hook (`githooks/pre-commit`) runs `node scripts/build-notes.js` and stages the generated HTML. It needs Node.js and the dependencies installed with `npm install`. It does nothing when no note Markdown files are staged.
 
 Shared styling for note pages lives in `notes/notes.css` — edit it once instead of per-file.
